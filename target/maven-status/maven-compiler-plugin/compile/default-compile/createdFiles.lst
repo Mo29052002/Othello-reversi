@@ -1,0 +1,11 @@
+view/GameController.class
+view/OthelloApp.class
+model/Move.class
+model/Board.class
+model/GameState.class
+view/GameController$2.class
+model/Cell$CellState.class
+model/Cell.class
+view/GameController$1.class
+model/Player.class
+model/Rules.class
