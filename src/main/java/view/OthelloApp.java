@@ -17,7 +17,7 @@ public class OthelloApp extends JFrame {
         showMenu();
     }
 
-    private void showMenu() {
+    public  void showMenu() {
         getContentPane().removeAll();
 
         JPanel menuPanel = new JPanel();

@@ -62,10 +62,6 @@ public class GameController {
         this.gameState.updateScores();
     }
 
-    // For backward compatibility
-    private void resetGame() {
-        resetGame(8);
-    }
 
     private int chooseBoardSize() {
         String[] options = {"4", "6", "8", "10", "12"};
@@ -128,7 +124,7 @@ public class GameController {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                setBackground(new Color(0, 100, 0)); // Dark green
+                setBackground(new Color(255, 100, 0)); // Dark green
                 setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
                 Cell cell = gameState.getBoard().getCell(x, y);
@@ -273,7 +269,7 @@ public class GameController {
 
         resumeButton.addActionListener(e -> pauseDialog.dispose());
         restartButton.addActionListener(e -> {
-            resetGame();
+            resetGame(gameState.getBoard().getSize());
             buildGameFrame();
             gameFrame.setVisible(true);
             pauseDialog.dispose();
@@ -286,9 +282,10 @@ public class GameController {
             }
         });
         quitButton.addActionListener(e -> {
-            gameFrame.dispose();
-            app.showMenuFromGame();
-            pauseDialog.dispose();
+           pauseDialog.dispose();
+           gameFrame.dispose();
+           app.showMenu();
+           app.setVisible(true);
         });
 
         panel.add(label);
