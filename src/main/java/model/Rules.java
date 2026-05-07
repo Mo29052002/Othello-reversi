@@ -63,8 +63,9 @@ public class Rules {
 
     public static List<Move> getValidMoves(Board board, Player player) {
         List<Move> moves = new ArrayList<>();
-        for (int x = 0; x < Board.SIZE; x++) {
-            for (int y = 0; y < Board.SIZE; y++) {
+        int size = board.getSize();
+        for (int x = 0; x < size; x++) {
+            for (int y = 0; y < size; y++) {
                 if (isValidMove(board, x, y, player)) {
                     moves.add(new Move(x, y, player));
                 }

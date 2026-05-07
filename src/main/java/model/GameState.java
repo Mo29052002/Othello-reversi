@@ -12,13 +12,18 @@ public class GameState {
     private boolean gameOver;
     private Player winner;
 
-    public GameState() {
-        board = new Board();
+    public GameState(int boardSize) {
+        board = new Board(boardSize);
         player1 = new Player(Cell.CellState.BLACK);
         player2 = new Player(Cell.CellState.WHITE);
         currentPlayer = player1; // Black starts
         gameOver = false;
         winner = null;
+    }
+
+    // Default constructor for backward compatibility
+    public GameState() {
+        this(8);
     }
 
     public Board getBoard() {

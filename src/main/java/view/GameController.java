@@ -44,16 +44,44 @@ public class GameController {
                 return;
             }
         } else {
-            resetGame();
+            int boardSize = chooseBoardSize();
+            if (boardSize == -1) {
+                // User cancelled
+                app.showMenuFromGame();
+                return;
+            }
+            resetGame(boardSize);
         }
         buildGameFrame();
         app.setVisible(false);
         gameFrame.setVisible(true);
     }
 
-    private void resetGame() {
-        this.gameState = new GameState();
+    private void resetGame(int boardSize) {
+        this.gameState = new GameState(boardSize);
         this.gameState.updateScores();
+    }
+
+    // For backward compatibility
+    private void resetGame() {
+        resetGame(8);
+    }
+
+    private int chooseBoardSize() {
+        String[] options = {"4", "6", "8", "10", "12"};
+        String choice = (String) JOptionPane.showInputDialog(
+            app,
+            "Choisissez la taille du plateau :",
+            "Taille du plateau",
+            JOptionPane.QUESTION_MESSAGE,
+            null,
+            options,
+            "8"
+        );
+        if (choice == null) {
+            return -1; // Cancelled
+        }
+        return Integer.parseInt(choice);
     }
 
     private void buildGameFrame() {
@@ -81,12 +109,13 @@ public class GameController {
     }
 
     private JPanel createBoardPanel() {
-        JPanel panel = new JPanel(new GridLayout(Board.SIZE, Board.SIZE, 2, 2));
+        int boardSize = gameState.getBoard().getSize();
+        JPanel panel = new JPanel(new GridLayout(boardSize, boardSize, 2, 2));
         panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         panel.setBackground(new Color(34, 139, 34)); // Dark green
 
-        for (int x = 0; x < Board.SIZE; x++) {
-            for (int y = 0; y < Board.SIZE; y++) {
+        for (int x = 0; x < boardSize; x++) {
+            for (int y = 0; y < boardSize; y++) {
                 JPanel cellPanel = createCellPanel(x, y);
                 panel.add(cellPanel);
             }
@@ -289,10 +318,13 @@ public class GameController {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(saveFile))) {
             writer.write(Integer.toString(mode));
             writer.newLine();
+            writer.write(Integer.toString(gameState.getBoard().getSize()));
+            writer.newLine();
             writer.write(gameState.getCurrentPlayer().getColor().name());
             writer.newLine();
-            for (int x = 0; x < Board.SIZE; x++) {
-                for (int y = 0; y < Board.SIZE; y++) {
+            int boardSize = gameState.getBoard().getSize();
+            for (int x = 0; x < boardSize; x++) {
+                for (int y = 0; y < boardSize; y++) {
                     writer.write(gameState.getBoard().getCell(x, y).getState().name());
                     writer.write(" ");
                 }
@@ -310,11 +342,12 @@ public class GameController {
         }
         try (BufferedReader reader = new BufferedReader(new FileReader(saveFile))) {
             int fileMode = Integer.parseInt(reader.readLine());
+            int boardSize = Integer.parseInt(reader.readLine());
             String currentColor = reader.readLine();
-            GameState loadedState = new GameState();
-            for (int x = 0; x < Board.SIZE; x++) {
+            GameState loadedState = new GameState(boardSize);
+            for (int x = 0; x < boardSize; x++) {
                 String[] line = reader.readLine().split(" ");
-                for (int y = 0; y < Board.SIZE; y++) {
+                for (int y = 0; y < boardSize; y++) {
                     Cell.CellState state = Cell.CellState.valueOf(line[y]);
                     loadedState.getBoard().placePiece(x, y, state);
                 }
