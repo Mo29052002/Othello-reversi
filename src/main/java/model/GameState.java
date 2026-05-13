@@ -1,4 +1,5 @@
 package model;
+import java.util.*;
 
 /**
  * Represents the overall state of the Othello/Reversi game.
@@ -11,6 +12,7 @@ public class GameState {
     private Player currentPlayer;
     private boolean gameOver;
     private Player winner;
+    private List<Move> moveHistory; // For undo/redo functionality
 
     public GameState(int boardSize) {
         board = new Board(boardSize);
@@ -19,6 +21,7 @@ public class GameState {
         currentPlayer = player1; // Black starts
         gameOver = false;
         winner = null;
+        moveHistory = new ArrayList<>();
     }
 
     // Default constructor for backward compatibility
@@ -46,6 +49,10 @@ public class GameState {
         currentPlayer = (currentPlayer == player1) ? player2 : player1;
     }
 
+    public void addMove(Move move) {
+        moveHistory.add(move);
+    }
+
     public boolean isGameOver() {
         return gameOver;
     }
@@ -60,6 +67,10 @@ public class GameState {
 
     public void setWinner(Player winner) {
         this.winner = winner;
+    }
+
+    public List<Move> getMoveHistory() {
+        return moveHistory;
     }
 
     public void updateScores() {

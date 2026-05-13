@@ -30,6 +30,7 @@ public class GameController {
     private JLabel statusLabel;
     private JButton pauseButton;
     private int mode;
+    private JTextArea HistoryArea;
 
     public GameController(OthelloApp app) {
         this.app = app;
@@ -83,8 +84,12 @@ public class GameController {
     private void buildGameFrame() {
         gameFrame = new JFrame("Othello / Reversi - Partie");
         gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gameFrame.setSize(700, 800);
+        gameFrame.setSize(900, 800);
         gameFrame.setLocationRelativeTo(null);
+        HistoryArea = new JTextArea(5, 20);
+        HistoryArea.setEditable(false);
+        HistoryArea.setFont(new Font("Monospaced",Font.PLAIN,12));
+        JScrollPane scrollPane = new JScrollPane(HistoryArea);
 
         boardPanel = createBoardPanel();
         statusLabel = new JLabel(getStatusText(), SwingConstants.CENTER);
@@ -100,7 +105,7 @@ public class GameController {
         gameFrame.setLayout(new BorderLayout());
         gameFrame.add(topPanel, BorderLayout.NORTH);
         gameFrame.add(boardPanel, BorderLayout.CENTER);
-
+        gameFrame.add(scrollPane, BorderLayout.EAST);
         refreshBoard();
     }
 
@@ -116,42 +121,61 @@ public class GameController {
                 panel.add(cellPanel);
             }
         }
-        return panel;
-    }
-
-    private JPanel createCellPanel(int x, int y) {
-        JPanel panel = new JPanel() {
-            @Override
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-                setBackground(new Color(255, 100, 0)); // Dark green
-                setBorder(BorderFactory.createLineBorder(Color.BLACK));
-
-                Cell cell = gameState.getBoard().getCell(x, y);
-                if (!cell.isEmpty()) {
-                    Graphics2D g2d = (Graphics2D) g;
-                    g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                    g2d.setColor(cell.isBlack() ? Color.BLACK : Color.WHITE);
-                    int diameter = Math.min(getWidth(), getHeight()) - 10;
-                    int centerX = (getWidth() - diameter) / 2;
-                    int centerY = (getHeight() - diameter) / 2;
-                    g2d.fillOval(centerX, centerY, diameter, diameter);
-                    g2d.setColor(Color.DARK_GRAY);
-                    g2d.drawOval(centerX, centerY, diameter, diameter);
-                }
-            }
-        };
-        panel.setPreferredSize(new Dimension(60, 60));
-
-        panel.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                handleCellClick(x, y);
-            }
-        });
 
         return panel;
     }
+
+   private JPanel createCellPanel(int x, int y) {
+    JPanel panel = new JPanel() {
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+
+            Cell cell = gameState.getBoard().getCell(x, y);
+            if (!cell.isEmpty()) {
+                Graphics2D g2d = (Graphics2D) g;
+                g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2d.setColor(cell.isBlack() ? Color.BLACK : Color.WHITE);
+
+                int diameter = Math.min(getWidth(), getHeight()) - 10;
+                int centerX = (getWidth() - diameter) / 2;
+                int centerY = (getHeight() - diameter) / 2;
+
+                g2d.fillOval(centerX, centerY, diameter, diameter);
+                g2d.setColor(Color.DARK_GRAY);
+                g2d.drawOval(centerX, centerY, diameter, diameter);
+            }
+        }
+    };
+
+    Color baseColor = new Color(100, 0, 0);
+    panel.setBackground(baseColor);
+    panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+    panel.setPreferredSize(new Dimension(60, 60));
+
+    panel.addMouseListener(new MouseAdapter() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            handleCellClick(x, y);
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            Player current = gameState.getCurrentPlayer();
+            if (gameState.getBoard().getCell(x, y).isEmpty()
+                    && Rules.isValidMove(gameState.getBoard(), x, y, current)) {
+                panel.setBackground(Color.LIGHT_GRAY);
+            }
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            panel.setBackground(baseColor);
+        }
+    });
+
+    return panel;
+}
 
     private void handleCellClick(int x, int y) {
         if (gameState.isGameOver()) {
@@ -175,6 +199,8 @@ public class GameController {
         Player current = gameState.getCurrentPlayer();
         Move move = new Move(x, y, current);
         Rules.applyMove(gameState.getBoard(), move);
+        gameState.addMove(move);
+        updateMoveHistory();
         gameState.updateScores();
         updateGameStatus();
         if (!gameState.isGameOver()) {
@@ -187,6 +213,17 @@ public class GameController {
             }
         }
         refreshBoard();
+    }
+
+    private void updateMoveHistory() {
+        StringBuilder historyText = new StringBuilder();
+        List<Move> moves = gameState.getMoveHistory();
+        for (int i = 0; i < moves.size(); i++) {
+            Move move = moves.get(i);
+            String player = move.getPlayer().isBlack() ? "Noir" : "Blanc";
+            historyText.append(String.format("%d. %s: (%d, %d)\n", i + 1, player, move.getX(), move.getY()));
+        }
+        HistoryArea.setText(historyText.toString());
     }
 
     private void performAiTurn() {
