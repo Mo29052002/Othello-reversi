@@ -1,3 +1,4 @@
+model/GameSnapshot.class
 view/GameController.class
 view/OthelloApp.class
 model/Move.class

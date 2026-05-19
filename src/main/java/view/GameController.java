@@ -10,9 +10,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import model.Board;
 import model.Cell;
+import model.GameSnapshot;
 import model.GameState;
 import model.Move;
 import model.Player;
@@ -29,8 +31,12 @@ public class GameController {
     private JPanel boardPanel;
     private JLabel statusLabel;
     private JButton pauseButton;
+    private JButton undoButton;
+    private JButton redoButton;
     private int mode;
     private JTextArea HistoryArea;
+    private List<GameSnapshot> snapshots = new ArrayList<>(); // For undo functionality
+    private List<GameSnapshot> redoSnapshots = new ArrayList<>(); // For redo functionality
 
     public GameController(OthelloApp app) {
         this.app = app;
@@ -44,6 +50,8 @@ public class GameController {
                 showAlert("Aucune partie chargée", "Aucune sauvegarde trouvée ou fichier invalide.");
                 return;
             }
+            snapshots.clear();
+            saveSnapshot(null);
         } else {
             int boardSize = chooseBoardSize();
             if (boardSize == -1) {
@@ -61,8 +69,29 @@ public class GameController {
     private void resetGame(int boardSize) {
         this.gameState = new GameState(boardSize);
         this.gameState.updateScores();
+        snapshots.clear();
+        saveSnapshot(null);
     }
 
+    private void saveSnapshot(Move move) {
+        int size = gameState.getBoard().getSize();
+        Cell.CellState[][] boardState = new Cell.CellState[size][size];
+        for (int x = 0; x < size; x++) {
+            for (int y = 0; y < size; y++) {
+                boardState[x][y] = gameState.getBoard().getCell(x, y).getState();
+            }
+        }
+        GameSnapshot snapshot = new GameSnapshot(
+                move,
+                boardState,
+                size,
+                gameState.getCurrentPlayer().getColor(),
+                gameState.getPlayer1().getScore(),
+                gameState.getPlayer2().getScore(),
+                gameState.getMoveHistory().size()
+        );
+        snapshots.add(snapshot);
+    }
 
     private int chooseBoardSize() {
         String[] options = {"4", "6", "8", "10", "12"};
@@ -98,14 +127,66 @@ public class GameController {
         pauseButton = new JButton("Pause");
         pauseButton.addActionListener(e -> showPauseDialog());
 
+        undoButton = new JButton("REVENIR EN ARRIÈRE");
+        undoButton.addActionListener(e -> undoMove());
+
+        redoButton = new JButton("AVANCER");
+        redoButton.addActionListener(e -> redoMove());
+
+        JPanel leftPanel = new JPanel(new FlowLayout());
+        leftPanel.add(undoButton);
+        leftPanel.add(redoButton);
+
         JPanel topPanel = new JPanel(new BorderLayout());
         topPanel.add(statusLabel, BorderLayout.CENTER);
         topPanel.add(pauseButton, BorderLayout.EAST);
+        topPanel.add(leftPanel, BorderLayout.WEST);
 
         gameFrame.setLayout(new BorderLayout());
         gameFrame.add(topPanel, BorderLayout.NORTH);
         gameFrame.add(boardPanel, BorderLayout.CENTER);
         gameFrame.add(scrollPane, BorderLayout.EAST);
+        refreshBoard();
+    }
+
+    private void undoMove() {
+        if (snapshots.size() <= 1) {
+            showAlert("Impossible", "Aucun coup à annuler.");
+            return;
+        }
+
+        GameSnapshot undoneSnapshot = snapshots.remove(snapshots.size() - 1);
+        redoSnapshots.add(undoneSnapshot);
+        GameSnapshot previousSnapshot = snapshots.get(snapshots.size() - 1);
+        previousSnapshot.restoreToBoard(gameState.getBoard());
+        gameState.setCurrentPlayer(previousSnapshot.getCurrentPlayer());
+        gameState.updateScores();
+        gameState.setGameOver(false);
+        gameState.setWinner(null);
+
+        if (!gameState.getMoveHistory().isEmpty()) {
+            gameState.getMoveHistory().remove(gameState.getMoveHistory().size() - 1);
+        }
+        updateMoveHistory();
+        refreshBoard();
+    }
+
+    private void redoMove() {
+        if (redoSnapshots.isEmpty()) {
+            showAlert("Impossible", "Aucun coup à refaire.");
+            return;
+        }
+        GameSnapshot toRedo = redoSnapshots.remove(redoSnapshots.size() - 1);
+        toRedo.restoreToBoard(gameState.getBoard());
+        gameState.setCurrentPlayer(toRedo.getCurrentPlayer());
+        gameState.updateScores();
+        gameState.setGameOver(false);
+        gameState.setWinner(null);
+        snapshots.add(toRedo);
+        if (toRedo.getMove() != null) {
+            gameState.getMoveHistory().add(toRedo.getMove());
+        }
+        updateMoveHistory();
         refreshBoard();
     }
 
@@ -212,6 +293,8 @@ public class GameController {
                 }
             }
         }
+        saveSnapshot(move);
+        redoSnapshots.clear();
         refreshBoard();
     }
 
@@ -306,10 +389,12 @@ public class GameController {
 
         resumeButton.addActionListener(e -> pauseDialog.dispose());
         restartButton.addActionListener(e -> {
+            gameFrame.dispose();
             resetGame(gameState.getBoard().getSize());
             buildGameFrame();
             gameFrame.setVisible(true);
             pauseDialog.dispose();
+            
         });
         saveButton.addActionListener(e -> {
             if (saveGame()) {

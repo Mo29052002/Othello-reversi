@@ -45,6 +45,10 @@ public class GameState {
         return currentPlayer;
     }
 
+    public void setCurrentPlayer(Cell.CellState color) {
+        currentPlayer = (player1.getColor() == color) ? player1 : player2;
+    }
+
     public void switchPlayer() {
         currentPlayer = (currentPlayer == player1) ? player2 : player1;
     }
