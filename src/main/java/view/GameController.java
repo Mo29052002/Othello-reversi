@@ -235,10 +235,6 @@ public class GameController {
     panel.setPreferredSize(new Dimension(60, 60));
 
     panel.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            handleCellClick(x, y);
-        }
 
         @Override
         public void mouseEntered(MouseEvent e) {
@@ -253,10 +249,33 @@ public class GameController {
         public void mouseExited(MouseEvent e) {
             panel.setBackground(baseColor);
         }
+        
+        @Override
+        public void mousePressed(MouseEvent e) {
+            if (SwingUtilities.isRightMouseButton(e)) {
+                 Player current = gameState.getCurrentPlayer();
+               if (gameState.getBoard().getCell(x, y).isEmpty()
+                    && Rules.isValidMove(gameState.getBoard(), x, y, current)) {
+                applyPlayerMove(x, y);
+            }
+            } else {
+                if (SwingUtilities.isLeftMouseButton(e)) {
+                handleCellClick(x, y);
+            }
+        }
+    }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            if (SwingUtilities.isRightMouseButton(e)) {
+               undoMove();
+            }
+        }
     });
 
     return panel;
 }
+
 
     private void handleCellClick(int x, int y) {
         if (gameState.isGameOver()) {
