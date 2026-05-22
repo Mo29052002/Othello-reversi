@@ -20,29 +20,140 @@ import model.Move;
 import model.Player;
 import model.Rules;
 
+/**
+ * @class GameController
+ * @brief Contrôleur principal d'une partie d'Othello/Reversi.
+ *
+ * Cette classe assure la liaison entre l'interface graphique et la logique
+ * du jeu. Elle gère l'initialisation d'une partie, les interactions utilisateur,
+ * la mise à jour de l'affichage, l'historique des coups, ainsi que les
+ * fonctionnalités de sauvegarde, chargement, annulation et rétablissement.
+ */
 public class GameController {
+
+    /**
+     * @brief Nom du fichier utilisé pour la sauvegarde de la partie.
+     *
+     * Ce fichier texte contient les informations minimales nécessaires
+     * pour recharger l'état d'une partie.
+     */
     private static final String SAVE_FILE_NAME = "othello-save.txt";
 
+    /**
+     * @brief Référence vers l'application principale.
+     *
+     * Cet objet permet au contrôleur de revenir au menu principal ou
+     * d'interagir avec la fenêtre principale de lancement.
+     */
     private final OthelloApp app;
+
+    /**
+     * @brief Fichier physique de sauvegarde associé à la partie.
+     *
+     * Il est construit à partir de la constante {@link #SAVE_FILE_NAME}.
+     */
     private final File saveFile;
 
+    /**
+     * @brief État courant de la partie.
+     *
+     * Contient le plateau, les joueurs, le joueur courant, les scores,
+     * l'historique des coups et l'état de fin de partie.
+     */
     private GameState gameState;
-    private JFrame gameFrame;
-    private JPanel boardPanel;
-    private JLabel statusLabel;
-    private JButton pauseButton;
-    private JButton undoButton;
-    private JButton redoButton;
-    private int mode;
-    private JTextArea HistoryArea;
-    private List<GameSnapshot> snapshots = new ArrayList<>(); // For undo functionality
-    private List<GameSnapshot> redoSnapshots = new ArrayList<>(); // For redo functionality
 
+    /**
+     * @brief Fenêtre principale de la partie en cours.
+     *
+     * Cette fenêtre contient le plateau, les boutons d'action, le statut
+     * de la partie et l'historique des coups.
+     */
+    private JFrame gameFrame;
+
+    /**
+     * @brief Panneau graphique représentant le plateau de jeu.
+     */
+    private JPanel boardPanel;
+
+    /**
+     * @brief Libellé affichant l'état courant de la partie.
+     *
+     * Il indique par exemple le joueur dont c'est le tour ou le score actuel.
+     */
+    private JLabel statusLabel;
+
+    /**
+     * @brief Bouton permettant d'ouvrir le menu de pause.
+     */
+    private JButton pauseButton;
+
+    /**
+     * @brief Bouton permettant d'annuler le dernier coup joué.
+     */
+    private JButton undoButton;
+
+    /**
+     * @brief Bouton permettant de refaire un coup précédemment annulé.
+     */
+    private JButton redoButton;
+
+    /**
+     * @brief Bouton permettant de jouer en saisissant les coordonnées au clavier.
+     */
+    private JButton playwithkeyboardButton;
+
+    /**
+     * @brief Mode de jeu courant.
+     *
+     * Exemples :
+     * - 1 : joueur contre joueur ;
+     * - 2 : joueur contre ordinateur ;
+     * - 3 : chargement d'une partie sauvegardée.
+     */
+    private int mode;
+
+    /**
+     * @brief Zone de texte affichant l'historique des coups joués.
+     */
+    private JTextArea HistoryArea;
+
+    /**
+     * @brief Liste des instantanés de partie utilisée pour l'annulation.
+     *
+     * Chaque instantané représente un état successif du jeu.
+     */
+    private List<GameSnapshot> snapshots = new ArrayList<>();
+
+    /**
+     * @brief Liste des instantanés annulés utilisée pour le rétablissement.
+     *
+     * Cette liste permet de refaire les coups après une annulation.
+     */
+    private List<GameSnapshot> redoSnapshots = new ArrayList<>();
+
+    /**
+     * @brief Construit un contrôleur de partie associé à l'application principale.
+     *
+     * Initialise la référence vers l'application et prépare le fichier
+     * de sauvegarde utilisé pour enregistrer ou charger une partie.
+     *
+     * @param app Application principale contenant le menu et la fenêtre d'accueil.
+     */
     public GameController(OthelloApp app) {
         this.app = app;
         this.saveFile = new File(SAVE_FILE_NAME);
     }
 
+    /**
+     * @brief Démarre une nouvelle partie selon le mode choisi.
+     *
+     * Si le mode correspond au chargement d'une partie, la méthode tente
+     * de restaurer une sauvegarde existante. Sinon, elle demande la taille
+     * du plateau puis initialise une nouvelle partie. Ensuite, elle construit
+     * la fenêtre de jeu et l'affiche.
+     *
+     * @param mode Mode de jeu à lancer.
+     */
     public void startGame(int mode) {
         this.mode = mode;
         if (mode == 3) {
@@ -55,7 +166,7 @@ public class GameController {
         } else {
             int boardSize = chooseBoardSize();
             if (boardSize == -1) {
-                // User cancelled
+            
                 app.showMenuFromGame();
                 return;
             }
@@ -66,6 +177,14 @@ public class GameController {
         gameFrame.setVisible(true);
     }
 
+    /**
+     * @brief Réinitialise complètement la partie avec une nouvelle taille de plateau.
+     *
+     * Cette méthode recrée un nouvel état de jeu, met à jour les scores,
+     * vide l'historique des instantanés et enregistre un premier état initial.
+     *
+     * @param boardSize Taille du plateau à créer.
+     */
     private void resetGame(int boardSize) {
         this.gameState = new GameState(boardSize);
         this.gameState.updateScores();
@@ -73,6 +192,15 @@ public class GameController {
         saveSnapshot(null);
     }
 
+    /**
+     * @brief Enregistre un instantané complet de l'état courant de la partie.
+     *
+     * Cette méthode copie l'état du plateau, le joueur courant, les scores,
+     * le numéro du coup et éventuellement le coup ayant conduit à cet état.
+     * L'instantané est ajouté à l'historique pour permettre l'annulation.
+     *
+     * @param move Coup ayant conduit à l'état courant, ou null pour un état initial.
+     */
     private void saveSnapshot(Move move) {
         int size = gameState.getBoard().getSize();
         Cell.CellState[][] boardState = new Cell.CellState[size][size];
@@ -93,6 +221,14 @@ public class GameController {
         snapshots.add(snapshot);
     }
 
+    /**
+     * @brief Demande à l'utilisateur de choisir la taille du plateau.
+     *
+     * Une boîte de dialogue propose plusieurs tailles prédéfinies.
+     * Si l'utilisateur annule, la méthode retourne -1.
+     *
+     * @return La taille choisie du plateau, ou -1 si l'utilisateur annule.
+     */
     private int chooseBoardSize() {
         String[] options = {"4", "6", "8", "10", "12"};
         String choice = (String) JOptionPane.showInputDialog(
@@ -105,19 +241,27 @@ public class GameController {
             "8"
         );
         if (choice == null) {
-            return -1; // Cancelled
+            return -1;
         }
         return Integer.parseInt(choice);
     }
 
+    /**
+     * @brief Construit l'interface graphique complète de la partie.
+     *
+     * Cette méthode crée la fenêtre de jeu, le plateau, la barre d'état,
+     * les boutons d'action et la zone d'historique, puis positionne tous
+     * les composants dans la fenêtre.
+     */
     private void buildGameFrame() {
         gameFrame = new JFrame("Othello / Reversi - Partie");
         gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gameFrame.setSize(900, 800);
         gameFrame.setLocationRelativeTo(null);
+
         HistoryArea = new JTextArea(5, 20);
         HistoryArea.setEditable(false);
-        HistoryArea.setFont(new Font("Monospaced",Font.PLAIN,12));
+        HistoryArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
         JScrollPane scrollPane = new JScrollPane(HistoryArea);
 
         boardPanel = createBoardPanel();
@@ -133,9 +277,13 @@ public class GameController {
         redoButton = new JButton("AVANCER");
         redoButton.addActionListener(e -> redoMove());
 
+        playwithkeyboardButton = new JButton("Jouer avec le clavier");
+        playwithkeyboardButton.addActionListener(e -> playWithKeyboard());
+
         JPanel leftPanel = new JPanel(new FlowLayout());
         leftPanel.add(undoButton);
         leftPanel.add(redoButton);
+        leftPanel.add(playwithkeyboardButton);
 
         JPanel topPanel = new JPanel(new BorderLayout());
         topPanel.add(statusLabel, BorderLayout.CENTER);
@@ -149,6 +297,13 @@ public class GameController {
         refreshBoard();
     }
 
+    /**
+     * @brief Annule le dernier coup joué.
+     *
+     * La méthode restaure l'instantané précédent, place l'instantané annulé
+     * dans la pile de rétablissement, met à jour les scores, l'historique
+     * des coups et rafraîchit l'affichage.
+     */
     private void undoMove() {
         if (snapshots.size() <= 1) {
             showAlert("Impossible", "Aucun coup à annuler.");
@@ -171,6 +326,13 @@ public class GameController {
         refreshBoard();
     }
 
+    /**
+     * @brief Rejoue le dernier coup annulé.
+     *
+     * La méthode récupère le dernier instantané annulé, le restaure sur
+     * le plateau, réactualise les informations de partie puis le replace
+     * dans la liste des instantanés actifs.
+     */
     private void redoMove() {
         if (redoSnapshots.isEmpty()) {
             showAlert("Impossible", "Aucun coup à refaire.");
@@ -190,11 +352,19 @@ public class GameController {
         refreshBoard();
     }
 
+    /**
+     * @brief Crée le panneau graphique représentant l'ensemble du plateau.
+     *
+     * Le panneau est constitué d'une grille de sous-panneaux, un par case,
+     * chacun étant chargé de dessiner et gérer les interactions de sa cellule.
+     *
+     * @return Le panneau contenant toutes les cases du plateau.
+     */
     private JPanel createBoardPanel() {
         int boardSize = gameState.getBoard().getSize();
         JPanel panel = new JPanel(new GridLayout(boardSize, boardSize, 2, 2));
         panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
-        panel.setBackground(new Color(34, 139, 34)); // Dark green
+        panel.setBackground(new Color(34, 139, 34));
 
         for (int x = 0; x < boardSize; x++) {
             for (int y = 0; y < boardSize; y++) {
@@ -206,77 +376,123 @@ public class GameController {
         return panel;
     }
 
-   private JPanel createCellPanel(int x, int y) {
-    JPanel panel = new JPanel() {
-        @Override
-        protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
+    /**
+     * @brief Crée le panneau graphique correspondant à une case du plateau.
+     *
+     * Ce panneau dessine visuellement la case et le pion éventuel présent.
+     * Il gère également les interactions souris : survol, clic gauche pour
+     * jouer et clic droit pour annuler ou jouer selon l'action définie.
+     *
+     * @param x Coordonnée horizontale de la case.
+     * @param y Coordonnée verticale de la case.
+     * @return Le panneau graphique représentant la case demandée.
+     */
+    private JPanel createCellPanel(int x, int y) {
+        JPanel panel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
 
-            Cell cell = gameState.getBoard().getCell(x, y);
-            if (!cell.isEmpty()) {
-                Graphics2D g2d = (Graphics2D) g;
-                g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                g2d.setColor(cell.isBlack() ? Color.BLACK : Color.WHITE);
+                Cell cell = gameState.getBoard().getCell(x, y);
+                if (!cell.isEmpty()) {
+                    Graphics2D g2d = (Graphics2D) g;
+                    g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                    g2d.setColor(cell.isBlack() ? Color.BLACK : Color.WHITE);
 
-                int diameter = Math.min(getWidth(), getHeight()) - 10;
-                int centerX = (getWidth() - diameter) / 2;
-                int centerY = (getHeight() - diameter) / 2;
+                    int diameter = Math.min(getWidth(), getHeight()) - 10;
+                    int centerX = (getWidth() - diameter) / 2;
+                    int centerY = (getHeight() - diameter) / 2;
 
-                g2d.fillOval(centerX, centerY, diameter, diameter);
-                g2d.setColor(Color.DARK_GRAY);
-                g2d.drawOval(centerX, centerY, diameter, diameter);
+                    g2d.fillOval(centerX, centerY, diameter, diameter);
+                    g2d.setColor(Color.DARK_GRAY);
+                    g2d.drawOval(centerX, centerY, diameter, diameter);
+                }
             }
-        }
-    };
+        };
 
-    Color baseColor = new Color(100, 0, 0);
-    panel.setBackground(baseColor);
-    panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-    panel.setPreferredSize(new Dimension(60, 60));
+        Color baseColor = new Color(100, 0, 0);
+        panel.setBackground(baseColor);
+        panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        panel.setPreferredSize(new Dimension(60, 60));
 
-    panel.addMouseListener(new MouseAdapter() {
+        panel.addMouseListener(new MouseAdapter() {
 
-        @Override
-        public void mouseEntered(MouseEvent e) {
-            Player current = gameState.getCurrentPlayer();
-            if (gameState.getBoard().getCell(x, y).isEmpty()
-                    && Rules.isValidMove(gameState.getBoard(), x, y, current)) {
-                panel.setBackground(Color.LIGHT_GRAY);
+            /**
+             * @brief Met en surbrillance une case valide lors du survol de la souris.
+             *
+             * @param e Événement de survol de souris.
+             */
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                Player current = gameState.getCurrentPlayer();
+                if (gameState.getBoard().getCell(x, y).isEmpty()
+                        && Rules.isValidMove(gameState.getBoard(), x, y, current)) {
+                    panel.setBackground(Color.LIGHT_GRAY);
+                }
             }
-        }
 
-        @Override
-        public void mouseExited(MouseEvent e) {
-            panel.setBackground(baseColor);
-        }
-        
-        @Override
-        public void mousePressed(MouseEvent e) {
-            if (SwingUtilities.isRightMouseButton(e)) {
-                 Player current = gameState.getCurrentPlayer();
-               if (gameState.getBoard().getCell(x, y).isEmpty()
-                    && Rules.isValidMove(gameState.getBoard(), x, y, current)) {
-                applyPlayerMove(x, y);
+            /**
+             * @brief Restaure la couleur normale de la case lorsque la souris la quitte.
+             *
+             * @param e Événement de sortie de souris.
+             */
+            @Override
+            public void mouseExited(MouseEvent e) {
+                panel.setBackground(baseColor);
             }
-            } else {
-                if (SwingUtilities.isLeftMouseButton(e)) {
-                handleCellClick(x, y);
+
+            /**
+             * @brief Gère l'appui sur un bouton de la souris sur une case.
+             *
+             * - Clic droit : joue le coup si la case est valide.
+             * - Clic gauche : délègue le traitement au gestionnaire classique de clic.
+             *
+             * @param e Événement d'appui souris.
+             */
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if (SwingUtilities.isRightMouseButton(e)) {
+                    Player current = gameState.getCurrentPlayer();
+                    if (gameState.getBoard().getCell(x, y).isEmpty()
+                            && Rules.isValidMove(gameState.getBoard(), x, y, current)) {
+                        applyPlayerMove(x, y);
+                    }
+                } else {
+                    if (SwingUtilities.isLeftMouseButton(e)) {
+                        handleCellClick(x, y);
+                    }
+                }
             }
-        }
+
+            /**
+             * @brief Gère le relâchement du bouton droit de la souris.
+             *
+             * Dans cette implémentation, le relâchement du clic droit déclenche
+             * une annulation du dernier coup.
+             *
+             * @param e Événement de relâchement souris.
+             */
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                if (SwingUtilities.isRightMouseButton(e)) {
+                    undoMove();
+                }
+            }
+        });
+
+        return panel;
     }
 
-        @Override
-        public void mouseReleased(MouseEvent e) {
-            if (SwingUtilities.isRightMouseButton(e)) {
-               undoMove();
-            }
-        }
-    });
-
-    return panel;
-}
-
-
+    /**
+     * @brief Traite le clic utilisateur sur une case du plateau.
+     *
+     * La méthode vérifie si la partie est terminée, puis si le coup est valide.
+     * Si le coup est autorisé, il est appliqué. En mode contre ordinateur,
+     * le tour de l'IA est ensuite exécuté.
+     *
+     * @param x Coordonnée horizontale de la case cliquée.
+     * @param y Coordonnée verticale de la case cliquée.
+     */
     private void handleCellClick(int x, int y) {
         if (gameState.isGameOver()) {
             showAlert("Partie terminée", "La partie est terminée. Recommence pour jouer à nouveau.");
@@ -295,6 +511,16 @@ public class GameController {
         }
     }
 
+    /**
+     * @brief Applique le coup du joueur courant sur le plateau.
+     *
+     * La méthode crée l'objet représentant le coup, applique les règles,
+     * enregistre ce coup dans l'historique, met à jour les scores, vérifie
+     * l'état de la partie, enregistre un instantané et rafraîchit l'affichage.
+     *
+     * @param x Coordonnée horizontale du coup joué.
+     * @param y Coordonnée verticale du coup joué.
+     */
     private void applyPlayerMove(int x, int y) {
         Player current = gameState.getCurrentPlayer();
         Move move = new Move(x, y, current);
@@ -317,6 +543,12 @@ public class GameController {
         refreshBoard();
     }
 
+    /**
+     * @brief Met à jour le texte affiché dans la zone d'historique des coups.
+     *
+     * Chaque ligne contient le numéro du coup, la couleur du joueur
+     * et les coordonnées jouées.
+     */
     private void updateMoveHistory() {
         StringBuilder historyText = new StringBuilder();
         List<Move> moves = gameState.getMoveHistory();
@@ -328,6 +560,13 @@ public class GameController {
         HistoryArea.setText(historyText.toString());
     }
 
+    /**
+     * @brief Exécute le tour de l'intelligence artificielle.
+     *
+     * Dans cette version, l'ordinateur choisit simplement le premier coup
+     * valide disponible. Après application du coup, les scores et l'état
+     * de la partie sont mis à jour.
+     */
     private void performAiTurn() {
         if (gameState.isGameOver()) {
             return;
@@ -358,6 +597,13 @@ public class GameController {
         refreshBoard();
     }
 
+    /**
+     * @brief Met à jour l'état global de la partie et détecte la fin du jeu.
+     *
+     * Si la partie est terminée ou si le plateau est plein, la méthode
+     * détermine le vainqueur, met à jour l'affichage puis montre une boîte
+     * d'information contenant le résultat final et les scores.
+     */
     private void updateGameStatus() {
         if (gameState.isGameOver() || gameState.getBoard().isFull()) {
             gameState.setGameOver(true);
@@ -381,6 +627,12 @@ public class GameController {
         }
     }
 
+    /**
+     * @brief Rafraîchit l'affichage du plateau et du texte de statut.
+     *
+     * Cette méthode force le redessin du plateau et met à jour le texte
+     * affiché en haut de la fenêtre.
+     */
     private void refreshBoard() {
         boardPanel.repaint();
         if (statusLabel != null) {
@@ -388,6 +640,12 @@ public class GameController {
         }
     }
 
+    /**
+     * @brief Affiche la boîte de dialogue de pause.
+     *
+     * Cette boîte permet de reprendre la partie, recommencer, sauvegarder
+     * ou revenir au menu principal.
+     */
     private void showPauseDialog() {
         JDialog pauseDialog = new JDialog(gameFrame, "Menu Pause", true);
         pauseDialog.setSize(300, 250);
@@ -413,7 +671,6 @@ public class GameController {
             buildGameFrame();
             gameFrame.setVisible(true);
             pauseDialog.dispose();
-            
         });
         saveButton.addActionListener(e -> {
             if (saveGame()) {
@@ -423,10 +680,10 @@ public class GameController {
             }
         });
         quitButton.addActionListener(e -> {
-           pauseDialog.dispose();
-           gameFrame.dispose();
-           app.showMenu();
-           app.setVisible(true);
+            pauseDialog.dispose();
+            gameFrame.dispose();
+            app.showMenu();
+            app.setVisible(true);
         });
 
         panel.add(label);
@@ -443,6 +700,67 @@ public class GameController {
         pauseDialog.setVisible(true);
     }
 
+    /**
+     * @brief Ouvre une boîte de dialogue permettant de jouer au clavier.
+     *
+     * L'utilisateur saisit les coordonnées x et y du coup à jouer.
+     * Si le coup est valide, il est appliqué au plateau.
+     */
+    public void playWithKeyboard() {
+        JDialog keyboardDialog = new JDialog(gameFrame, "Jouer avec le clavier", true);
+        keyboardDialog.setSize(300, 250);
+        keyboardDialog.setLocationRelativeTo(gameFrame);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+
+        JPanel panel2 = new JPanel();
+        panel2.setLayout(new FlowLayout());
+
+        JLabel keyboardLabel = new JLabel("entrer les coordonnées pour jouer ", SwingConstants.CENTER);
+        keyboardLabel.setFont(new Font("Arial", Font.BOLD, 18));
+        keyboardLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        JTextField inputField1 = new JTextField(10);
+        JTextField inputField2 = new JTextField(10);
+
+        JButton submitButton = new JButton("Valider");
+        submitButton.addActionListener(e -> {
+            int x = Integer.parseInt(inputField1.getText());
+            int y = Integer.parseInt(inputField2.getText());
+            Player current = gameState.getCurrentPlayer();
+            if (!Rules.isValidMove(gameState.getBoard(), x, y, current)) {
+                showAlert("Coup invalide", "Ce coup n'est pas autorisé. veuillez entrer des coordonnées valides.");
+                return;
+            } else {
+                applyPlayerMove(x, y);
+                gameState.updateScores();
+                keyboardDialog.dispose();
+            }
+        });
+
+        panel2.add(inputField1);
+        panel2.add(inputField2);
+
+        panel.add(keyboardLabel);
+        panel.add(Box.createRigidArea(new Dimension(0, 20)));
+        panel.add(panel2);
+        panel.add(Box.createRigidArea(new Dimension(0, 5)));
+        panel.add(submitButton);
+
+        keyboardDialog.add(panel);
+        keyboardDialog.setVisible(true);
+    }
+
+    /**
+     * @brief Construit le texte représentant l'état courant de la partie.
+     *
+     * Si la partie est terminée, un texte simple l'indique.
+     * Sinon, le texte précise le joueur courant ainsi que les scores.
+     *
+     * @return Une chaîne décrivant l'état courant de la partie.
+     */
     private String getStatusText() {
         if (gameState.isGameOver()) {
             return "Partie terminée";
@@ -452,6 +770,14 @@ public class GameController {
                 + gameState.getPlayer2().getScore();
     }
 
+    /**
+     * @brief Sauvegarde l'état courant de la partie dans un fichier texte.
+     *
+     * Le fichier contient le mode de jeu, la taille du plateau, le joueur
+     * courant et l'état complet de chaque case du plateau.
+     *
+     * @return true si la sauvegarde s'est bien déroulée, false sinon.
+     */
     private boolean saveGame() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(saveFile))) {
             writer.write(Integer.toString(mode));
@@ -474,6 +800,14 @@ public class GameController {
         }
     }
 
+    /**
+     * @brief Charge une partie depuis le fichier de sauvegarde.
+     *
+     * La méthode lit les informations de base de la partie, recrée un état
+     * de jeu cohérent, reconstruit le plateau et restaure le joueur courant.
+     *
+     * @return true si le chargement a réussi, false sinon.
+     */
     private boolean loadGame() {
         if (!saveFile.exists()) {
             return false;
@@ -503,7 +837,16 @@ public class GameController {
         }
     }
 
-    private void showAlert(String title, String message) {
+    /**
+     * @brief Affiche une boîte de dialogue d'information à l'utilisateur.
+     *
+     * Cette méthode centralise l'affichage des messages d'information,
+     * d'erreur ou de notification dans l'interface.
+     *
+     * @param title Titre de la boîte de dialogue.
+     * @param message Message à afficher à l'utilisateur.
+     */
+    public void showAlert(String title, String message) {
         JOptionPane.showMessageDialog(gameFrame, message, title, JOptionPane.INFORMATION_MESSAGE);
     }
 }
