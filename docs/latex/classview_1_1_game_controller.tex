@@ -1,0 +1,615 @@
+\doxysection{Référence de la classe view.\+Game\+Controller}
+\hypertarget{classview_1_1_game_controller}{}\label{classview_1_1_game_controller}\index{view.GameController@{view.GameController}}
+
+
+Contrôleur principal d\textquotesingle{}une partie d\textquotesingle{}Othello/\+Reversi.  
+
+
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classview_1_1_game_controller_aacf834a0875f39b8f43da95ec77487fc}{Game\+Controller}} (\mbox{\hyperlink{classview_1_1_othello_app}{Othello\+App}} \mbox{\hyperlink{classview_1_1_game_controller_a662cf56fd0701e6fe80312c21834536f}{app}})
+\begin{DoxyCompactList}\small\item\em Construit un contrôleur de partie associé à l\textquotesingle{}application principale. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_game_controller_ae45feca55df39aa1ac01e6a4bb7269ad}{start\+Game}} (int \mbox{\hyperlink{classview_1_1_game_controller_a5c771fc03bcb27c66e6fe7740b698901}{mode}})
+\begin{DoxyCompactList}\small\item\em Démarre une nouvelle partie selon le mode choisi. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_game_controller_aeccef6b2d1aa3189c93f09d2c60c123e}{play\+With\+Keyboard}} ()
+\begin{DoxyCompactList}\small\item\em Ouvre une boîte de dialogue permettant de jouer au clavier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_game_controller_a72da66e5eb316a00930240312bcfa940}{show\+Alert}} (String title, String message)
+\begin{DoxyCompactList}\small\item\em Affiche une boîte de dialogue d\textquotesingle{}information à l\textquotesingle{}utilisateur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classview_1_1_game_controller_acd35763a14547cbae7bdf3928592bad7}{reset\+Game}} (int board\+Size)
+\begin{DoxyCompactList}\small\item\em Réinitialise complètement la partie avec une nouvelle taille de plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_game_controller_ae31a6d39d40a0a448be42b9d401b253d}{save\+Snapshot}} (\mbox{\hyperlink{classmodel_1_1_move}{Move}} move)
+\begin{DoxyCompactList}\small\item\em Enregistre un instantané complet de l\textquotesingle{}état courant de la partie. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classview_1_1_game_controller_a81ecdad12b06ec2cd361d8a147eea216}{choose\+Board\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Demande à l\textquotesingle{}utilisateur de choisir la taille du plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_game_controller_a203c7f6135b00a09db92b7e119962946}{build\+Game\+Frame}} ()
+\begin{DoxyCompactList}\small\item\em Construit l\textquotesingle{}interface graphique complète de la partie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_game_controller_ad719a8bc7f9ce79d563e656c2ce794f3}{undo\+Move}} ()
+\begin{DoxyCompactList}\small\item\em Annule le dernier coup joué. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_game_controller_a81768e32b9d175507a88cf6522092ab1}{redo\+Move}} ()
+\begin{DoxyCompactList}\small\item\em Rejoue le dernier coup annulé. \end{DoxyCompactList}\item 
+JPanel \mbox{\hyperlink{classview_1_1_game_controller_a49ffba2896ca234564720afbe8bbe7bc}{create\+Board\+Panel}} ()
+\begin{DoxyCompactList}\small\item\em Crée le panneau graphique représentant l\textquotesingle{}ensemble du plateau. \end{DoxyCompactList}\item 
+JPanel \mbox{\hyperlink{classview_1_1_game_controller_a02b0268454b20e9ac26e5c36cc5ea0e8}{create\+Cell\+Panel}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Crée le panneau graphique correspondant à une case du plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_game_controller_a1efabe241e13548d1a078a90e28892ca}{handle\+Cell\+Click}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Traite le clic utilisateur sur une case du plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_game_controller_a9d73b3cced9439d543e3f3abbaac9f69}{apply\+Player\+Move}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Applique le coup du joueur courant sur le plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_game_controller_a8d1b90f4c5dfb53c6f916ad43db74ffd}{update\+Move\+History}} ()
+\begin{DoxyCompactList}\small\item\em Met à jour le texte affiché dans la zone d\textquotesingle{}historique des coups. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_game_controller_a2be86b1a004c8fbcb3ea568c7e489b91}{perform\+Ai\+Turn}} ()
+\begin{DoxyCompactList}\small\item\em Exécute le tour de l\textquotesingle{}intelligence artificielle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_game_controller_a44cf76027a1105a6c2c27358a51cc0d5}{update\+Game\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Met à jour l\textquotesingle{}état global de la partie et détecte la fin du jeu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_game_controller_ad8052771b96d804a444d0435fd210538}{refresh\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Rafraîchit l\textquotesingle{}affichage du plateau et du texte de statut. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_game_controller_a5425808ecf2098ccf1fe356337de0f84}{show\+Pause\+Dialog}} ()
+\begin{DoxyCompactList}\small\item\em Affiche la boîte de dialogue de pause. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classview_1_1_game_controller_ac9d3db52d7dfb62f43f66f598539e397}{get\+Status\+Text}} ()
+\begin{DoxyCompactList}\small\item\em Construit le texte représentant l\textquotesingle{}état courant de la partie. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classview_1_1_game_controller_a71ffc16937ac09de38989115250650a2}{save\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Sauvegarde l\textquotesingle{}état courant de la partie dans un fichier texte. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classview_1_1_game_controller_a42d78da68fea6d04ad8cd3b8e4644169}{load\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Charge une partie depuis le fichier de sauvegarde. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+final \mbox{\hyperlink{classview_1_1_othello_app}{Othello\+App}} \mbox{\hyperlink{classview_1_1_game_controller_a662cf56fd0701e6fe80312c21834536f}{app}}
+\begin{DoxyCompactList}\small\item\em Référence vers l\textquotesingle{}application principale. \end{DoxyCompactList}\item 
+final File \mbox{\hyperlink{classview_1_1_game_controller_a43ce805aafb7550f4ccdd13b89e17ba7}{save\+File}}
+\begin{DoxyCompactList}\small\item\em Fichier physique de sauvegarde associé à la partie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmodel_1_1_game_state}{Game\+State}} \mbox{\hyperlink{classview_1_1_game_controller_af1c82f6207891c382a5400ee34ba354b}{game\+State}}
+\begin{DoxyCompactList}\small\item\em État courant de la partie. \end{DoxyCompactList}\item 
+JFrame \mbox{\hyperlink{classview_1_1_game_controller_a7f54b798be4195249575493119470575}{game\+Frame}}
+\begin{DoxyCompactList}\small\item\em Fenêtre principale de la partie en cours. \end{DoxyCompactList}\item 
+JPanel \mbox{\hyperlink{classview_1_1_game_controller_a48732d83bec566a57147b8f0bbfa7ce0}{board\+Panel}}
+\begin{DoxyCompactList}\small\item\em Panneau graphique représentant le plateau de jeu. \end{DoxyCompactList}\item 
+JLabel \mbox{\hyperlink{classview_1_1_game_controller_af76665df06fe93f10531e4adf7ac789b}{status\+Label}}
+\begin{DoxyCompactList}\small\item\em Libellé affichant l\textquotesingle{}état courant de la partie. \end{DoxyCompactList}\item 
+JButton \mbox{\hyperlink{classview_1_1_game_controller_ad687640c647292a29760297ff60e2dd9}{pause\+Button}}
+\begin{DoxyCompactList}\small\item\em Bouton permettant d\textquotesingle{}ouvrir le menu de pause. \end{DoxyCompactList}\item 
+JButton \mbox{\hyperlink{classview_1_1_game_controller_aaffb897f81b0d6ded99f733a6728412b}{undo\+Button}}
+\begin{DoxyCompactList}\small\item\em Bouton permettant d\textquotesingle{}annuler le dernier coup joué. \end{DoxyCompactList}\item 
+JButton \mbox{\hyperlink{classview_1_1_game_controller_a6e06206926d0e1bfa57c22d114f14716}{redo\+Button}}
+\begin{DoxyCompactList}\small\item\em Bouton permettant de refaire un coup précédemment annulé. \end{DoxyCompactList}\item 
+JButton \mbox{\hyperlink{classview_1_1_game_controller_a51fd8c7c7e837d63edfb11ecaa74b7fb}{playwithkeyboard\+Button}}
+\begin{DoxyCompactList}\small\item\em Bouton permettant de jouer en saisissant les coordonnées au clavier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classview_1_1_game_controller_a5c771fc03bcb27c66e6fe7740b698901}{mode}}
+\begin{DoxyCompactList}\small\item\em Mode de jeu courant. \end{DoxyCompactList}\item 
+JText\+Area \mbox{\hyperlink{classview_1_1_game_controller_a1d75ec999ba1d415ba04f64741df06fb}{History\+Area}}
+\begin{DoxyCompactList}\small\item\em Zone de texte affichant l\textquotesingle{}historique des coups joués. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classmodel_1_1_game_snapshot}{Game\+Snapshot}} $>$ \mbox{\hyperlink{classview_1_1_game_controller_aed1ba9858c56cef4229292a37fef7ef0}{snapshots}} = new Array\+List$<$$>$()
+\begin{DoxyCompactList}\small\item\em Liste des instantanés de partie utilisée pour l\textquotesingle{}annulation. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classmodel_1_1_game_snapshot}{Game\+Snapshot}} $>$ \mbox{\hyperlink{classview_1_1_game_controller_a6cfcbffaa8048942935470bf863d07a1}{redo\+Snapshots}} = new Array\+List$<$$>$()
+\begin{DoxyCompactList}\small\item\em Liste des instantanés annulés utilisée pour le rétablissement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés statiques}
+\begin{DoxyCompactItemize}
+\item 
+static final String \mbox{\hyperlink{classview_1_1_game_controller_a4a0cae76dd211115296769a32f555e1b}{SAVE\+\_\+\+FILE\+\_\+\+NAME}} = "{}othello-\/save.\+txt"{}
+\begin{DoxyCompactList}\small\item\em Nom du fichier utilisé pour la sauvegarde de la partie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Contrôleur principal d\textquotesingle{}une partie d\textquotesingle{}Othello/\+Reversi. 
+
+Cette classe assure la liaison entre l\textquotesingle{}interface graphique et la logique du jeu. Elle gère l\textquotesingle{}initialisation d\textquotesingle{}une partie, les interactions utilisateur, la mise à jour de l\textquotesingle{}affichage, l\textquotesingle{}historique des coups, ainsi que les fonctionnalités de sauvegarde, chargement, annulation et rétablissement. 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{classview_1_1_game_controller_aacf834a0875f39b8f43da95ec77487fc}\index{view.GameController@{view.GameController}!GameController@{GameController}}
+\index{GameController@{GameController}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{GameController()}{GameController()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_aacf834a0875f39b8f43da95ec77487fc} 
+view.\+Game\+Controller.\+Game\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classview_1_1_othello_app}{Othello\+App}}}]{app}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construit un contrôleur de partie associé à l\textquotesingle{}application principale. 
+
+Initialise la référence vers l\textquotesingle{}application et prépare le fichier de sauvegarde utilisé pour enregistrer ou charger une partie.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em app} & Application principale contenant le menu et la fenêtre d\textquotesingle{}accueil. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{classview_1_1_game_controller_a9d73b3cced9439d543e3f3abbaac9f69}\index{view.GameController@{view.GameController}!applyPlayerMove@{applyPlayerMove}}
+\index{applyPlayerMove@{applyPlayerMove}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{applyPlayerMove()}{applyPlayerMove()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a9d73b3cced9439d543e3f3abbaac9f69} 
+void view.\+Game\+Controller.\+apply\+Player\+Move (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Applique le coup du joueur courant sur le plateau. 
+
+La méthode crée l\textquotesingle{}objet représentant le coup, applique les règles, enregistre ce coup dans l\textquotesingle{}historique, met à jour les scores, vérifie l\textquotesingle{}état de la partie, enregistre un instantané et rafraîchit l\textquotesingle{}affichage.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Coordonnée horizontale du coup joué. \\
+\hline
+{\em y} & Coordonnée verticale du coup joué. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classview_1_1_game_controller_a203c7f6135b00a09db92b7e119962946}\index{view.GameController@{view.GameController}!buildGameFrame@{buildGameFrame}}
+\index{buildGameFrame@{buildGameFrame}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{buildGameFrame()}{buildGameFrame()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a203c7f6135b00a09db92b7e119962946} 
+void view.\+Game\+Controller.\+build\+Game\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Construit l\textquotesingle{}interface graphique complète de la partie. 
+
+Cette méthode crée la fenêtre de jeu, le plateau, la barre d\textquotesingle{}état, les boutons d\textquotesingle{}action et la zone d\textquotesingle{}historique, puis positionne tous les composants dans la fenêtre. \Hypertarget{classview_1_1_game_controller_a81ecdad12b06ec2cd361d8a147eea216}\index{view.GameController@{view.GameController}!chooseBoardSize@{chooseBoardSize}}
+\index{chooseBoardSize@{chooseBoardSize}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{chooseBoardSize()}{chooseBoardSize()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a81ecdad12b06ec2cd361d8a147eea216} 
+int view.\+Game\+Controller.\+choose\+Board\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Demande à l\textquotesingle{}utilisateur de choisir la taille du plateau. 
+
+Une boîte de dialogue propose plusieurs tailles prédéfinies. Si l\textquotesingle{}utilisateur annule, la méthode retourne -\/1.
+
+\begin{DoxyReturn}{Renvoie}
+La taille choisie du plateau, ou -\/1 si l\textquotesingle{}utilisateur annule. 
+\end{DoxyReturn}
+\Hypertarget{classview_1_1_game_controller_a49ffba2896ca234564720afbe8bbe7bc}\index{view.GameController@{view.GameController}!createBoardPanel@{createBoardPanel}}
+\index{createBoardPanel@{createBoardPanel}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{createBoardPanel()}{createBoardPanel()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a49ffba2896ca234564720afbe8bbe7bc} 
+JPanel view.\+Game\+Controller.\+create\+Board\+Panel (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Crée le panneau graphique représentant l\textquotesingle{}ensemble du plateau. 
+
+Le panneau est constitué d\textquotesingle{}une grille de sous-\/panneaux, un par case, chacun étant chargé de dessiner et gérer les interactions de sa cellule.
+
+\begin{DoxyReturn}{Renvoie}
+Le panneau contenant toutes les cases du plateau. 
+\end{DoxyReturn}
+\Hypertarget{classview_1_1_game_controller_a02b0268454b20e9ac26e5c36cc5ea0e8}\index{view.GameController@{view.GameController}!createCellPanel@{createCellPanel}}
+\index{createCellPanel@{createCellPanel}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{createCellPanel()}{createCellPanel()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a02b0268454b20e9ac26e5c36cc5ea0e8} 
+JPanel view.\+Game\+Controller.\+create\+Cell\+Panel (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Crée le panneau graphique correspondant à une case du plateau. 
+
+Ce panneau dessine visuellement la case et le pion éventuel présent. Il gère également les interactions souris \+: survol, clic gauche pour jouer et clic droit pour annuler ou jouer selon l\textquotesingle{}action définie.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Coordonnée horizontale de la case. \\
+\hline
+{\em y} & Coordonnée verticale de la case. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Le panneau graphique représentant la case demandée. 
+\end{DoxyReturn}
+Met en surbrillance une case valide lors du survol de la souris.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & Événement de survol de souris.\\
+\hline
+\end{DoxyParams}
+Restaure la couleur normale de la case lorsque la souris la quitte.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & Événement de sortie de souris.\\
+\hline
+\end{DoxyParams}
+Gère l\textquotesingle{}appui sur un bouton de la souris sur une case.
+
+
+\begin{DoxyItemize}
+\item Clic droit \+: joue le coup si la case est valide.
+\item Clic gauche \+: délègue le traitement au gestionnaire classique de clic.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & Événement d\textquotesingle{}appui souris.\\
+\hline
+\end{DoxyParams}
+Gère le relâchement du bouton droit de la souris.
+
+Dans cette implémentation, le relâchement du clic droit déclenche une annulation du dernier coup.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & Événement de relâchement souris.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{classview_1_1_game_controller_ac9d3db52d7dfb62f43f66f598539e397}\index{view.GameController@{view.GameController}!getStatusText@{getStatusText}}
+\index{getStatusText@{getStatusText}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{getStatusText()}{getStatusText()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_ac9d3db52d7dfb62f43f66f598539e397} 
+String view.\+Game\+Controller.\+get\+Status\+Text (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Construit le texte représentant l\textquotesingle{}état courant de la partie. 
+
+Si la partie est terminée, un texte simple l\textquotesingle{}indique. Sinon, le texte précise le joueur courant ainsi que les scores.
+
+\begin{DoxyReturn}{Renvoie}
+Une chaîne décrivant l\textquotesingle{}état courant de la partie. 
+\end{DoxyReturn}
+\Hypertarget{classview_1_1_game_controller_a1efabe241e13548d1a078a90e28892ca}\index{view.GameController@{view.GameController}!handleCellClick@{handleCellClick}}
+\index{handleCellClick@{handleCellClick}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{handleCellClick()}{handleCellClick()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a1efabe241e13548d1a078a90e28892ca} 
+void view.\+Game\+Controller.\+handle\+Cell\+Click (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Traite le clic utilisateur sur une case du plateau. 
+
+La méthode vérifie si la partie est terminée, puis si le coup est valide. Si le coup est autorisé, il est appliqué. En mode contre ordinateur, le tour de l\textquotesingle{}IA est ensuite exécuté.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Coordonnée horizontale de la case cliquée. \\
+\hline
+{\em y} & Coordonnée verticale de la case cliquée. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classview_1_1_game_controller_a42d78da68fea6d04ad8cd3b8e4644169}\index{view.GameController@{view.GameController}!loadGame@{loadGame}}
+\index{loadGame@{loadGame}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{loadGame()}{loadGame()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a42d78da68fea6d04ad8cd3b8e4644169} 
+boolean view.\+Game\+Controller.\+load\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Charge une partie depuis le fichier de sauvegarde. 
+
+La méthode lit les informations de base de la partie, recrée un état de jeu cohérent, reconstruit le plateau et restaure le joueur courant.
+
+\begin{DoxyReturn}{Renvoie}
+true si le chargement a réussi, false sinon. 
+\end{DoxyReturn}
+\Hypertarget{classview_1_1_game_controller_a2be86b1a004c8fbcb3ea568c7e489b91}\index{view.GameController@{view.GameController}!performAiTurn@{performAiTurn}}
+\index{performAiTurn@{performAiTurn}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{performAiTurn()}{performAiTurn()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a2be86b1a004c8fbcb3ea568c7e489b91} 
+void view.\+Game\+Controller.\+perform\+Ai\+Turn (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Exécute le tour de l\textquotesingle{}intelligence artificielle. 
+
+Dans cette version, l\textquotesingle{}ordinateur choisit simplement le premier coup valide disponible. Après application du coup, les scores et l\textquotesingle{}état de la partie sont mis à jour. \Hypertarget{classview_1_1_game_controller_aeccef6b2d1aa3189c93f09d2c60c123e}\index{view.GameController@{view.GameController}!playWithKeyboard@{playWithKeyboard}}
+\index{playWithKeyboard@{playWithKeyboard}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{playWithKeyboard()}{playWithKeyboard()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_aeccef6b2d1aa3189c93f09d2c60c123e} 
+void view.\+Game\+Controller.\+play\+With\+Keyboard (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ouvre une boîte de dialogue permettant de jouer au clavier. 
+
+L\textquotesingle{}utilisateur saisit les coordonnées x et y du coup à jouer. Si le coup est valide, il est appliqué au plateau. \Hypertarget{classview_1_1_game_controller_a81768e32b9d175507a88cf6522092ab1}\index{view.GameController@{view.GameController}!redoMove@{redoMove}}
+\index{redoMove@{redoMove}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{redoMove()}{redoMove()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a81768e32b9d175507a88cf6522092ab1} 
+void view.\+Game\+Controller.\+redo\+Move (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Rejoue le dernier coup annulé. 
+
+La méthode récupère le dernier instantané annulé, le restaure sur le plateau, réactualise les informations de partie puis le replace dans la liste des instantanés actifs. \Hypertarget{classview_1_1_game_controller_ad8052771b96d804a444d0435fd210538}\index{view.GameController@{view.GameController}!refreshBoard@{refreshBoard}}
+\index{refreshBoard@{refreshBoard}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{refreshBoard()}{refreshBoard()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_ad8052771b96d804a444d0435fd210538} 
+void view.\+Game\+Controller.\+refresh\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Rafraîchit l\textquotesingle{}affichage du plateau et du texte de statut. 
+
+Cette méthode force le redessin du plateau et met à jour le texte affiché en haut de la fenêtre. \Hypertarget{classview_1_1_game_controller_acd35763a14547cbae7bdf3928592bad7}\index{view.GameController@{view.GameController}!resetGame@{resetGame}}
+\index{resetGame@{resetGame}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{resetGame()}{resetGame()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_acd35763a14547cbae7bdf3928592bad7} 
+void view.\+Game\+Controller.\+reset\+Game (\begin{DoxyParamCaption}\item[{int}]{board\+Size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Réinitialise complètement la partie avec une nouvelle taille de plateau. 
+
+Cette méthode recrée un nouvel état de jeu, met à jour les scores, vide l\textquotesingle{}historique des instantanés et enregistre un premier état initial.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board\+Size} & Taille du plateau à créer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classview_1_1_game_controller_a71ffc16937ac09de38989115250650a2}\index{view.GameController@{view.GameController}!saveGame@{saveGame}}
+\index{saveGame@{saveGame}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{saveGame()}{saveGame()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a71ffc16937ac09de38989115250650a2} 
+boolean view.\+Game\+Controller.\+save\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Sauvegarde l\textquotesingle{}état courant de la partie dans un fichier texte. 
+
+Le fichier contient le mode de jeu, la taille du plateau, le joueur courant et l\textquotesingle{}état complet de chaque case du plateau.
+
+\begin{DoxyReturn}{Renvoie}
+true si la sauvegarde s\textquotesingle{}est bien déroulée, false sinon. 
+\end{DoxyReturn}
+\Hypertarget{classview_1_1_game_controller_ae31a6d39d40a0a448be42b9d401b253d}\index{view.GameController@{view.GameController}!saveSnapshot@{saveSnapshot}}
+\index{saveSnapshot@{saveSnapshot}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{saveSnapshot()}{saveSnapshot()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_ae31a6d39d40a0a448be42b9d401b253d} 
+void view.\+Game\+Controller.\+save\+Snapshot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmodel_1_1_move}{Move}}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Enregistre un instantané complet de l\textquotesingle{}état courant de la partie. 
+
+Cette méthode copie l\textquotesingle{}état du plateau, le joueur courant, les scores, le numéro du coup et éventuellement le coup ayant conduit à cet état. L\textquotesingle{}instantané est ajouté à l\textquotesingle{}historique pour permettre l\textquotesingle{}annulation.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em move} & Coup ayant conduit à l\textquotesingle{}état courant, ou null pour un état initial. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classview_1_1_game_controller_a72da66e5eb316a00930240312bcfa940}\index{view.GameController@{view.GameController}!showAlert@{showAlert}}
+\index{showAlert@{showAlert}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{showAlert()}{showAlert()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a72da66e5eb316a00930240312bcfa940} 
+void view.\+Game\+Controller.\+show\+Alert (\begin{DoxyParamCaption}\item[{String}]{title}{, }\item[{String}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Affiche une boîte de dialogue d\textquotesingle{}information à l\textquotesingle{}utilisateur. 
+
+Cette méthode centralise l\textquotesingle{}affichage des messages d\textquotesingle{}information, d\textquotesingle{}erreur ou de notification dans l\textquotesingle{}interface.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em title} & Titre de la boîte de dialogue. \\
+\hline
+{\em message} & Message à afficher à l\textquotesingle{}utilisateur. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classview_1_1_game_controller_a5425808ecf2098ccf1fe356337de0f84}\index{view.GameController@{view.GameController}!showPauseDialog@{showPauseDialog}}
+\index{showPauseDialog@{showPauseDialog}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{showPauseDialog()}{showPauseDialog()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a5425808ecf2098ccf1fe356337de0f84} 
+void view.\+Game\+Controller.\+show\+Pause\+Dialog (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Affiche la boîte de dialogue de pause. 
+
+Cette boîte permet de reprendre la partie, recommencer, sauvegarder ou revenir au menu principal. \Hypertarget{classview_1_1_game_controller_ae45feca55df39aa1ac01e6a4bb7269ad}\index{view.GameController@{view.GameController}!startGame@{startGame}}
+\index{startGame@{startGame}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{startGame()}{startGame()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_ae45feca55df39aa1ac01e6a4bb7269ad} 
+void view.\+Game\+Controller.\+start\+Game (\begin{DoxyParamCaption}\item[{int}]{mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Démarre une nouvelle partie selon le mode choisi. 
+
+Si le mode correspond au chargement d\textquotesingle{}une partie, la méthode tente de restaurer une sauvegarde existante. Sinon, elle demande la taille du plateau puis initialise une nouvelle partie. Ensuite, elle construit la fenêtre de jeu et l\textquotesingle{}affiche.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mode} & Mode de jeu à lancer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classview_1_1_game_controller_ad719a8bc7f9ce79d563e656c2ce794f3}\index{view.GameController@{view.GameController}!undoMove@{undoMove}}
+\index{undoMove@{undoMove}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{undoMove()}{undoMove()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_ad719a8bc7f9ce79d563e656c2ce794f3} 
+void view.\+Game\+Controller.\+undo\+Move (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Annule le dernier coup joué. 
+
+La méthode restaure l\textquotesingle{}instantané précédent, place l\textquotesingle{}instantané annulé dans la pile de rétablissement, met à jour les scores, l\textquotesingle{}historique des coups et rafraîchit l\textquotesingle{}affichage. \Hypertarget{classview_1_1_game_controller_a44cf76027a1105a6c2c27358a51cc0d5}\index{view.GameController@{view.GameController}!updateGameStatus@{updateGameStatus}}
+\index{updateGameStatus@{updateGameStatus}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{updateGameStatus()}{updateGameStatus()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a44cf76027a1105a6c2c27358a51cc0d5} 
+void view.\+Game\+Controller.\+update\+Game\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Met à jour l\textquotesingle{}état global de la partie et détecte la fin du jeu. 
+
+Si la partie est terminée ou si le plateau est plein, la méthode détermine le vainqueur, met à jour l\textquotesingle{}affichage puis montre une boîte d\textquotesingle{}information contenant le résultat final et les scores. \Hypertarget{classview_1_1_game_controller_a8d1b90f4c5dfb53c6f916ad43db74ffd}\index{view.GameController@{view.GameController}!updateMoveHistory@{updateMoveHistory}}
+\index{updateMoveHistory@{updateMoveHistory}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{updateMoveHistory()}{updateMoveHistory()}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a8d1b90f4c5dfb53c6f916ad43db74ffd} 
+void view.\+Game\+Controller.\+update\+Move\+History (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Met à jour le texte affiché dans la zone d\textquotesingle{}historique des coups. 
+
+Chaque ligne contient le numéro du coup, la couleur du joueur et les coordonnées jouées. 
+
+\doxysubsection{Documentation des données membres}
+\Hypertarget{classview_1_1_game_controller_a662cf56fd0701e6fe80312c21834536f}\index{view.GameController@{view.GameController}!app@{app}}
+\index{app@{app}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{app}{app}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a662cf56fd0701e6fe80312c21834536f} 
+final \mbox{\hyperlink{classview_1_1_othello_app}{Othello\+App}} view.\+Game\+Controller.\+app\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Référence vers l\textquotesingle{}application principale. 
+
+Cet objet permet au contrôleur de revenir au menu principal ou d\textquotesingle{}interagir avec la fenêtre principale de lancement. \Hypertarget{classview_1_1_game_controller_a48732d83bec566a57147b8f0bbfa7ce0}\index{view.GameController@{view.GameController}!boardPanel@{boardPanel}}
+\index{boardPanel@{boardPanel}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{boardPanel}{boardPanel}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a48732d83bec566a57147b8f0bbfa7ce0} 
+JPanel view.\+Game\+Controller.\+board\+Panel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Panneau graphique représentant le plateau de jeu. 
+
+\Hypertarget{classview_1_1_game_controller_a7f54b798be4195249575493119470575}\index{view.GameController@{view.GameController}!gameFrame@{gameFrame}}
+\index{gameFrame@{gameFrame}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{gameFrame}{gameFrame}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a7f54b798be4195249575493119470575} 
+JFrame view.\+Game\+Controller.\+game\+Frame\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fenêtre principale de la partie en cours. 
+
+Cette fenêtre contient le plateau, les boutons d\textquotesingle{}action, le statut de la partie et l\textquotesingle{}historique des coups. \Hypertarget{classview_1_1_game_controller_af1c82f6207891c382a5400ee34ba354b}\index{view.GameController@{view.GameController}!gameState@{gameState}}
+\index{gameState@{gameState}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{gameState}{gameState}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_af1c82f6207891c382a5400ee34ba354b} 
+\mbox{\hyperlink{classmodel_1_1_game_state}{Game\+State}} view.\+Game\+Controller.\+game\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+État courant de la partie. 
+
+Contient le plateau, les joueurs, le joueur courant, les scores, l\textquotesingle{}historique des coups et l\textquotesingle{}état de fin de partie. \Hypertarget{classview_1_1_game_controller_a1d75ec999ba1d415ba04f64741df06fb}\index{view.GameController@{view.GameController}!HistoryArea@{HistoryArea}}
+\index{HistoryArea@{HistoryArea}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{HistoryArea}{HistoryArea}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a1d75ec999ba1d415ba04f64741df06fb} 
+JText\+Area view.\+Game\+Controller.\+History\+Area\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Zone de texte affichant l\textquotesingle{}historique des coups joués. 
+
+\Hypertarget{classview_1_1_game_controller_a5c771fc03bcb27c66e6fe7740b698901}\index{view.GameController@{view.GameController}!mode@{mode}}
+\index{mode@{mode}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a5c771fc03bcb27c66e6fe7740b698901} 
+int view.\+Game\+Controller.\+mode\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mode de jeu courant. 
+
+Exemples \+:
+\begin{DoxyItemize}
+\item 1 \+: joueur contre joueur ;
+\item 2 \+: joueur contre ordinateur ;
+\item 3 \+: chargement d\textquotesingle{}une partie sauvegardée. 
+\end{DoxyItemize}\Hypertarget{classview_1_1_game_controller_ad687640c647292a29760297ff60e2dd9}\index{view.GameController@{view.GameController}!pauseButton@{pauseButton}}
+\index{pauseButton@{pauseButton}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{pauseButton}{pauseButton}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_ad687640c647292a29760297ff60e2dd9} 
+JButton view.\+Game\+Controller.\+pause\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant d\textquotesingle{}ouvrir le menu de pause. 
+
+\Hypertarget{classview_1_1_game_controller_a51fd8c7c7e837d63edfb11ecaa74b7fb}\index{view.GameController@{view.GameController}!playwithkeyboardButton@{playwithkeyboardButton}}
+\index{playwithkeyboardButton@{playwithkeyboardButton}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{playwithkeyboardButton}{playwithkeyboardButton}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a51fd8c7c7e837d63edfb11ecaa74b7fb} 
+JButton view.\+Game\+Controller.\+playwithkeyboard\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant de jouer en saisissant les coordonnées au clavier. 
+
+\Hypertarget{classview_1_1_game_controller_a6e06206926d0e1bfa57c22d114f14716}\index{view.GameController@{view.GameController}!redoButton@{redoButton}}
+\index{redoButton@{redoButton}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{redoButton}{redoButton}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a6e06206926d0e1bfa57c22d114f14716} 
+JButton view.\+Game\+Controller.\+redo\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant de refaire un coup précédemment annulé. 
+
+\Hypertarget{classview_1_1_game_controller_a6cfcbffaa8048942935470bf863d07a1}\index{view.GameController@{view.GameController}!redoSnapshots@{redoSnapshots}}
+\index{redoSnapshots@{redoSnapshots}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{redoSnapshots}{redoSnapshots}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a6cfcbffaa8048942935470bf863d07a1} 
+List$<$\mbox{\hyperlink{classmodel_1_1_game_snapshot}{Game\+Snapshot}}$>$ view.\+Game\+Controller.\+redo\+Snapshots = new Array\+List$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Liste des instantanés annulés utilisée pour le rétablissement. 
+
+Cette liste permet de refaire les coups après une annulation. \Hypertarget{classview_1_1_game_controller_a4a0cae76dd211115296769a32f555e1b}\index{view.GameController@{view.GameController}!SAVE\_FILE\_NAME@{SAVE\_FILE\_NAME}}
+\index{SAVE\_FILE\_NAME@{SAVE\_FILE\_NAME}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{SAVE\_FILE\_NAME}{SAVE\_FILE\_NAME}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a4a0cae76dd211115296769a32f555e1b} 
+final String view.\+Game\+Controller.\+SAVE\+\_\+\+FILE\+\_\+\+NAME = "{}othello-\/save.\+txt"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Nom du fichier utilisé pour la sauvegarde de la partie. 
+
+Ce fichier texte contient les informations minimales nécessaires pour recharger l\textquotesingle{}état d\textquotesingle{}une partie. \Hypertarget{classview_1_1_game_controller_a43ce805aafb7550f4ccdd13b89e17ba7}\index{view.GameController@{view.GameController}!saveFile@{saveFile}}
+\index{saveFile@{saveFile}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{saveFile}{saveFile}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_a43ce805aafb7550f4ccdd13b89e17ba7} 
+final File view.\+Game\+Controller.\+save\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fichier physique de sauvegarde associé à la partie. 
+
+Il est construit à partir de la constante {\ttfamily \doxylink{classview_1_1_game_controller_a4a0cae76dd211115296769a32f555e1b}{SAVE\+\_\+\+FILE\+\_\+\+NAME}}. \Hypertarget{classview_1_1_game_controller_aed1ba9858c56cef4229292a37fef7ef0}\index{view.GameController@{view.GameController}!snapshots@{snapshots}}
+\index{snapshots@{snapshots}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{snapshots}{snapshots}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_aed1ba9858c56cef4229292a37fef7ef0} 
+List$<$\mbox{\hyperlink{classmodel_1_1_game_snapshot}{Game\+Snapshot}}$>$ view.\+Game\+Controller.\+snapshots = new Array\+List$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Liste des instantanés de partie utilisée pour l\textquotesingle{}annulation. 
+
+Chaque instantané représente un état successif du jeu. \Hypertarget{classview_1_1_game_controller_af76665df06fe93f10531e4adf7ac789b}\index{view.GameController@{view.GameController}!statusLabel@{statusLabel}}
+\index{statusLabel@{statusLabel}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{statusLabel}{statusLabel}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_af76665df06fe93f10531e4adf7ac789b} 
+JLabel view.\+Game\+Controller.\+status\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Libellé affichant l\textquotesingle{}état courant de la partie. 
+
+Il indique par exemple le joueur dont c\textquotesingle{}est le tour ou le score actuel. \Hypertarget{classview_1_1_game_controller_aaffb897f81b0d6ded99f733a6728412b}\index{view.GameController@{view.GameController}!undoButton@{undoButton}}
+\index{undoButton@{undoButton}!view.GameController@{view.GameController}}
+\doxysubsubsection{\texorpdfstring{undoButton}{undoButton}}
+{\footnotesize\ttfamily \label{classview_1_1_game_controller_aaffb897f81b0d6ded99f733a6728412b} 
+JButton view.\+Game\+Controller.\+undo\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant d\textquotesingle{}annuler le dernier coup joué. 
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/view/\mbox{\hyperlink{_game_controller_8java}{Game\+Controller.\+java}}\end{DoxyCompactItemize}

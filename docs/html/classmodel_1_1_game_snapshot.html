@@ -1,0 +1,706 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Othelle/reversi: Référence de la classe model.GameSnapshot</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Othelle/reversi
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classmodel_1_1_game_snapshot.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-methods">Fonctions membres privées</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="classmodel_1_1_game_snapshot-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle"><div class="title">Référence de la classe model.GameSnapshot</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Représente un instantané de l'état d'une partie d'Othello/Reversi.  
+ <a href="#details">Plus de détails...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a5f8b36f7bd09b4580c55f765e89e1771" id="r_a5f8b36f7bd09b4580c55f765e89e1771"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f8b36f7bd09b4580c55f765e89e1771">GameSnapshot</a> (<a class="el" href="classmodel_1_1_move.html">Move</a> <a class="el" href="#ab766fb7cfa5d6fa7c2331460a5aaa912">move</a>, Cell.CellState[][] <a class="el" href="#a07c7c4f17357cd48a93f051a402142c3">boardState</a>, int <a class="el" href="#ade4b24068c35b3a1ce22fef3cfb80777">boardSize</a>, Cell.CellState <a class="el" href="#a584a5437b38ae81b7348ff05ba735f07">currentPlayer</a>, int <a class="el" href="#a4e604e69a223839f6f4403ed52d42cb3">blackScore</a>, int <a class="el" href="#ab1952c4c4fed1bb2c60c56921b638a74">whiteScore</a>, int <a class="el" href="#a43948e653e79beaa90e582d11c3e5127">moveNumber</a>)</td></tr>
+<tr class="memdesc:a5f8b36f7bd09b4580c55f765e89e1771"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un nouvel instantané à partir des informations fournies.  <br /></td></tr>
+<tr class="separator:a5f8b36f7bd09b4580c55f765e89e1771"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae1f726ff3fa4567fdf369ab12123d51" id="r_aae1f726ff3fa4567fdf369ab12123d51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmodel_1_1_move.html">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae1f726ff3fa4567fdf369ab12123d51">getMove</a> ()</td></tr>
+<tr class="memdesc:aae1f726ff3fa4567fdf369ab12123d51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le coup ayant conduit à cet instantané.  <br /></td></tr>
+<tr class="separator:aae1f726ff3fa4567fdf369ab12123d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eafcdca78aec39c95faf4513becedef" id="r_a1eafcdca78aec39c95faf4513becedef"><td class="memItemLeft" align="right" valign="top">Cell.CellState[][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1eafcdca78aec39c95faf4513becedef">getBoardState</a> ()</td></tr>
+<tr class="memdesc:a1eafcdca78aec39c95faf4513becedef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne une copie de l'état du plateau à cet instant.  <br /></td></tr>
+<tr class="separator:a1eafcdca78aec39c95faf4513becedef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad989d7cb0a47999e29bfb26d5099b9a2" id="r_ad989d7cb0a47999e29bfb26d5099b9a2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad989d7cb0a47999e29bfb26d5099b9a2">getBoardSize</a> ()</td></tr>
+<tr class="memdesc:ad989d7cb0a47999e29bfb26d5099b9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la taille du plateau associée à cet instantané.  <br /></td></tr>
+<tr class="separator:ad989d7cb0a47999e29bfb26d5099b9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a345b8f9c04204ee54657c0a7719858c8" id="r_a345b8f9c04204ee54657c0a7719858c8"><td class="memItemLeft" align="right" valign="top">Cell.CellState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a345b8f9c04204ee54657c0a7719858c8">getCurrentPlayer</a> ()</td></tr>
+<tr class="memdesc:a345b8f9c04204ee54657c0a7719858c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le joueur devant jouer après cet instantané.  <br /></td></tr>
+<tr class="separator:a345b8f9c04204ee54657c0a7719858c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2db33c45641f8bcd206e14e87845bd5" id="r_ad2db33c45641f8bcd206e14e87845bd5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2db33c45641f8bcd206e14e87845bd5">getBlackScore</a> ()</td></tr>
+<tr class="memdesc:ad2db33c45641f8bcd206e14e87845bd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le score du joueur noir.  <br /></td></tr>
+<tr class="separator:ad2db33c45641f8bcd206e14e87845bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae591b9f9d20255c1aad54715c2c592e8" id="r_ae591b9f9d20255c1aad54715c2c592e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae591b9f9d20255c1aad54715c2c592e8">getWhiteScore</a> ()</td></tr>
+<tr class="memdesc:ae591b9f9d20255c1aad54715c2c592e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le score du joueur blanc.  <br /></td></tr>
+<tr class="separator:ae591b9f9d20255c1aad54715c2c592e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae10cd7165ef40a3613a88a6532f614c2" id="r_ae10cd7165ef40a3613a88a6532f614c2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae10cd7165ef40a3613a88a6532f614c2">getMoveNumber</a> ()</td></tr>
+<tr class="memdesc:ae10cd7165ef40a3613a88a6532f614c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le numéro du coup correspondant à cet instantané.  <br /></td></tr>
+<tr class="separator:ae10cd7165ef40a3613a88a6532f614c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1219ed2dc6fed3ebce4962ab1ef3f394" id="r_a1219ed2dc6fed3ebce4962ab1ef3f394"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1219ed2dc6fed3ebce4962ab1ef3f394">restoreToBoard</a> (<a class="el" href="classmodel_1_1_board.html">Board</a> board)</td></tr>
+<tr class="memdesc:a1219ed2dc6fed3ebce4962ab1ef3f394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restaure l'état du plateau fourni à partir de cet instantané.  <br /></td></tr>
+<tr class="separator:a1219ed2dc6fed3ebce4962ab1ef3f394"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Fonctions membres privées</h2></td></tr>
+<tr class="memitem:a016d9a837dd3b289ae46b527967c4096" id="r_a016d9a837dd3b289ae46b527967c4096"><td class="memItemLeft" align="right" valign="top">Cell.CellState[][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a016d9a837dd3b289ae46b527967c4096">copyBoardState</a> (Cell.CellState[][] original)</td></tr>
+<tr class="memdesc:a016d9a837dd3b289ae46b527967c4096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée une copie profonde de l'état du plateau passé en paramètre.  <br /></td></tr>
+<tr class="separator:a016d9a837dd3b289ae46b527967c4096"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:ab766fb7cfa5d6fa7c2331460a5aaa912" id="r_ab766fb7cfa5d6fa7c2331460a5aaa912"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmodel_1_1_move.html">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab766fb7cfa5d6fa7c2331460a5aaa912">move</a></td></tr>
+<tr class="memdesc:ab766fb7cfa5d6fa7c2331460a5aaa912"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coup ayant conduit à cet état de la partie.  <br /></td></tr>
+<tr class="separator:ab766fb7cfa5d6fa7c2331460a5aaa912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c7c4f17357cd48a93f051a402142c3" id="r_a07c7c4f17357cd48a93f051a402142c3"><td class="memItemLeft" align="right" valign="top">Cell.CellState[][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07c7c4f17357cd48a93f051a402142c3">boardState</a></td></tr>
+<tr class="memdesc:a07c7c4f17357cd48a93f051a402142c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copie de l'état du plateau au moment de l'instantané.  <br /></td></tr>
+<tr class="separator:a07c7c4f17357cd48a93f051a402142c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade4b24068c35b3a1ce22fef3cfb80777" id="r_ade4b24068c35b3a1ce22fef3cfb80777"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade4b24068c35b3a1ce22fef3cfb80777">boardSize</a></td></tr>
+<tr class="memdesc:ade4b24068c35b3a1ce22fef3cfb80777"><td class="mdescLeft">&#160;</td><td class="mdescRight">Taille du plateau au moment de l'instantané.  <br /></td></tr>
+<tr class="separator:ade4b24068c35b3a1ce22fef3cfb80777"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a584a5437b38ae81b7348ff05ba735f07" id="r_a584a5437b38ae81b7348ff05ba735f07"><td class="memItemLeft" align="right" valign="top">Cell.CellState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a584a5437b38ae81b7348ff05ba735f07">currentPlayer</a></td></tr>
+<tr class="memdesc:a584a5437b38ae81b7348ff05ba735f07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joueur devant jouer au moment de cet instantané.  <br /></td></tr>
+<tr class="separator:a584a5437b38ae81b7348ff05ba735f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e604e69a223839f6f4403ed52d42cb3" id="r_a4e604e69a223839f6f4403ed52d42cb3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e604e69a223839f6f4403ed52d42cb3">blackScore</a></td></tr>
+<tr class="memdesc:a4e604e69a223839f6f4403ed52d42cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Score actuel du joueur noir.  <br /></td></tr>
+<tr class="separator:a4e604e69a223839f6f4403ed52d42cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1952c4c4fed1bb2c60c56921b638a74" id="r_ab1952c4c4fed1bb2c60c56921b638a74"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1952c4c4fed1bb2c60c56921b638a74">whiteScore</a></td></tr>
+<tr class="memdesc:ab1952c4c4fed1bb2c60c56921b638a74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Score actuel du joueur blanc.  <br /></td></tr>
+<tr class="separator:ab1952c4c4fed1bb2c60c56921b638a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43948e653e79beaa90e582d11c3e5127" id="r_a43948e653e79beaa90e582d11c3e5127"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43948e653e79beaa90e582d11c3e5127">moveNumber</a></td></tr>
+<tr class="memdesc:a43948e653e79beaa90e582d11c3e5127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numéro du coup correspondant à cet instantané.  <br /></td></tr>
+<tr class="separator:a43948e653e79beaa90e582d11c3e5127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Représente un instantané de l'état d'une partie d'Othello/Reversi. </p>
+<p>Cette classe capture toutes les informations nécessaires pour décrire un état précis de la partie : le coup joué pour atteindre cet état, l'état du plateau, le joueur dont c'est le tour, les scores et le numéro du coup. Elle peut être utilisée pour l'historique de la partie, l'annulation de coups, ou la sauvegarde/restauration de l'état du jeu. </p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a id="a5f8b36f7bd09b4580c55f765e89e1771" name="a5f8b36f7bd09b4580c55f765e89e1771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f8b36f7bd09b4580c55f765e89e1771">&#9670;&#160;</a></span>GameSnapshot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">model.GameSnapshot.GameSnapshot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmodel_1_1_move.html">Move</a></td>          <td class="paramname"><span class="paramname"><em>move</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Cell.CellState</td>          <td class="paramname"><span class="paramname"><em>boardState</em></span>[][], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>boardSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Cell.CellState</td>          <td class="paramname"><span class="paramname"><em>currentPlayer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>blackScore</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>whiteScore</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>moveNumber</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construit un nouvel instantané à partir des informations fournies. </p>
+<p>Le constructeur copie l'état du plateau pour éviter toute modification ultérieure liée à la référence d'origine. Il enregistre également le coup joué, la taille du plateau, le joueur courant, les scores et le numéro du coup.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">move</td><td>Coup joué pour arriver à cet état de la partie. </td></tr>
+    <tr><td class="paramname">boardState</td><td>État actuel du plateau sous forme de tableau 2D des états de chaque case. </td></tr>
+    <tr><td class="paramname">boardSize</td><td>Taille du plateau (nombre de cases par côté). </td></tr>
+    <tr><td class="paramname">currentPlayer</td><td>Joueur devant jouer après cet instantané (généralement noir ou blanc). </td></tr>
+    <tr><td class="paramname">blackScore</td><td>Score du joueur noir à cet instant. </td></tr>
+    <tr><td class="paramname">whiteScore</td><td>Score du joueur blanc à cet instant. </td></tr>
+    <tr><td class="paramname">moveNumber</td><td>Numéro du coup dans la partie correspondant à cet état. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="a016d9a837dd3b289ae46b527967c4096" name="a016d9a837dd3b289ae46b527967c4096"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a016d9a837dd3b289ae46b527967c4096">&#9670;&#160;</a></span>copyBoardState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Cell.CellState[][] model.GameSnapshot.copyBoardState </td>
+          <td>(</td>
+          <td class="paramtype">Cell.CellState</td>          <td class="paramname"><span class="paramname"><em>original</em></span>[][]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Crée une copie profonde de l'état du plateau passé en paramètre. </p>
+<p>Cette méthode recopie les références des états de chaque case dans un nouveau tableau 2D afin que l'instantané ne soit pas modifié si l'état du plateau d'origine change par la suite.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">original</td><td>Tableau 2D représentant l'état original du plateau. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un nouveau tableau 2D contenant une copie des états de chaque case. </dd></dl>
+
+</div>
+</div>
+<a id="ad2db33c45641f8bcd206e14e87845bd5" name="ad2db33c45641f8bcd206e14e87845bd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2db33c45641f8bcd206e14e87845bd5">&#9670;&#160;</a></span>getBlackScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int model.GameSnapshot.getBlackScore </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne le score du joueur noir. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Le nombre de pions noirs sur le plateau à cet instant. </dd></dl>
+
+</div>
+</div>
+<a id="ad989d7cb0a47999e29bfb26d5099b9a2" name="ad989d7cb0a47999e29bfb26d5099b9a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad989d7cb0a47999e29bfb26d5099b9a2">&#9670;&#160;</a></span>getBoardSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int model.GameSnapshot.getBoardSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne la taille du plateau associée à cet instantané. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>La taille du plateau (nombre de cases par côté). </dd></dl>
+
+</div>
+</div>
+<a id="a1eafcdca78aec39c95faf4513becedef" name="a1eafcdca78aec39c95faf4513becedef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eafcdca78aec39c95faf4513becedef">&#9670;&#160;</a></span>getBoardState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Cell.CellState[][] model.GameSnapshot.getBoardState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne une copie de l'état du plateau à cet instant. </p>
+<p>Un nouveau tableau 2D est retourné pour garantir que l'état stocké dans l'instantané reste immuable depuis l'extérieur.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>Un tableau 2D de <code><a class="el" href="enummodel_1_1_cell_1_1_cell_state.html">Cell.CellState</a></code> représentant l'état du plateau. </dd></dl>
+
+</div>
+</div>
+<a id="a345b8f9c04204ee54657c0a7719858c8" name="a345b8f9c04204ee54657c0a7719858c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a345b8f9c04204ee54657c0a7719858c8">&#9670;&#160;</a></span>getCurrentPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Cell.CellState model.GameSnapshot.getCurrentPlayer </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne le joueur devant jouer après cet instantané. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>La couleur du joueur courant, sous forme de <code><a class="el" href="enummodel_1_1_cell_1_1_cell_state.html">Cell.CellState</a></code>. </dd></dl>
+
+</div>
+</div>
+<a id="aae1f726ff3fa4567fdf369ab12123d51" name="aae1f726ff3fa4567fdf369ab12123d51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae1f726ff3fa4567fdf369ab12123d51">&#9670;&#160;</a></span>getMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmodel_1_1_move.html">Move</a> model.GameSnapshot.getMove </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne le coup ayant conduit à cet instantané. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>L'objet <code><a class="el" href="classmodel_1_1_move.html">Move</a></code> associé à cet état de la partie. </dd></dl>
+
+</div>
+</div>
+<a id="ae10cd7165ef40a3613a88a6532f614c2" name="ae10cd7165ef40a3613a88a6532f614c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae10cd7165ef40a3613a88a6532f614c2">&#9670;&#160;</a></span>getMoveNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int model.GameSnapshot.getMoveNumber </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne le numéro du coup correspondant à cet instantané. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Le numéro du coup dans la partie. </dd></dl>
+
+</div>
+</div>
+<a id="ae591b9f9d20255c1aad54715c2c592e8" name="ae591b9f9d20255c1aad54715c2c592e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae591b9f9d20255c1aad54715c2c592e8">&#9670;&#160;</a></span>getWhiteScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int model.GameSnapshot.getWhiteScore </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne le score du joueur blanc. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Le nombre de pions blancs sur le plateau à cet instant. </dd></dl>
+
+</div>
+</div>
+<a id="a1219ed2dc6fed3ebce4962ab1ef3f394" name="a1219ed2dc6fed3ebce4962ab1ef3f394"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1219ed2dc6fed3ebce4962ab1ef3f394">&#9670;&#160;</a></span>restoreToBoard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model.GameSnapshot.restoreToBoard </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmodel_1_1_board.html">Board</a></td>          <td class="paramname"><span class="paramname"><em>board</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Restaure l'état du plateau fourni à partir de cet instantané. </p>
+<p>Cette méthode parcourt la copie interne de l'état du plateau et place les pions correspondants sur le plateau passé en paramètre. Elle ne modifie pas le joueur courant ni les scores en dehors de ce plateau.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>Plateau sur lequel l'état de l'instantané doit être restauré. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a id="a4e604e69a223839f6f4403ed52d42cb3" name="a4e604e69a223839f6f4403ed52d42cb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e604e69a223839f6f4403ed52d42cb3">&#9670;&#160;</a></span>blackScore</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int model.GameSnapshot.blackScore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Score actuel du joueur noir. </p>
+<p>Représente le nombre de pions noirs présents sur le plateau à cet instant. </p>
+
+</div>
+</div>
+<a id="ade4b24068c35b3a1ce22fef3cfb80777" name="ade4b24068c35b3a1ce22fef3cfb80777"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade4b24068c35b3a1ce22fef3cfb80777">&#9670;&#160;</a></span>boardSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int model.GameSnapshot.boardSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Taille du plateau au moment de l'instantané. </p>
+<p>Correspond au nombre de cases par côté (par exemple 8 pour un plateau classique). </p>
+
+</div>
+</div>
+<a id="a07c7c4f17357cd48a93f051a402142c3" name="a07c7c4f17357cd48a93f051a402142c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07c7c4f17357cd48a93f051a402142c3">&#9670;&#160;</a></span>boardState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Cell.CellState [][] model.GameSnapshot.boardState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copie de l'état du plateau au moment de l'instantané. </p>
+<p>Tableau 2D contenant, pour chaque case, l'état correspondant (vide, pion noir ou pion blanc). </p>
+
+</div>
+</div>
+<a id="a584a5437b38ae81b7348ff05ba735f07" name="a584a5437b38ae81b7348ff05ba735f07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a584a5437b38ae81b7348ff05ba735f07">&#9670;&#160;</a></span>currentPlayer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Cell.CellState model.GameSnapshot.currentPlayer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Joueur devant jouer au moment de cet instantané. </p>
+<p>Indique la couleur du prochain joueur (noir ou blanc). </p>
+
+</div>
+</div>
+<a id="ab766fb7cfa5d6fa7c2331460a5aaa912" name="ab766fb7cfa5d6fa7c2331460a5aaa912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab766fb7cfa5d6fa7c2331460a5aaa912">&#9670;&#160;</a></span>move</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmodel_1_1_move.html">Move</a> model.GameSnapshot.move</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Coup ayant conduit à cet état de la partie. </p>
+<p>Il s'agit généralement du dernier coup joué avant de capturer cet instantané. Peut servir à reconstruire l'historique de la partie. </p>
+
+</div>
+</div>
+<a id="a43948e653e79beaa90e582d11c3e5127" name="a43948e653e79beaa90e582d11c3e5127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43948e653e79beaa90e582d11c3e5127">&#9670;&#160;</a></span>moveNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int model.GameSnapshot.moveNumber</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Numéro du coup correspondant à cet instantané. </p>
+<p>Par exemple, 1 pour le premier coup, 2 pour le deuxième, etc. </p>
+
+</div>
+</div>
+<a id="ab1952c4c4fed1bb2c60c56921b638a74" name="ab1952c4c4fed1bb2c60c56921b638a74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1952c4c4fed1bb2c60c56921b638a74">&#9670;&#160;</a></span>whiteScore</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int model.GameSnapshot.whiteScore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Score actuel du joueur blanc. </p>
+<p>Représente le nombre de pions blancs présents sur le plateau à cet instant. </p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<li>src/main/java/model/<a class="el" href="_game_snapshot_8java.html">GameSnapshot.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemodel.html">model</a></li><li class="navelem"><a class="el" href="classmodel_1_1_game_snapshot.html">GameSnapshot</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

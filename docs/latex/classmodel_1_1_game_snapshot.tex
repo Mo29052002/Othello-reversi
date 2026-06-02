@@ -1,0 +1,298 @@
+\doxysection{Référence de la classe model.\+Game\+Snapshot}
+\hypertarget{classmodel_1_1_game_snapshot}{}\label{classmodel_1_1_game_snapshot}\index{model.GameSnapshot@{model.GameSnapshot}}
+
+
+Représente un instantané de l\textquotesingle{}état d\textquotesingle{}une partie d\textquotesingle{}Othello/\+Reversi.  
+
+
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmodel_1_1_game_snapshot_a5f8b36f7bd09b4580c55f765e89e1771}{Game\+Snapshot}} (\mbox{\hyperlink{classmodel_1_1_move}{Move}} \mbox{\hyperlink{classmodel_1_1_game_snapshot_ab766fb7cfa5d6fa7c2331460a5aaa912}{move}}, Cell.\+Cell\+State\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmodel_1_1_game_snapshot_a07c7c4f17357cd48a93f051a402142c3}{board\+State}}, int \mbox{\hyperlink{classmodel_1_1_game_snapshot_ade4b24068c35b3a1ce22fef3cfb80777}{board\+Size}}, Cell.\+Cell\+State \mbox{\hyperlink{classmodel_1_1_game_snapshot_a584a5437b38ae81b7348ff05ba735f07}{current\+Player}}, int \mbox{\hyperlink{classmodel_1_1_game_snapshot_a4e604e69a223839f6f4403ed52d42cb3}{black\+Score}}, int \mbox{\hyperlink{classmodel_1_1_game_snapshot_ab1952c4c4fed1bb2c60c56921b638a74}{white\+Score}}, int \mbox{\hyperlink{classmodel_1_1_game_snapshot_a43948e653e79beaa90e582d11c3e5127}{move\+Number}})
+\begin{DoxyCompactList}\small\item\em Construit un nouvel instantané à partir des informations fournies. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmodel_1_1_move}{Move}} \mbox{\hyperlink{classmodel_1_1_game_snapshot_aae1f726ff3fa4567fdf369ab12123d51}{get\+Move}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le coup ayant conduit à cet instantané. \end{DoxyCompactList}\item 
+Cell.\+Cell\+State\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmodel_1_1_game_snapshot_a1eafcdca78aec39c95faf4513becedef}{get\+Board\+State}} ()
+\begin{DoxyCompactList}\small\item\em Retourne une copie de l\textquotesingle{}état du plateau à cet instant. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmodel_1_1_game_snapshot_ad989d7cb0a47999e29bfb26d5099b9a2}{get\+Board\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Retourne la taille du plateau associée à cet instantané. \end{DoxyCompactList}\item 
+Cell.\+Cell\+State \mbox{\hyperlink{classmodel_1_1_game_snapshot_a345b8f9c04204ee54657c0a7719858c8}{get\+Current\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le joueur devant jouer après cet instantané. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmodel_1_1_game_snapshot_ad2db33c45641f8bcd206e14e87845bd5}{get\+Black\+Score}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le score du joueur noir. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmodel_1_1_game_snapshot_ae591b9f9d20255c1aad54715c2c592e8}{get\+White\+Score}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le score du joueur blanc. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmodel_1_1_game_snapshot_ae10cd7165ef40a3613a88a6532f614c2}{get\+Move\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le numéro du coup correspondant à cet instantané. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmodel_1_1_game_snapshot_a1219ed2dc6fed3ebce4962ab1ef3f394}{restore\+To\+Board}} (\mbox{\hyperlink{classmodel_1_1_board}{Board}} board)
+\begin{DoxyCompactList}\small\item\em Restaure l\textquotesingle{}état du plateau fourni à partir de cet instantané. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+Cell.\+Cell\+State\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmodel_1_1_game_snapshot_a016d9a837dd3b289ae46b527967c4096}{copy\+Board\+State}} (Cell.\+Cell\+State\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} original)
+\begin{DoxyCompactList}\small\item\em Crée une copie profonde de l\textquotesingle{}état du plateau passé en paramètre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmodel_1_1_move}{Move}} \mbox{\hyperlink{classmodel_1_1_game_snapshot_ab766fb7cfa5d6fa7c2331460a5aaa912}{move}}
+\begin{DoxyCompactList}\small\item\em Coup ayant conduit à cet état de la partie. \end{DoxyCompactList}\item 
+Cell.\+Cell\+State\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmodel_1_1_game_snapshot_a07c7c4f17357cd48a93f051a402142c3}{board\+State}}
+\begin{DoxyCompactList}\small\item\em Copie de l\textquotesingle{}état du plateau au moment de l\textquotesingle{}instantané. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmodel_1_1_game_snapshot_ade4b24068c35b3a1ce22fef3cfb80777}{board\+Size}}
+\begin{DoxyCompactList}\small\item\em Taille du plateau au moment de l\textquotesingle{}instantané. \end{DoxyCompactList}\item 
+Cell.\+Cell\+State \mbox{\hyperlink{classmodel_1_1_game_snapshot_a584a5437b38ae81b7348ff05ba735f07}{current\+Player}}
+\begin{DoxyCompactList}\small\item\em Joueur devant jouer au moment de cet instantané. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmodel_1_1_game_snapshot_a4e604e69a223839f6f4403ed52d42cb3}{black\+Score}}
+\begin{DoxyCompactList}\small\item\em Score actuel du joueur noir. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmodel_1_1_game_snapshot_ab1952c4c4fed1bb2c60c56921b638a74}{white\+Score}}
+\begin{DoxyCompactList}\small\item\em Score actuel du joueur blanc. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmodel_1_1_game_snapshot_a43948e653e79beaa90e582d11c3e5127}{move\+Number}}
+\begin{DoxyCompactList}\small\item\em Numéro du coup correspondant à cet instantané. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Représente un instantané de l\textquotesingle{}état d\textquotesingle{}une partie d\textquotesingle{}Othello/\+Reversi. 
+
+Cette classe capture toutes les informations nécessaires pour décrire un état précis de la partie \+: le coup joué pour atteindre cet état, l\textquotesingle{}état du plateau, le joueur dont c\textquotesingle{}est le tour, les scores et le numéro du coup. Elle peut être utilisée pour l\textquotesingle{}historique de la partie, l\textquotesingle{}annulation de coups, ou la sauvegarde/restauration de l\textquotesingle{}état du jeu. 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{classmodel_1_1_game_snapshot_a5f8b36f7bd09b4580c55f765e89e1771}\index{model.GameSnapshot@{model.GameSnapshot}!GameSnapshot@{GameSnapshot}}
+\index{GameSnapshot@{GameSnapshot}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{GameSnapshot()}{GameSnapshot()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_a5f8b36f7bd09b4580c55f765e89e1771} 
+model.\+Game\+Snapshot.\+Game\+Snapshot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmodel_1_1_move}{Move}}}]{move}{, }\item[{Cell.\+Cell\+State}]{board\+State}{\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }\item[{int}]{board\+Size}{, }\item[{Cell.\+Cell\+State}]{current\+Player}{, }\item[{int}]{black\+Score}{, }\item[{int}]{white\+Score}{, }\item[{int}]{move\+Number}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construit un nouvel instantané à partir des informations fournies. 
+
+Le constructeur copie l\textquotesingle{}état du plateau pour éviter toute modification ultérieure liée à la référence d\textquotesingle{}origine. Il enregistre également le coup joué, la taille du plateau, le joueur courant, les scores et le numéro du coup.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em move} & Coup joué pour arriver à cet état de la partie. \\
+\hline
+{\em board\+State} & État actuel du plateau sous forme de tableau 2D des états de chaque case. \\
+\hline
+{\em board\+Size} & Taille du plateau (nombre de cases par côté). \\
+\hline
+{\em current\+Player} & Joueur devant jouer après cet instantané (généralement noir ou blanc). \\
+\hline
+{\em black\+Score} & Score du joueur noir à cet instant. \\
+\hline
+{\em white\+Score} & Score du joueur blanc à cet instant. \\
+\hline
+{\em move\+Number} & Numéro du coup dans la partie correspondant à cet état. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{classmodel_1_1_game_snapshot_a016d9a837dd3b289ae46b527967c4096}\index{model.GameSnapshot@{model.GameSnapshot}!copyBoardState@{copyBoardState}}
+\index{copyBoardState@{copyBoardState}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{copyBoardState()}{copyBoardState()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_a016d9a837dd3b289ae46b527967c4096} 
+Cell.\+Cell\+State\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} model.\+Game\+Snapshot.\+copy\+Board\+State (\begin{DoxyParamCaption}\item[{Cell.\+Cell\+State}]{original}{\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Crée une copie profonde de l\textquotesingle{}état du plateau passé en paramètre. 
+
+Cette méthode recopie les références des états de chaque case dans un nouveau tableau 2D afin que l\textquotesingle{}instantané ne soit pas modifié si l\textquotesingle{}état du plateau d\textquotesingle{}origine change par la suite.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em original} & Tableau 2D représentant l\textquotesingle{}état original du plateau. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Un nouveau tableau 2D contenant une copie des états de chaque case. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_game_snapshot_ad2db33c45641f8bcd206e14e87845bd5}\index{model.GameSnapshot@{model.GameSnapshot}!getBlackScore@{getBlackScore}}
+\index{getBlackScore@{getBlackScore}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{getBlackScore()}{getBlackScore()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_ad2db33c45641f8bcd206e14e87845bd5} 
+int model.\+Game\+Snapshot.\+get\+Black\+Score (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le score du joueur noir. 
+
+\begin{DoxyReturn}{Renvoie}
+Le nombre de pions noirs sur le plateau à cet instant. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_game_snapshot_ad989d7cb0a47999e29bfb26d5099b9a2}\index{model.GameSnapshot@{model.GameSnapshot}!getBoardSize@{getBoardSize}}
+\index{getBoardSize@{getBoardSize}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{getBoardSize()}{getBoardSize()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_ad989d7cb0a47999e29bfb26d5099b9a2} 
+int model.\+Game\+Snapshot.\+get\+Board\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la taille du plateau associée à cet instantané. 
+
+\begin{DoxyReturn}{Renvoie}
+La taille du plateau (nombre de cases par côté). 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_game_snapshot_a1eafcdca78aec39c95faf4513becedef}\index{model.GameSnapshot@{model.GameSnapshot}!getBoardState@{getBoardState}}
+\index{getBoardState@{getBoardState}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{getBoardState()}{getBoardState()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_a1eafcdca78aec39c95faf4513becedef} 
+Cell.\+Cell\+State\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} model.\+Game\+Snapshot.\+get\+Board\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne une copie de l\textquotesingle{}état du plateau à cet instant. 
+
+Un nouveau tableau 2D est retourné pour garantir que l\textquotesingle{}état stocké dans l\textquotesingle{}instantané reste immuable depuis l\textquotesingle{}extérieur.
+
+\begin{DoxyReturn}{Renvoie}
+Un tableau 2D de {\ttfamily \doxylink{enummodel_1_1_cell_1_1_cell_state}{Cell.\+Cell\+State}} représentant l\textquotesingle{}état du plateau. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_game_snapshot_a345b8f9c04204ee54657c0a7719858c8}\index{model.GameSnapshot@{model.GameSnapshot}!getCurrentPlayer@{getCurrentPlayer}}
+\index{getCurrentPlayer@{getCurrentPlayer}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{getCurrentPlayer()}{getCurrentPlayer()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_a345b8f9c04204ee54657c0a7719858c8} 
+Cell.\+Cell\+State model.\+Game\+Snapshot.\+get\+Current\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le joueur devant jouer après cet instantané. 
+
+\begin{DoxyReturn}{Renvoie}
+La couleur du joueur courant, sous forme de {\ttfamily \doxylink{enummodel_1_1_cell_1_1_cell_state}{Cell.\+Cell\+State}}. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_game_snapshot_aae1f726ff3fa4567fdf369ab12123d51}\index{model.GameSnapshot@{model.GameSnapshot}!getMove@{getMove}}
+\index{getMove@{getMove}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{getMove()}{getMove()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_aae1f726ff3fa4567fdf369ab12123d51} 
+\mbox{\hyperlink{classmodel_1_1_move}{Move}} model.\+Game\+Snapshot.\+get\+Move (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le coup ayant conduit à cet instantané. 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}objet {\ttfamily \doxylink{classmodel_1_1_move}{Move}} associé à cet état de la partie. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_game_snapshot_ae10cd7165ef40a3613a88a6532f614c2}\index{model.GameSnapshot@{model.GameSnapshot}!getMoveNumber@{getMoveNumber}}
+\index{getMoveNumber@{getMoveNumber}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{getMoveNumber()}{getMoveNumber()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_ae10cd7165ef40a3613a88a6532f614c2} 
+int model.\+Game\+Snapshot.\+get\+Move\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le numéro du coup correspondant à cet instantané. 
+
+\begin{DoxyReturn}{Renvoie}
+Le numéro du coup dans la partie. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_game_snapshot_ae591b9f9d20255c1aad54715c2c592e8}\index{model.GameSnapshot@{model.GameSnapshot}!getWhiteScore@{getWhiteScore}}
+\index{getWhiteScore@{getWhiteScore}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{getWhiteScore()}{getWhiteScore()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_ae591b9f9d20255c1aad54715c2c592e8} 
+int model.\+Game\+Snapshot.\+get\+White\+Score (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le score du joueur blanc. 
+
+\begin{DoxyReturn}{Renvoie}
+Le nombre de pions blancs sur le plateau à cet instant. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_game_snapshot_a1219ed2dc6fed3ebce4962ab1ef3f394}\index{model.GameSnapshot@{model.GameSnapshot}!restoreToBoard@{restoreToBoard}}
+\index{restoreToBoard@{restoreToBoard}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{restoreToBoard()}{restoreToBoard()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_a1219ed2dc6fed3ebce4962ab1ef3f394} 
+void model.\+Game\+Snapshot.\+restore\+To\+Board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmodel_1_1_board}{Board}}}]{board}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Restaure l\textquotesingle{}état du plateau fourni à partir de cet instantané. 
+
+Cette méthode parcourt la copie interne de l\textquotesingle{}état du plateau et place les pions correspondants sur le plateau passé en paramètre. Elle ne modifie pas le joueur courant ni les scores en dehors de ce plateau.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & Plateau sur lequel l\textquotesingle{}état de l\textquotesingle{}instantané doit être restauré. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des données membres}
+\Hypertarget{classmodel_1_1_game_snapshot_a4e604e69a223839f6f4403ed52d42cb3}\index{model.GameSnapshot@{model.GameSnapshot}!blackScore@{blackScore}}
+\index{blackScore@{blackScore}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{blackScore}{blackScore}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_a4e604e69a223839f6f4403ed52d42cb3} 
+int model.\+Game\+Snapshot.\+black\+Score\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Score actuel du joueur noir. 
+
+Représente le nombre de pions noirs présents sur le plateau à cet instant. \Hypertarget{classmodel_1_1_game_snapshot_ade4b24068c35b3a1ce22fef3cfb80777}\index{model.GameSnapshot@{model.GameSnapshot}!boardSize@{boardSize}}
+\index{boardSize@{boardSize}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{boardSize}{boardSize}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_ade4b24068c35b3a1ce22fef3cfb80777} 
+int model.\+Game\+Snapshot.\+board\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Taille du plateau au moment de l\textquotesingle{}instantané. 
+
+Correspond au nombre de cases par côté (par exemple 8 pour un plateau classique). \Hypertarget{classmodel_1_1_game_snapshot_a07c7c4f17357cd48a93f051a402142c3}\index{model.GameSnapshot@{model.GameSnapshot}!boardState@{boardState}}
+\index{boardState@{boardState}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{boardState}{boardState}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_a07c7c4f17357cd48a93f051a402142c3} 
+Cell.\+Cell\+State \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} model.\+Game\+Snapshot.\+board\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Copie de l\textquotesingle{}état du plateau au moment de l\textquotesingle{}instantané. 
+
+Tableau 2D contenant, pour chaque case, l\textquotesingle{}état correspondant (vide, pion noir ou pion blanc). \Hypertarget{classmodel_1_1_game_snapshot_a584a5437b38ae81b7348ff05ba735f07}\index{model.GameSnapshot@{model.GameSnapshot}!currentPlayer@{currentPlayer}}
+\index{currentPlayer@{currentPlayer}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{currentPlayer}{currentPlayer}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_a584a5437b38ae81b7348ff05ba735f07} 
+Cell.\+Cell\+State model.\+Game\+Snapshot.\+current\+Player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Joueur devant jouer au moment de cet instantané. 
+
+Indique la couleur du prochain joueur (noir ou blanc). \Hypertarget{classmodel_1_1_game_snapshot_ab766fb7cfa5d6fa7c2331460a5aaa912}\index{model.GameSnapshot@{model.GameSnapshot}!move@{move}}
+\index{move@{move}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{move}{move}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_ab766fb7cfa5d6fa7c2331460a5aaa912} 
+\mbox{\hyperlink{classmodel_1_1_move}{Move}} model.\+Game\+Snapshot.\+move\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Coup ayant conduit à cet état de la partie. 
+
+Il s\textquotesingle{}agit généralement du dernier coup joué avant de capturer cet instantané. Peut servir à reconstruire l\textquotesingle{}historique de la partie. \Hypertarget{classmodel_1_1_game_snapshot_a43948e653e79beaa90e582d11c3e5127}\index{model.GameSnapshot@{model.GameSnapshot}!moveNumber@{moveNumber}}
+\index{moveNumber@{moveNumber}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{moveNumber}{moveNumber}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_a43948e653e79beaa90e582d11c3e5127} 
+int model.\+Game\+Snapshot.\+move\+Number\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Numéro du coup correspondant à cet instantané. 
+
+Par exemple, 1 pour le premier coup, 2 pour le deuxième, etc. \Hypertarget{classmodel_1_1_game_snapshot_ab1952c4c4fed1bb2c60c56921b638a74}\index{model.GameSnapshot@{model.GameSnapshot}!whiteScore@{whiteScore}}
+\index{whiteScore@{whiteScore}!model.GameSnapshot@{model.GameSnapshot}}
+\doxysubsubsection{\texorpdfstring{whiteScore}{whiteScore}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_snapshot_ab1952c4c4fed1bb2c60c56921b638a74} 
+int model.\+Game\+Snapshot.\+white\+Score\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Score actuel du joueur blanc. 
+
+Représente le nombre de pions blancs présents sur le plateau à cet instant. 
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/model/\mbox{\hyperlink{_game_snapshot_8java}{Game\+Snapshot.\+java}}\end{DoxyCompactItemize}

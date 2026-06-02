@@ -1,0 +1,178 @@
+\doxysection{Référence de la classe model.\+Player}
+\hypertarget{classmodel_1_1_player}{}\label{classmodel_1_1_player}\index{model.Player@{model.Player}}
+
+
+Représente un joueur dans une partie d\textquotesingle{}Othello/\+Reversi.  
+
+
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmodel_1_1_player_a8ad3d3486b4151b7809c301ac2faa51e}{Player}} (Cell.\+Cell\+State \mbox{\hyperlink{classmodel_1_1_player_a033b20ed20a04110ade3f4c2ccbf027c}{color}})
+\begin{DoxyCompactList}\small\item\em Construit un joueur avec la couleur spécifiée. \end{DoxyCompactList}\item 
+Cell.\+Cell\+State \mbox{\hyperlink{classmodel_1_1_player_a8d60d2b26ed5fe00865ad7f0e6ef0141}{get\+Color}} ()
+\begin{DoxyCompactList}\small\item\em Retourne la couleur de ce joueur. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmodel_1_1_player_a9e027a7ee08d451cde3e6743e2ef1d6d}{get\+Score}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le score courant du joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmodel_1_1_player_ac33f17ab14fd36e80759a145e9512ae1}{set\+Score}} (int \mbox{\hyperlink{classmodel_1_1_player_ad6d852aea99befddd30bb094222123d2}{score}})
+\begin{DoxyCompactList}\small\item\em Met à jour le score du joueur avec une nouvelle valeur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmodel_1_1_player_a23a338eb5fa1376d6749ee26dc9ba2be}{increment\+Score}} ()
+\begin{DoxyCompactList}\small\item\em Incrémente le score du joueur d\textquotesingle{}une unité. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmodel_1_1_player_a15fd3e4bea7b02310e734d2d3f3fb8e0}{decrement\+Score}} ()
+\begin{DoxyCompactList}\small\item\em Décrémente le score du joueur d\textquotesingle{}une unité. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classmodel_1_1_player_a662f54039416be41363a1fa78e3ce522}{is\+Black}} ()
+\begin{DoxyCompactList}\small\item\em Indique si ce joueur joue avec les pions noirs. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classmodel_1_1_player_aa68d64afd4d46f36a42963f4bcc27e38}{is\+White}} ()
+\begin{DoxyCompactList}\small\item\em Indique si ce joueur joue avec les pions blancs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+final Cell.\+Cell\+State \mbox{\hyperlink{classmodel_1_1_player_a033b20ed20a04110ade3f4c2ccbf027c}{color}}
+\begin{DoxyCompactList}\small\item\em Couleur des pions associés à ce joueur. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmodel_1_1_player_ad6d852aea99befddd30bb094222123d2}{score}}
+\begin{DoxyCompactList}\small\item\em Score courant du joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Représente un joueur dans une partie d\textquotesingle{}Othello/\+Reversi. 
+
+Chaque joueur est associé à une couleur (noir ou blanc) et possède un score correspondant au nombre de pions de sa couleur présents sur le plateau. 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{classmodel_1_1_player_a8ad3d3486b4151b7809c301ac2faa51e}\index{model.Player@{model.Player}!Player@{Player}}
+\index{Player@{Player}!model.Player@{model.Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_player_a8ad3d3486b4151b7809c301ac2faa51e} 
+model.\+Player.\+Player (\begin{DoxyParamCaption}\item[{Cell.\+Cell\+State}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construit un joueur avec la couleur spécifiée. 
+
+Le score initial est fixé à 2, correspondant à la configuration de départ standard d\textquotesingle{}Othello (deux pions par joueur).
+
+
+\begin{DoxyParams}{Paramètres}
+{\em color} & Couleur des pions de ce joueur (BLACK ou WHITE). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{classmodel_1_1_player_a15fd3e4bea7b02310e734d2d3f3fb8e0}\index{model.Player@{model.Player}!decrementScore@{decrementScore}}
+\index{decrementScore@{decrementScore}!model.Player@{model.Player}}
+\doxysubsubsection{\texorpdfstring{decrementScore()}{decrementScore()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_player_a15fd3e4bea7b02310e734d2d3f3fb8e0} 
+void model.\+Player.\+decrement\+Score (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Décrémente le score du joueur d\textquotesingle{}une unité. 
+
+Utile lorsqu\textquotesingle{}un pion de la couleur du joueur est retiré ou retourné. \Hypertarget{classmodel_1_1_player_a8d60d2b26ed5fe00865ad7f0e6ef0141}\index{model.Player@{model.Player}!getColor@{getColor}}
+\index{getColor@{getColor}!model.Player@{model.Player}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_player_a8d60d2b26ed5fe00865ad7f0e6ef0141} 
+Cell.\+Cell\+State model.\+Player.\+get\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la couleur de ce joueur. 
+
+\begin{DoxyReturn}{Renvoie}
+La couleur du joueur sous forme de {\ttfamily \doxylink{enummodel_1_1_cell_1_1_cell_state}{Cell.\+Cell\+State}}. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_player_a9e027a7ee08d451cde3e6743e2ef1d6d}\index{model.Player@{model.Player}!getScore@{getScore}}
+\index{getScore@{getScore}!model.Player@{model.Player}}
+\doxysubsubsection{\texorpdfstring{getScore()}{getScore()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_player_a9e027a7ee08d451cde3e6743e2ef1d6d} 
+int model.\+Player.\+get\+Score (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le score courant du joueur. 
+
+\begin{DoxyReturn}{Renvoie}
+Le score du joueur (nombre de pions de sa couleur). 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_player_a23a338eb5fa1376d6749ee26dc9ba2be}\index{model.Player@{model.Player}!incrementScore@{incrementScore}}
+\index{incrementScore@{incrementScore}!model.Player@{model.Player}}
+\doxysubsubsection{\texorpdfstring{incrementScore()}{incrementScore()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_player_a23a338eb5fa1376d6749ee26dc9ba2be} 
+void model.\+Player.\+increment\+Score (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Incrémente le score du joueur d\textquotesingle{}une unité. 
+
+Utile lorsqu\textquotesingle{}un nouveau pion de la couleur du joueur est ajouté sur le plateau. \Hypertarget{classmodel_1_1_player_a662f54039416be41363a1fa78e3ce522}\index{model.Player@{model.Player}!isBlack@{isBlack}}
+\index{isBlack@{isBlack}!model.Player@{model.Player}}
+\doxysubsubsection{\texorpdfstring{isBlack()}{isBlack()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_player_a662f54039416be41363a1fa78e3ce522} 
+boolean model.\+Player.\+is\+Black (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Indique si ce joueur joue avec les pions noirs. 
+
+\begin{DoxyReturn}{Renvoie}
+true si la couleur du joueur est BLACK, false sinon. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_player_aa68d64afd4d46f36a42963f4bcc27e38}\index{model.Player@{model.Player}!isWhite@{isWhite}}
+\index{isWhite@{isWhite}!model.Player@{model.Player}}
+\doxysubsubsection{\texorpdfstring{isWhite()}{isWhite()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_player_aa68d64afd4d46f36a42963f4bcc27e38} 
+boolean model.\+Player.\+is\+White (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Indique si ce joueur joue avec les pions blancs. 
+
+\begin{DoxyReturn}{Renvoie}
+true si la couleur du joueur est WHITE, false sinon. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_player_ac33f17ab14fd36e80759a145e9512ae1}\index{model.Player@{model.Player}!setScore@{setScore}}
+\index{setScore@{setScore}!model.Player@{model.Player}}
+\doxysubsubsection{\texorpdfstring{setScore()}{setScore()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_player_ac33f17ab14fd36e80759a145e9512ae1} 
+void model.\+Player.\+set\+Score (\begin{DoxyParamCaption}\item[{int}]{score}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Met à jour le score du joueur avec une nouvelle valeur. 
+
+Cette méthode permet de synchroniser le score avec l\textquotesingle{}état du plateau après recomptage des pions.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em score} & Nouveau score à affecter au joueur. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des données membres}
+\Hypertarget{classmodel_1_1_player_a033b20ed20a04110ade3f4c2ccbf027c}\index{model.Player@{model.Player}!color@{color}}
+\index{color@{color}!model.Player@{model.Player}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \label{classmodel_1_1_player_a033b20ed20a04110ade3f4c2ccbf027c} 
+final Cell.\+Cell\+State model.\+Player.\+color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Couleur des pions associés à ce joueur. 
+
+La couleur est représentée par une valeur de {\ttfamily \doxylink{enummodel_1_1_cell_1_1_cell_state}{Cell.\+Cell\+State}}, généralement BLACK pour le joueur noir ou WHITE pour le joueur blanc. \Hypertarget{classmodel_1_1_player_ad6d852aea99befddd30bb094222123d2}\index{model.Player@{model.Player}!score@{score}}
+\index{score@{score}!model.Player@{model.Player}}
+\doxysubsubsection{\texorpdfstring{score}{score}}
+{\footnotesize\ttfamily \label{classmodel_1_1_player_ad6d852aea99befddd30bb094222123d2} 
+int model.\+Player.\+score\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Score courant du joueur. 
+
+Le score représente le nombre de pions de la couleur du joueur actuellement présents sur le plateau. 
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/model/\mbox{\hyperlink{_player_8java}{Player.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,350 @@
+\doxysection{Référence de la classe model.\+Game\+State}
+\hypertarget{classmodel_1_1_game_state}{}\label{classmodel_1_1_game_state}\index{model.GameState@{model.GameState}}
+
+
+Représente l\textquotesingle{}état global d\textquotesingle{}une partie d\textquotesingle{}Othello/\+Reversi.  
+
+
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmodel_1_1_game_state_aec27bb1d7c2d20385b47de0818409109}{Game\+State}} (int board\+Size)
+\begin{DoxyCompactList}\small\item\em Construit un nouvel état de jeu avec un plateau de taille donnée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmodel_1_1_game_state_a9a1d5e61b19312b1949c2b23a3cc5333}{Game\+State}} ()
+\begin{DoxyCompactList}\small\item\em Construit un nouvel état de jeu avec un plateau de taille par défaut. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmodel_1_1_board}{Board}} \mbox{\hyperlink{classmodel_1_1_game_state_af7ce8226c5df61df8768f401f9e59f47}{get\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le plateau de jeu associé à cet état. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} \mbox{\hyperlink{classmodel_1_1_game_state_ae87e6094ff771c208a7b68c0aa6989d5}{get\+Player1}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le premier joueur (pions noirs). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} \mbox{\hyperlink{classmodel_1_1_game_state_a5eb4c8a5f90bb4f599151a254f9d09e5}{get\+Player2}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le second joueur (pions blancs). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} \mbox{\hyperlink{classmodel_1_1_game_state_afbc5e7662b21689d5e77770b732c4876}{get\+Current\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le joueur actuellement actif. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmodel_1_1_game_state_abf45f911b3d53bf5cf5a754c49abebab}{set\+Current\+Player}} (Cell.\+Cell\+State color)
+\begin{DoxyCompactList}\small\item\em Définit le joueur courant à partir d\textquotesingle{}une couleur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmodel_1_1_game_state_ac50a7994ef3dfeb30fa12b976a892c80}{switch\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Change le joueur courant pour l\textquotesingle{}autre joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmodel_1_1_game_state_afd63e70dff2302d6a09f4ae4e40bbf4b}{add\+Move}} (\mbox{\hyperlink{classmodel_1_1_move}{Move}} move)
+\begin{DoxyCompactList}\small\item\em Ajoute un coup à l\textquotesingle{}historique de la partie. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classmodel_1_1_game_state_af9e97040fb272b3d11ee72b00144dd01}{is\+Game\+Over}} ()
+\begin{DoxyCompactList}\small\item\em Indique si la partie est terminée. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmodel_1_1_game_state_aabd97d49346c5bd98eca53364f47f450}{set\+Game\+Over}} (boolean \mbox{\hyperlink{classmodel_1_1_game_state_a7871734cdbe0d6e9992e127a0a8e53ed}{game\+Over}})
+\begin{DoxyCompactList}\small\item\em Met à jour le statut de fin de partie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} \mbox{\hyperlink{classmodel_1_1_game_state_a31c2358c07c9a69eba47084ee0ef5c49}{get\+Winner}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le gagnant de la partie si elle est terminée. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmodel_1_1_game_state_ac4d074aeaee5162fae6092be6faaaa00}{set\+Winner}} (\mbox{\hyperlink{classmodel_1_1_player}{Player}} \mbox{\hyperlink{classmodel_1_1_game_state_a28560e4618ab5d14b2c93c7dab04de2e}{winner}})
+\begin{DoxyCompactList}\small\item\em Définit le gagnant de la partie. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classmodel_1_1_move}{Move}} $>$ \mbox{\hyperlink{classmodel_1_1_game_state_aa2deb7b026bcccc76128828e9c399956}{get\+Move\+History}} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}historique des coups joués. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmodel_1_1_game_state_a128ac40701d541989843118423750350}{update\+Scores}} ()
+\begin{DoxyCompactList}\small\item\em Met à jour les scores des deux joueurs en fonction du plateau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmodel_1_1_board}{Board}} \mbox{\hyperlink{classmodel_1_1_game_state_a3754035dd4dc6ffe2209b76232becc2d}{board}}
+\begin{DoxyCompactList}\small\item\em Plateau de jeu associé à cette partie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} \mbox{\hyperlink{classmodel_1_1_game_state_ae33326040460328c0a3f313575a2c78f}{player1}}
+\begin{DoxyCompactList}\small\item\em Premier joueur de la partie, associé aux pions noirs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} \mbox{\hyperlink{classmodel_1_1_game_state_aee1c91bac441032694c47ecdb43e25ff}{player2}}
+\begin{DoxyCompactList}\small\item\em Second joueur de la partie, associé aux pions blancs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} \mbox{\hyperlink{classmodel_1_1_game_state_a54675598c5778c2f20437a039eb48ecd}{current\+Player}}
+\begin{DoxyCompactList}\small\item\em Joueur devant jouer au tour courant. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classmodel_1_1_game_state_a7871734cdbe0d6e9992e127a0a8e53ed}{game\+Over}}
+\begin{DoxyCompactList}\small\item\em Indique si la partie est terminée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} \mbox{\hyperlink{classmodel_1_1_game_state_a28560e4618ab5d14b2c93c7dab04de2e}{winner}}
+\begin{DoxyCompactList}\small\item\em Gagnant de la partie lorsque celle-\/ci est terminée. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classmodel_1_1_move}{Move}} $>$ \mbox{\hyperlink{classmodel_1_1_game_state_ae2169406419351941d6cec62ec5f3b84}{move\+History}}
+\begin{DoxyCompactList}\small\item\em Historique des coups joués depuis le début de la partie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Représente l\textquotesingle{}état global d\textquotesingle{}une partie d\textquotesingle{}Othello/\+Reversi. 
+
+Cette classe gère le plateau, les deux joueurs, le joueur courant, le statut de fin de partie, le gagnant éventuel ainsi que l\textquotesingle{}historique des coups joués. 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{classmodel_1_1_game_state_aec27bb1d7c2d20385b47de0818409109}\index{model.GameState@{model.GameState}!GameState@{GameState}}
+\index{GameState@{GameState}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{GameState()}{GameState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_aec27bb1d7c2d20385b47de0818409109} 
+model.\+Game\+State.\+Game\+State (\begin{DoxyParamCaption}\item[{int}]{board\+Size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construit un nouvel état de jeu avec un plateau de taille donnée. 
+
+Initialise le plateau, crée les deux joueurs (noir et blanc), définit le joueur courant (noir commence), marque la partie comme non terminée et prépare l\textquotesingle{}historique des coups.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board\+Size} & Taille du plateau (nombre de cases par côté). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmodel_1_1_game_state_a9a1d5e61b19312b1949c2b23a3cc5333}\index{model.GameState@{model.GameState}!GameState@{GameState}}
+\index{GameState@{GameState}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{GameState()}{GameState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_a9a1d5e61b19312b1949c2b23a3cc5333} 
+model.\+Game\+State.\+Game\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construit un nouvel état de jeu avec un plateau de taille par défaut. 
+
+Utilise la taille standard de 8 cases par côté pour le plateau. Ce constructeur est fourni pour la compatibilité avec un usage classique. 
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{classmodel_1_1_game_state_afd63e70dff2302d6a09f4ae4e40bbf4b}\index{model.GameState@{model.GameState}!addMove@{addMove}}
+\index{addMove@{addMove}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{addMove()}{addMove()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_afd63e70dff2302d6a09f4ae4e40bbf4b} 
+void model.\+Game\+State.\+add\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmodel_1_1_move}{Move}}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ajoute un coup à l\textquotesingle{}historique de la partie. 
+
+Permet d\textquotesingle{}enregistrer chaque coup joué pour pouvoir, par exemple, annuler des coups ou rejouer la partie.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em move} & Coup à ajouter à la liste d\textquotesingle{}historique. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmodel_1_1_game_state_af7ce8226c5df61df8768f401f9e59f47}\index{model.GameState@{model.GameState}!getBoard@{getBoard}}
+\index{getBoard@{getBoard}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{getBoard()}{getBoard()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_af7ce8226c5df61df8768f401f9e59f47} 
+\mbox{\hyperlink{classmodel_1_1_board}{Board}} model.\+Game\+State.\+get\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le plateau de jeu associé à cet état. 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}objet {\ttfamily \doxylink{classmodel_1_1_board}{Board}} représentant le plateau actuel. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_game_state_afbc5e7662b21689d5e77770b732c4876}\index{model.GameState@{model.GameState}!getCurrentPlayer@{getCurrentPlayer}}
+\index{getCurrentPlayer@{getCurrentPlayer}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{getCurrentPlayer()}{getCurrentPlayer()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_afbc5e7662b21689d5e77770b732c4876} 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} model.\+Game\+State.\+get\+Current\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le joueur actuellement actif. 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}objet {\ttfamily \doxylink{classmodel_1_1_player}{Player}} qui doit jouer au tour courant. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_game_state_aa2deb7b026bcccc76128828e9c399956}\index{model.GameState@{model.GameState}!getMoveHistory@{getMoveHistory}}
+\index{getMoveHistory@{getMoveHistory}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{getMoveHistory()}{getMoveHistory()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_aa2deb7b026bcccc76128828e9c399956} 
+List$<$ \mbox{\hyperlink{classmodel_1_1_move}{Move}} $>$ model.\+Game\+State.\+get\+Move\+History (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne l\textquotesingle{}historique des coups joués. 
+
+\begin{DoxyReturn}{Renvoie}
+La liste des objets {\ttfamily \doxylink{classmodel_1_1_move}{Move}} représentant tous les coups enregistrés depuis le début de la partie. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_game_state_ae87e6094ff771c208a7b68c0aa6989d5}\index{model.GameState@{model.GameState}!getPlayer1@{getPlayer1}}
+\index{getPlayer1@{getPlayer1}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{getPlayer1()}{getPlayer1()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_ae87e6094ff771c208a7b68c0aa6989d5} 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} model.\+Game\+State.\+get\+Player1 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le premier joueur (pions noirs). 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}objet {\ttfamily \doxylink{classmodel_1_1_player}{Player}} représentant le joueur noir. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_game_state_a5eb4c8a5f90bb4f599151a254f9d09e5}\index{model.GameState@{model.GameState}!getPlayer2@{getPlayer2}}
+\index{getPlayer2@{getPlayer2}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{getPlayer2()}{getPlayer2()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_a5eb4c8a5f90bb4f599151a254f9d09e5} 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} model.\+Game\+State.\+get\+Player2 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le second joueur (pions blancs). 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}objet {\ttfamily \doxylink{classmodel_1_1_player}{Player}} représentant le joueur blanc. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_game_state_a31c2358c07c9a69eba47084ee0ef5c49}\index{model.GameState@{model.GameState}!getWinner@{getWinner}}
+\index{getWinner@{getWinner}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{getWinner()}{getWinner()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_a31c2358c07c9a69eba47084ee0ef5c49} 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} model.\+Game\+State.\+get\+Winner (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le gagnant de la partie si elle est terminée. 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}objet {\ttfamily \doxylink{classmodel_1_1_player}{Player}} gagnant, ou null si aucun gagnant n\textquotesingle{}est défini (partie en cours ou égalité). 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_game_state_af9e97040fb272b3d11ee72b00144dd01}\index{model.GameState@{model.GameState}!isGameOver@{isGameOver}}
+\index{isGameOver@{isGameOver}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{isGameOver()}{isGameOver()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_af9e97040fb272b3d11ee72b00144dd01} 
+boolean model.\+Game\+State.\+is\+Game\+Over (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Indique si la partie est terminée. 
+
+\begin{DoxyReturn}{Renvoie}
+true si la partie est finie, false sinon. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_game_state_abf45f911b3d53bf5cf5a754c49abebab}\index{model.GameState@{model.GameState}!setCurrentPlayer@{setCurrentPlayer}}
+\index{setCurrentPlayer@{setCurrentPlayer}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{setCurrentPlayer()}{setCurrentPlayer()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_abf45f911b3d53bf5cf5a754c49abebab} 
+void model.\+Game\+State.\+set\+Current\+Player (\begin{DoxyParamCaption}\item[{Cell.\+Cell\+State}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Définit le joueur courant à partir d\textquotesingle{}une couleur. 
+
+Si la couleur passée correspond à celle de player1, celui-\/ci devient le joueur courant ; sinon, c\textquotesingle{}est player2 qui devient le joueur courant.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em color} & Couleur du joueur à définir comme joueur courant (généralement {\ttfamily \doxylink{enummodel_1_1_cell_1_1_cell_state_af3fe1c636db28034487f318ea36ec987}{Cell.\+Cell\+State\#\+BLACK}} ou {\ttfamily \doxylink{enummodel_1_1_cell_1_1_cell_state_a8dfd6e65e1b9a07ad3b97ee42844e5f3}{Cell.\+Cell\+State\#\+WHITE}}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmodel_1_1_game_state_aabd97d49346c5bd98eca53364f47f450}\index{model.GameState@{model.GameState}!setGameOver@{setGameOver}}
+\index{setGameOver@{setGameOver}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{setGameOver()}{setGameOver()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_aabd97d49346c5bd98eca53364f47f450} 
+void model.\+Game\+State.\+set\+Game\+Over (\begin{DoxyParamCaption}\item[{boolean}]{game\+Over}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Met à jour le statut de fin de partie. 
+
+Cette méthode permet de marquer la partie comme terminée ou non en fonction de la logique de jeu externe.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em game\+Over} & true pour indiquer que la partie est terminée, false pour indiquer qu\textquotesingle{}elle est encore en cours. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmodel_1_1_game_state_ac4d074aeaee5162fae6092be6faaaa00}\index{model.GameState@{model.GameState}!setWinner@{setWinner}}
+\index{setWinner@{setWinner}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{setWinner()}{setWinner()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_ac4d074aeaee5162fae6092be6faaaa00} 
+void model.\+Game\+State.\+set\+Winner (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmodel_1_1_player}{Player}}}]{winner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Définit le gagnant de la partie. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em winner} & Joueur à déclarer gagnant de la partie, ou null pour indiquer qu\textquotesingle{}il n\textquotesingle{}y a pas de gagnant. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmodel_1_1_game_state_ac50a7994ef3dfeb30fa12b976a892c80}\index{model.GameState@{model.GameState}!switchPlayer@{switchPlayer}}
+\index{switchPlayer@{switchPlayer}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{switchPlayer()}{switchPlayer()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_ac50a7994ef3dfeb30fa12b976a892c80} 
+void model.\+Game\+State.\+switch\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Change le joueur courant pour l\textquotesingle{}autre joueur. 
+
+Si le joueur courant est player1, il devient player2, et inversement. Cette méthode est typiquement appelée après qu\textquotesingle{}un coup valide a été joué. \Hypertarget{classmodel_1_1_game_state_a128ac40701d541989843118423750350}\index{model.GameState@{model.GameState}!updateScores@{updateScores}}
+\index{updateScores@{updateScores}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{updateScores()}{updateScores()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_a128ac40701d541989843118423750350} 
+void model.\+Game\+State.\+update\+Scores (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Met à jour les scores des deux joueurs en fonction du plateau. 
+
+Cette méthode recompte le nombre de pions noirs et blancs présents sur le plateau et met à jour le score de chaque joueur en conséquence. 
+
+\doxysubsection{Documentation des données membres}
+\Hypertarget{classmodel_1_1_game_state_a3754035dd4dc6ffe2209b76232becc2d}\index{model.GameState@{model.GameState}!board@{board}}
+\index{board@{board}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{board}{board}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_a3754035dd4dc6ffe2209b76232becc2d} 
+\mbox{\hyperlink{classmodel_1_1_board}{Board}} model.\+Game\+State.\+board\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Plateau de jeu associé à cette partie. 
+
+Contient la disposition actuelle des pions sur la grille. \Hypertarget{classmodel_1_1_game_state_a54675598c5778c2f20437a039eb48ecd}\index{model.GameState@{model.GameState}!currentPlayer@{currentPlayer}}
+\index{currentPlayer@{currentPlayer}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{currentPlayer}{currentPlayer}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_a54675598c5778c2f20437a039eb48ecd} 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} model.\+Game\+State.\+current\+Player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Joueur devant jouer au tour courant. 
+
+Il s\textquotesingle{}agit soit de player1 (noir), soit de player2 (blanc). \Hypertarget{classmodel_1_1_game_state_a7871734cdbe0d6e9992e127a0a8e53ed}\index{model.GameState@{model.GameState}!gameOver@{gameOver}}
+\index{gameOver@{gameOver}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{gameOver}{gameOver}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_a7871734cdbe0d6e9992e127a0a8e53ed} 
+boolean model.\+Game\+State.\+game\+Over\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Indique si la partie est terminée. 
+
+À true lorsque plus aucun coup valide n\textquotesingle{}est possible ou lorsque les règles de fin de partie sont satisfaites. \Hypertarget{classmodel_1_1_game_state_ae2169406419351941d6cec62ec5f3b84}\index{model.GameState@{model.GameState}!moveHistory@{moveHistory}}
+\index{moveHistory@{moveHistory}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{moveHistory}{moveHistory}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_ae2169406419351941d6cec62ec5f3b84} 
+List$<$\mbox{\hyperlink{classmodel_1_1_move}{Move}}$>$ model.\+Game\+State.\+move\+History\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Historique des coups joués depuis le début de la partie. 
+
+Chaque élément représente un coup, ce qui permet d\textquotesingle{}implémenter des fonctionnalités d\textquotesingle{}annulation/reprise (undo/redo). \Hypertarget{classmodel_1_1_game_state_ae33326040460328c0a3f313575a2c78f}\index{model.GameState@{model.GameState}!player1@{player1}}
+\index{player1@{player1}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{player1}{player1}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_ae33326040460328c0a3f313575a2c78f} 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} model.\+Game\+State.\+player1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Premier joueur de la partie, associé aux pions noirs. 
+
+\Hypertarget{classmodel_1_1_game_state_aee1c91bac441032694c47ecdb43e25ff}\index{model.GameState@{model.GameState}!player2@{player2}}
+\index{player2@{player2}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{player2}{player2}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_aee1c91bac441032694c47ecdb43e25ff} 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} model.\+Game\+State.\+player2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Second joueur de la partie, associé aux pions blancs. 
+
+\Hypertarget{classmodel_1_1_game_state_a28560e4618ab5d14b2c93c7dab04de2e}\index{model.GameState@{model.GameState}!winner@{winner}}
+\index{winner@{winner}!model.GameState@{model.GameState}}
+\doxysubsubsection{\texorpdfstring{winner}{winner}}
+{\footnotesize\ttfamily \label{classmodel_1_1_game_state_a28560e4618ab5d14b2c93c7dab04de2e} 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} model.\+Game\+State.\+winner\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gagnant de la partie lorsque celle-\/ci est terminée. 
+
+Vaut null si la partie n\textquotesingle{}est pas terminée ou si aucun gagnant n\textquotesingle{}a été déterminé (par exemple en cas d\textquotesingle{}égalité). 
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/model/\mbox{\hyperlink{_game_state_8java}{Game\+State.\+java}}\end{DoxyCompactItemize}

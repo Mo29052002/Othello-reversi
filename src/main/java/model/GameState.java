@@ -73,7 +73,7 @@ public class GameState {
         board = new Board(boardSize);
         player1 = new Player(Cell.CellState.BLACK);
         player2 = new Player(Cell.CellState.WHITE);
-        currentPlayer = player1; // Black starts
+        currentPlayer = player1; 
         gameOver = false;
         winner = null;
         moveHistory = new ArrayList<>();

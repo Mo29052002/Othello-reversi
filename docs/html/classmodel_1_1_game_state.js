@@ -1,0 +1,25 @@
+var classmodel_1_1_game_state =
+[
+    [ "GameState", "classmodel_1_1_game_state.html#aec27bb1d7c2d20385b47de0818409109", null ],
+    [ "GameState", "classmodel_1_1_game_state.html#a9a1d5e61b19312b1949c2b23a3cc5333", null ],
+    [ "addMove", "classmodel_1_1_game_state.html#afd63e70dff2302d6a09f4ae4e40bbf4b", null ],
+    [ "getBoard", "classmodel_1_1_game_state.html#af7ce8226c5df61df8768f401f9e59f47", null ],
+    [ "getCurrentPlayer", "classmodel_1_1_game_state.html#afbc5e7662b21689d5e77770b732c4876", null ],
+    [ "getMoveHistory", "classmodel_1_1_game_state.html#aa2deb7b026bcccc76128828e9c399956", null ],
+    [ "getPlayer1", "classmodel_1_1_game_state.html#ae87e6094ff771c208a7b68c0aa6989d5", null ],
+    [ "getPlayer2", "classmodel_1_1_game_state.html#a5eb4c8a5f90bb4f599151a254f9d09e5", null ],
+    [ "getWinner", "classmodel_1_1_game_state.html#a31c2358c07c9a69eba47084ee0ef5c49", null ],
+    [ "isGameOver", "classmodel_1_1_game_state.html#af9e97040fb272b3d11ee72b00144dd01", null ],
+    [ "setCurrentPlayer", "classmodel_1_1_game_state.html#abf45f911b3d53bf5cf5a754c49abebab", null ],
+    [ "setGameOver", "classmodel_1_1_game_state.html#aabd97d49346c5bd98eca53364f47f450", null ],
+    [ "setWinner", "classmodel_1_1_game_state.html#ac4d074aeaee5162fae6092be6faaaa00", null ],
+    [ "switchPlayer", "classmodel_1_1_game_state.html#ac50a7994ef3dfeb30fa12b976a892c80", null ],
+    [ "updateScores", "classmodel_1_1_game_state.html#a128ac40701d541989843118423750350", null ],
+    [ "board", "classmodel_1_1_game_state.html#a3754035dd4dc6ffe2209b76232becc2d", null ],
+    [ "currentPlayer", "classmodel_1_1_game_state.html#a54675598c5778c2f20437a039eb48ecd", null ],
+    [ "gameOver", "classmodel_1_1_game_state.html#a7871734cdbe0d6e9992e127a0a8e53ed", null ],
+    [ "moveHistory", "classmodel_1_1_game_state.html#ae2169406419351941d6cec62ec5f3b84", null ],
+    [ "player1", "classmodel_1_1_game_state.html#ae33326040460328c0a3f313575a2c78f", null ],
+    [ "player2", "classmodel_1_1_game_state.html#aee1c91bac441032694c47ecdb43e25ff", null ],
+    [ "winner", "classmodel_1_1_game_state.html#a28560e4618ab5d14b2c93c7dab04de2e", null ]
+];

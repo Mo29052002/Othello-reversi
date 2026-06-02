@@ -1,0 +1,184 @@
+\doxysection{Référence de la classe model.\+Move}
+\hypertarget{classmodel_1_1_move}{}\label{classmodel_1_1_move}\index{model.Move@{model.Move}}
+
+
+Représente un coup joué dans une partie d\textquotesingle{}Othello/\+Reversi.  
+
+
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmodel_1_1_move_ae8511b488acf9b2e0f6e3673db178ed8}{Move}} (int \mbox{\hyperlink{classmodel_1_1_move_ae784cf4506a30b54ace15f4b5fc6a5a9}{x}}, int \mbox{\hyperlink{classmodel_1_1_move_a6d8c3bda94129c30f3cde439385e4fda}{y}}, \mbox{\hyperlink{classmodel_1_1_player}{Player}} \mbox{\hyperlink{classmodel_1_1_move_aec1506daf1d1734f4027b5cbd47e4753}{player}})
+\begin{DoxyCompactList}\small\item\em Construit un coup à partir de la position et du joueur. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmodel_1_1_move_af290ee41de4bb980bd23826e7128b30e}{getX}} ()
+\begin{DoxyCompactList}\small\item\em Retourne la coordonnée horizontale de la case jouée. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmodel_1_1_move_a45f764e87ebfacf645c94c3c90495390}{getY}} ()
+\begin{DoxyCompactList}\small\item\em Retourne la coordonnée verticale de la case jouée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} \mbox{\hyperlink{classmodel_1_1_move_a22f891384747efd9037f3b9cf422cc0e}{get\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le joueur qui a effectué ce coup. \end{DoxyCompactList}\item 
+List$<$ int\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{classmodel_1_1_move_a591de54271900080ea8ddd5c9efafa96}{get\+Captured\+Pieces}} ()
+\begin{DoxyCompactList}\small\item\em Retourne la liste des pions capturés par ce coup. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmodel_1_1_move_a4ad8e9cb102535cb4a1ff1fdb95deb34}{set\+Captured\+Pieces}} (List$<$ int\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{classmodel_1_1_move_adba22cbaab3405d907df9ea7b6b1d3bc}{captured\+Pieces}})
+\begin{DoxyCompactList}\small\item\em Définit la liste des pions capturés par ce coup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+final int \mbox{\hyperlink{classmodel_1_1_move_ae784cf4506a30b54ace15f4b5fc6a5a9}{x}}
+\begin{DoxyCompactList}\small\item\em Coordonnée horizontale de la case visée par le coup. \end{DoxyCompactList}\item 
+final int \mbox{\hyperlink{classmodel_1_1_move_a6d8c3bda94129c30f3cde439385e4fda}{y}}
+\begin{DoxyCompactList}\small\item\em Coordonnée verticale de la case visée par le coup. \end{DoxyCompactList}\item 
+final \mbox{\hyperlink{classmodel_1_1_player}{Player}} \mbox{\hyperlink{classmodel_1_1_move_aec1506daf1d1734f4027b5cbd47e4753}{player}}
+\begin{DoxyCompactList}\small\item\em Joueur qui effectue ce coup. \end{DoxyCompactList}\item 
+List$<$ int\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{classmodel_1_1_move_adba22cbaab3405d907df9ea7b6b1d3bc}{captured\+Pieces}}
+\begin{DoxyCompactList}\small\item\em Liste des positions des pions capturés par ce coup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Représente un coup joué dans une partie d\textquotesingle{}Othello/\+Reversi. 
+
+Un coup est défini par la position ciblée sur le plateau (coordonnées x, y), le joueur qui effectue ce coup, ainsi que la liste des pions capturés (retournés) à la suite de ce coup. 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{classmodel_1_1_move_ae8511b488acf9b2e0f6e3673db178ed8}\index{model.Move@{model.Move}!Move@{Move}}
+\index{Move@{Move}!model.Move@{model.Move}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_move_ae8511b488acf9b2e0f6e3673db178ed8} 
+model.\+Move.\+Move (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{\mbox{\hyperlink{classmodel_1_1_player}{Player}}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construit un coup à partir de la position et du joueur. 
+
+Ce constructeur initialise un coup en indiquant la case ciblée sur le plateau et le joueur qui joue ce coup.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Coordonnée horizontale de la case jouée. \\
+\hline
+{\em y} & Coordonnée verticale de la case jouée. \\
+\hline
+{\em player} & Joueur qui effectue ce coup. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{classmodel_1_1_move_a591de54271900080ea8ddd5c9efafa96}\index{model.Move@{model.Move}!getCapturedPieces@{getCapturedPieces}}
+\index{getCapturedPieces@{getCapturedPieces}!model.Move@{model.Move}}
+\doxysubsubsection{\texorpdfstring{getCapturedPieces()}{getCapturedPieces()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_move_a591de54271900080ea8ddd5c9efafa96} 
+List$<$ int\mbox{[}$\,$\mbox{]}$>$ model.\+Move.\+get\+Captured\+Pieces (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la liste des pions capturés par ce coup. 
+
+Chaque élément est un tableau de deux entiers \mbox{[}x, y\mbox{]} indiquant la position d\textquotesingle{}un pion capturé sur le plateau.
+
+\begin{DoxyReturn}{Renvoie}
+La liste des positions des pions capturés, ou null si aucune liste n\textquotesingle{}a encore été définie. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_move_a22f891384747efd9037f3b9cf422cc0e}\index{model.Move@{model.Move}!getPlayer@{getPlayer}}
+\index{getPlayer@{getPlayer}!model.Move@{model.Move}}
+\doxysubsubsection{\texorpdfstring{getPlayer()}{getPlayer()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_move_a22f891384747efd9037f3b9cf422cc0e} 
+\mbox{\hyperlink{classmodel_1_1_player}{Player}} model.\+Move.\+get\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le joueur qui a effectué ce coup. 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}objet {\ttfamily \doxylink{classmodel_1_1_player}{Player}} associé à ce coup. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_move_af290ee41de4bb980bd23826e7128b30e}\index{model.Move@{model.Move}!getX@{getX}}
+\index{getX@{getX}!model.Move@{model.Move}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_move_af290ee41de4bb980bd23826e7128b30e} 
+int model.\+Move.\+getX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la coordonnée horizontale de la case jouée. 
+
+\begin{DoxyReturn}{Renvoie}
+La valeur de la coordonnée x. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_move_a45f764e87ebfacf645c94c3c90495390}\index{model.Move@{model.Move}!getY@{getY}}
+\index{getY@{getY}!model.Move@{model.Move}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_move_a45f764e87ebfacf645c94c3c90495390} 
+int model.\+Move.\+getY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la coordonnée verticale de la case jouée. 
+
+\begin{DoxyReturn}{Renvoie}
+La valeur de la coordonnée y. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_move_a4ad8e9cb102535cb4a1ff1fdb95deb34}\index{model.Move@{model.Move}!setCapturedPieces@{setCapturedPieces}}
+\index{setCapturedPieces@{setCapturedPieces}!model.Move@{model.Move}}
+\doxysubsubsection{\texorpdfstring{setCapturedPieces()}{setCapturedPieces()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_move_a4ad8e9cb102535cb4a1ff1fdb95deb34} 
+void model.\+Move.\+set\+Captured\+Pieces (\begin{DoxyParamCaption}\item[{List$<$ int\mbox{[}$\,$\mbox{]}$>$}]{captured\+Pieces}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Définit la liste des pions capturés par ce coup. 
+
+Cette méthode permet d\textquotesingle{}enregistrer, après calcul des captures, l\textquotesingle{}ensemble des positions des pions adverses retournés.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em captured\+Pieces} & Liste des positions \mbox{[}x, y\mbox{]} des pions capturés. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des données membres}
+\Hypertarget{classmodel_1_1_move_adba22cbaab3405d907df9ea7b6b1d3bc}\index{model.Move@{model.Move}!capturedPieces@{capturedPieces}}
+\index{capturedPieces@{capturedPieces}!model.Move@{model.Move}}
+\doxysubsubsection{\texorpdfstring{capturedPieces}{capturedPieces}}
+{\footnotesize\ttfamily \label{classmodel_1_1_move_adba22cbaab3405d907df9ea7b6b1d3bc} 
+List$<$int\mbox{[}$\,$\mbox{]}$>$ model.\+Move.\+captured\+Pieces\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Liste des positions des pions capturés par ce coup. 
+
+Chaque élément du tableau représente une position \mbox{[}x, y\mbox{]} d\textquotesingle{}un pion adverse qui sera retourné à la suite de ce coup. \Hypertarget{classmodel_1_1_move_aec1506daf1d1734f4027b5cbd47e4753}\index{model.Move@{model.Move}!player@{player}}
+\index{player@{player}!model.Move@{model.Move}}
+\doxysubsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily \label{classmodel_1_1_move_aec1506daf1d1734f4027b5cbd47e4753} 
+final \mbox{\hyperlink{classmodel_1_1_player}{Player}} model.\+Move.\+player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Joueur qui effectue ce coup. 
+
+Permet de connaître la couleur du pion posé (noir ou blanc). \Hypertarget{classmodel_1_1_move_ae784cf4506a30b54ace15f4b5fc6a5a9}\index{model.Move@{model.Move}!x@{x}}
+\index{x@{x}!model.Move@{model.Move}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily \label{classmodel_1_1_move_ae784cf4506a30b54ace15f4b5fc6a5a9} 
+final int model.\+Move.\+x\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Coordonnée horizontale de la case visée par le coup. 
+
+La valeur 0 correspond généralement à la première colonne du plateau. \Hypertarget{classmodel_1_1_move_a6d8c3bda94129c30f3cde439385e4fda}\index{model.Move@{model.Move}!y@{y}}
+\index{y@{y}!model.Move@{model.Move}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily \label{classmodel_1_1_move_a6d8c3bda94129c30f3cde439385e4fda} 
+final int model.\+Move.\+y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Coordonnée verticale de la case visée par le coup. 
+
+La valeur 0 correspond généralement à la première ligne du plateau. 
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/model/\mbox{\hyperlink{_move_8java}{Move.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,571 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Othelle/reversi: Référence de la classe model.Board</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Othelle/reversi
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classmodel_1_1_board.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-methods">Fonctions membres privées</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="classmodel_1_1_board-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle"><div class="title">Référence de la classe model.Board</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Représente le plateau de jeu d'Othello/Reversi.  
+ <a href="#details">Plus de détails...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a46a79e9435d5ad9a1423f2cd0116898f" id="r_a46a79e9435d5ad9a1423f2cd0116898f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46a79e9435d5ad9a1423f2cd0116898f">Board</a> (int <a class="el" href="#aa59badd8286249ef4e7151069eaa90b4">size</a>)</td></tr>
+<tr class="memdesc:a46a79e9435d5ad9a1423f2cd0116898f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un plateau carré de la taille spécifiée.  <br /></td></tr>
+<tr class="separator:a46a79e9435d5ad9a1423f2cd0116898f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b2733b3c3725639673c890c4e52622" id="r_ad3b2733b3c3725639673c890c4e52622"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3b2733b3c3725639673c890c4e52622">Board</a> ()</td></tr>
+<tr class="memdesc:ad3b2733b3c3725639673c890c4e52622"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un plateau avec la taille par défaut de 8.  <br /></td></tr>
+<tr class="separator:ad3b2733b3c3725639673c890c4e52622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d1feab1053ca486a3a7138bca29dec7" id="r_a4d1feab1053ca486a3a7138bca29dec7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmodel_1_1_cell.html">Cell</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d1feab1053ca486a3a7138bca29dec7">getCell</a> (int x, int y)</td></tr>
+<tr class="memdesc:a4d1feab1053ca486a3a7138bca29dec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la cellule située aux coordonnées données.  <br /></td></tr>
+<tr class="separator:a4d1feab1053ca486a3a7138bca29dec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a763279eb7f2f766b2b0922aa95b14192" id="r_a763279eb7f2f766b2b0922aa95b14192"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a763279eb7f2f766b2b0922aa95b14192">isValidPosition</a> (int x, int y)</td></tr>
+<tr class="memdesc:a763279eb7f2f766b2b0922aa95b14192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si une paire de coordonnées appartient au plateau.  <br /></td></tr>
+<tr class="separator:a763279eb7f2f766b2b0922aa95b14192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34bf19548badf3011956400b85ccc295" id="r_a34bf19548badf3011956400b85ccc295"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34bf19548badf3011956400b85ccc295">placePiece</a> (int x, int y, Cell.CellState state)</td></tr>
+<tr class="memdesc:a34bf19548badf3011956400b85ccc295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place un pion sur la case indiquée si la position est valide.  <br /></td></tr>
+<tr class="separator:a34bf19548badf3011956400b85ccc295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09481828270c88efcc95dbd09e2ad65c" id="r_a09481828270c88efcc95dbd09e2ad65c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmodel_1_1_cell.html">Cell</a>[][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09481828270c88efcc95dbd09e2ad65c">getGrid</a> ()</td></tr>
+<tr class="memdesc:a09481828270c88efcc95dbd09e2ad65c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la grille complète de cellules du plateau.  <br /></td></tr>
+<tr class="separator:a09481828270c88efcc95dbd09e2ad65c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3515f96333b37aec044cc0ee9c46ea4" id="r_af3515f96333b37aec044cc0ee9c46ea4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3515f96333b37aec044cc0ee9c46ea4">countPieces</a> (Cell.CellState state)</td></tr>
+<tr class="memdesc:af3515f96333b37aec044cc0ee9c46ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compte le nombre de pions d'un certain état sur le plateau.  <br /></td></tr>
+<tr class="separator:af3515f96333b37aec044cc0ee9c46ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1230796c836bc1b1b7fb69b32566ec65" id="r_a1230796c836bc1b1b7fb69b32566ec65"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1230796c836bc1b1b7fb69b32566ec65">isFull</a> ()</td></tr>
+<tr class="memdesc:a1230796c836bc1b1b7fb69b32566ec65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le plateau est entièrement rempli.  <br /></td></tr>
+<tr class="separator:a1230796c836bc1b1b7fb69b32566ec65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a439e50410b193bb052d77184b8626392" id="r_a439e50410b193bb052d77184b8626392"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a439e50410b193bb052d77184b8626392">getSize</a> ()</td></tr>
+<tr class="memdesc:a439e50410b193bb052d77184b8626392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la taille du plateau.  <br /></td></tr>
+<tr class="separator:a439e50410b193bb052d77184b8626392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Fonctions membres privées</h2></td></tr>
+<tr class="memitem:a82e8f60f397231588f5e9e2151f3d3df" id="r_a82e8f60f397231588f5e9e2151f3d3df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82e8f60f397231588f5e9e2151f3d3df">initializeBoard</a> ()</td></tr>
+<tr class="memdesc:a82e8f60f397231588f5e9e2151f3d3df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise la grille de cellules du plateau.  <br /></td></tr>
+<tr class="separator:a82e8f60f397231588f5e9e2151f3d3df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:aa59badd8286249ef4e7151069eaa90b4" id="r_aa59badd8286249ef4e7151069eaa90b4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa59badd8286249ef4e7151069eaa90b4">size</a></td></tr>
+<tr class="memdesc:aa59badd8286249ef4e7151069eaa90b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Taille du plateau (nombre de cases par ligne et par colonne).  <br /></td></tr>
+<tr class="separator:aa59badd8286249ef4e7151069eaa90b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ede878acc8dabb93357cd69d1b07166" id="r_a1ede878acc8dabb93357cd69d1b07166"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmodel_1_1_cell.html">Cell</a>[][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ede878acc8dabb93357cd69d1b07166">grid</a></td></tr>
+<tr class="memdesc:a1ede878acc8dabb93357cd69d1b07166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grille bidimensionnelle représentant les cellules du plateau.  <br /></td></tr>
+<tr class="separator:a1ede878acc8dabb93357cd69d1b07166"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Représente le plateau de jeu d'Othello/Reversi. </p>
+<p>Cette classe gère la grille de cellules ainsi que l'état global du plateau (taille, disposition initiale des pions et opérations de base sur les cases). </p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a id="a46a79e9435d5ad9a1423f2cd0116898f" name="a46a79e9435d5ad9a1423f2cd0116898f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46a79e9435d5ad9a1423f2cd0116898f">&#9670;&#160;</a></span>Board() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">model.Board.Board </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construit un plateau carré de la taille spécifiée. </p>
+<p>Initialise la grille de cellules et place la configuration initiale des quatre pions au centre du plateau.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>Taille du plateau (nombre de cases par côté). Doit être un entier positif supérieur ou égal à 4 pour un plateau jouable. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad3b2733b3c3725639673c890c4e52622" name="ad3b2733b3c3725639673c890c4e52622"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3b2733b3c3725639673c890c4e52622">&#9670;&#160;</a></span>Board() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">model.Board.Board </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construit un plateau avec la taille par défaut de 8. </p>
+<p>Ce constructeur est fourni pour conserver la compatibilité avec l'utilisation d'un plateau standard d'Othello/Reversi (8x8). </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="af3515f96333b37aec044cc0ee9c46ea4" name="af3515f96333b37aec044cc0ee9c46ea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3515f96333b37aec044cc0ee9c46ea4">&#9670;&#160;</a></span>countPieces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int model.Board.countPieces </td>
+          <td>(</td>
+          <td class="paramtype">Cell.CellState</td>          <td class="paramname"><span class="paramname"><em>state</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compte le nombre de pions d'un certain état sur le plateau. </p>
+<p>Parcourt l'ensemble de la grille et incrémente un compteur pour chaque cellule dont l'état correspond à celui passé en paramètre.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>État des cellules à compter (par exemple NOIR ou BLANC). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le nombre total de cellules ayant l'état spécifié sur le plateau. </dd></dl>
+
+</div>
+</div>
+<a id="a4d1feab1053ca486a3a7138bca29dec7" name="a4d1feab1053ca486a3a7138bca29dec7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d1feab1053ca486a3a7138bca29dec7">&#9670;&#160;</a></span>getCell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmodel_1_1_cell.html">Cell</a> model.Board.getCell </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne la cellule située aux coordonnées données. </p>
+<p>Si les coordonnées sont en dehors des limites du plateau, la méthode retourne null pour signaler une position invalide.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Coordonnée horizontale de la cellule (colonne), de 0 à size - 1. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordonnée verticale de la cellule (ligne), de 0 à size - 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La cellule <code><a class="el" href="classmodel_1_1_cell.html">Cell</a></code> correspondante si la position est valide, ou null si les coordonnées sont en dehors du plateau. </dd></dl>
+
+</div>
+</div>
+<a id="a09481828270c88efcc95dbd09e2ad65c" name="a09481828270c88efcc95dbd09e2ad65c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09481828270c88efcc95dbd09e2ad65c">&#9670;&#160;</a></span>getGrid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmodel_1_1_cell.html">Cell</a>[][] model.Board.getGrid </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne la grille complète de cellules du plateau. </p>
+<p>Cette méthode donne accès au tableau bidimensionnel interne représentant l'état courant de chaque case du plateau.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>Le tableau 2D de cellules représentant la grille. </dd></dl>
+
+</div>
+</div>
+<a id="a439e50410b193bb052d77184b8626392" name="a439e50410b193bb052d77184b8626392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a439e50410b193bb052d77184b8626392">&#9670;&#160;</a></span>getSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int model.Board.getSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne la taille du plateau. </p>
+<p>La taille correspond au nombre de cases par ligne (et par colonne) du plateau carré.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>La taille du plateau (dimension d'un côté). </dd></dl>
+
+</div>
+</div>
+<a id="a82e8f60f397231588f5e9e2151f3d3df" name="a82e8f60f397231588f5e9e2151f3d3df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82e8f60f397231588f5e9e2151f3d3df">&#9670;&#160;</a></span>initializeBoard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model.Board.initializeBoard </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialise la grille de cellules du plateau. </p>
+<p>Crée chaque cellule avec ses coordonnées (x, y) et positionne ensuite les quatre pions de départ au centre du plateau :</p><ul>
+<li>deux pions blancs en diagonale</li>
+<li>deux pions noirs en diagonale conformément aux règles classiques d'Othello. </li>
+</ul>
+
+</div>
+</div>
+<a id="a1230796c836bc1b1b7fb69b32566ec65" name="a1230796c836bc1b1b7fb69b32566ec65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1230796c836bc1b1b7fb69b32566ec65">&#9670;&#160;</a></span>isFull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean model.Board.isFull </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indique si le plateau est entièrement rempli. </p>
+<p>Le plateau est considéré comme plein lorsqu'aucune cellule n'est vide, c'est-à-dire qu'il n'existe plus de case disponible pour poser un pion.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>true si toutes les cellules contiennent un pion, false dès qu'au moins une cellule est encore vide. </dd></dl>
+
+</div>
+</div>
+<a id="a763279eb7f2f766b2b0922aa95b14192" name="a763279eb7f2f766b2b0922aa95b14192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a763279eb7f2f766b2b0922aa95b14192">&#9670;&#160;</a></span>isValidPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean model.Board.isValidPosition </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vérifie si une paire de coordonnées appartient au plateau. </p>
+<p>Cette méthode permet de s'assurer qu'une position (x, y) désigne bien une case existante dans la grille.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Coordonnée horizontale à tester. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordonnée verticale à tester. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true si la position est comprise dans les limites du plateau, false sinon. </dd></dl>
+
+</div>
+</div>
+<a id="a34bf19548badf3011956400b85ccc295" name="a34bf19548badf3011956400b85ccc295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34bf19548badf3011956400b85ccc295">&#9670;&#160;</a></span>placePiece()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model.Board.placePiece </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Cell.CellState</td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Place un pion sur la case indiquée si la position est valide. </p>
+<p>La méthode modifie l'état de la cellule aux coordonnées (x, y) en lui attribuant l'état spécifié (par exemple NOIR ou BLANC). Si la position est invalide, aucun changement n'est effectué.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Coordonnée horizontale de la case où placer le pion. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordonnée verticale de la case où placer le pion. </td></tr>
+    <tr><td class="paramname">state</td><td>Nouvel état de la cellule, représentant la couleur du pion (par exemple <code><a class="el" href="enummodel_1_1_cell_1_1_cell_state.html#af3fe1c636db28034487f318ea36ec987">Cell.CellState#BLACK</a></code> ou <code><a class="el" href="enummodel_1_1_cell_1_1_cell_state.html#a8dfd6e65e1b9a07ad3b97ee42844e5f3">Cell.CellState#WHITE</a></code>). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a id="a1ede878acc8dabb93357cd69d1b07166" name="a1ede878acc8dabb93357cd69d1b07166"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ede878acc8dabb93357cd69d1b07166">&#9670;&#160;</a></span>grid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmodel_1_1_cell.html">Cell</a> [][] model.Board.grid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Grille bidimensionnelle représentant les cellules du plateau. </p>
+<p>Chaque entrée du tableau correspond à une cellule <code><a class="el" href="classmodel_1_1_cell.html">Cell</a></code> située aux coordonnées (x, y) sur le plateau. </p>
+
+</div>
+</div>
+<a id="aa59badd8286249ef4e7151069eaa90b4" name="aa59badd8286249ef4e7151069eaa90b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa59badd8286249ef4e7151069eaa90b4">&#9670;&#160;</a></span>size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int model.Board.size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Taille du plateau (nombre de cases par ligne et par colonne). </p>
+<p>Par exemple, pour un plateau classique d'Othello, la taille est de 8. </p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<li>src/main/java/model/<a class="el" href="_board_8java.html">Board.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemodel.html">model</a></li><li class="navelem"><a class="el" href="classmodel_1_1_board.html">Board</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

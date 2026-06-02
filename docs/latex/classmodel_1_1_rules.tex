@@ -1,0 +1,238 @@
+\doxysection{Référence de la classe model.\+Rules}
+\hypertarget{classmodel_1_1_rules}{}\label{classmodel_1_1_rules}\index{model.Rules@{model.Rules}}
+
+
+Contient les règles et la logique de validation des coups pour Othello/\+Reversi.  
+
+
+\doxysubsubsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static boolean \mbox{\hyperlink{classmodel_1_1_rules_a743ec7633645d7ba4febdec4299032cc}{is\+Valid\+Move}} (\mbox{\hyperlink{classmodel_1_1_board}{Board}} board, int x, int y, \mbox{\hyperlink{classmodel_1_1_player}{Player}} player)
+\begin{DoxyCompactList}\small\item\em Vérifie si un coup est valide pour un joueur donné. \end{DoxyCompactList}\item 
+static List$<$ int\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{classmodel_1_1_rules_aafdaea552d7ad777339999977742f671}{get\+Captured\+Pieces}} (\mbox{\hyperlink{classmodel_1_1_board}{Board}} board, int x, int y, \mbox{\hyperlink{classmodel_1_1_player}{Player}} player)
+\begin{DoxyCompactList}\small\item\em Calcule la liste des pions capturés si un coup est joué à une position donnée. \end{DoxyCompactList}\item 
+static Cell.\+Cell\+State \mbox{\hyperlink{classmodel_1_1_rules_a0be3f89d46017360c0e2d2dfbc1862a5}{get\+Opponent\+Color}} (Cell.\+Cell\+State color)
+\begin{DoxyCompactList}\small\item\em Retourne la couleur de l\textquotesingle{}adversaire d\textquotesingle{}une couleur donnée. \end{DoxyCompactList}\item 
+static List$<$ \mbox{\hyperlink{classmodel_1_1_move}{Move}} $>$ \mbox{\hyperlink{classmodel_1_1_rules_a4feb409cd57e544bfb39a8d4ee3c6e8c}{get\+Valid\+Moves}} (\mbox{\hyperlink{classmodel_1_1_board}{Board}} board, \mbox{\hyperlink{classmodel_1_1_player}{Player}} player)
+\begin{DoxyCompactList}\small\item\em Calcule la liste de tous les coups valides pour un joueur donné. \end{DoxyCompactList}\item 
+static boolean \mbox{\hyperlink{classmodel_1_1_rules_a63c739f99208ac6cdd273e20b453043e}{has\+Valid\+Moves}} (\mbox{\hyperlink{classmodel_1_1_board}{Board}} board, \mbox{\hyperlink{classmodel_1_1_player}{Player}} player)
+\begin{DoxyCompactList}\small\item\em Indique si un joueur possède au moins un coup valide. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classmodel_1_1_rules_a168a2e3873879bb73e59e25c1a4b9329}{apply\+Move}} (\mbox{\hyperlink{classmodel_1_1_board}{Board}} board, \mbox{\hyperlink{classmodel_1_1_move}{Move}} move)
+\begin{DoxyCompactList}\small\item\em Applique un coup sur le plateau et retourne les pions capturés. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres privées statiques}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ int\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{classmodel_1_1_rules_a868a846c744fb0044242cc937a95fc3b}{check\+Direction}} (\mbox{\hyperlink{classmodel_1_1_board}{Board}} board, int x, int y, int dx, int dy, Cell.\+Cell\+State opponent)
+\begin{DoxyCompactList}\small\item\em Vérifie les captures possibles dans une direction donnée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés statiques}
+\begin{DoxyCompactItemize}
+\item 
+static final int\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmodel_1_1_rules_ae1d5dab762044618e0683db5fb99cc34}{DIRECTIONS}}
+\begin{DoxyCompactList}\small\item\em Directions de recherche pour détecter les captures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Contient les règles et la logique de validation des coups pour Othello/\+Reversi. 
+
+Cette classe fournit des méthodes statiques permettant de vérifier la validité des coups, de calculer les pions capturés, de lister les coups possibles et d\textquotesingle{}appliquer un coup sur le plateau de jeu. 
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{classmodel_1_1_rules_a168a2e3873879bb73e59e25c1a4b9329}\index{model.Rules@{model.Rules}!applyMove@{applyMove}}
+\index{applyMove@{applyMove}!model.Rules@{model.Rules}}
+\doxysubsubsection{\texorpdfstring{applyMove()}{applyMove()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_rules_a168a2e3873879bb73e59e25c1a4b9329} 
+static void model.\+Rules.\+apply\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmodel_1_1_board}{Board}}}]{board}{, }\item[{\mbox{\hyperlink{classmodel_1_1_move}{Move}}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Applique un coup sur le plateau et retourne les pions capturés. 
+
+La méthode \+:
+\begin{DoxyItemize}
+\item place le pion du joueur à la position indiquée ;
+\item calcule toutes les pièces capturées par ce coup ;
+\item remplace ces pions par la couleur du joueur ;
+\item enregistre la liste des positions capturées dans l\textquotesingle{}objet {\ttfamily \doxylink{classmodel_1_1_move}{Move}}.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & Plateau sur lequel le coup doit être appliqué. \\
+\hline
+{\em move} & Coup à appliquer, contenant la position et le joueur. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmodel_1_1_rules_a868a846c744fb0044242cc937a95fc3b}\index{model.Rules@{model.Rules}!checkDirection@{checkDirection}}
+\index{checkDirection@{checkDirection}!model.Rules@{model.Rules}}
+\doxysubsubsection{\texorpdfstring{checkDirection()}{checkDirection()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_rules_a868a846c744fb0044242cc937a95fc3b} 
+static List$<$ int\mbox{[}$\,$\mbox{]}$>$ model.\+Rules.\+check\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmodel_1_1_board}{Board}}}]{board}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{dx}{, }\item[{int}]{dy}{, }\item[{Cell.\+Cell\+State}]{opponent}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Vérifie les captures possibles dans une direction donnée. 
+
+En partant de la case immédiatement voisine dans la direction (dx, dy), la méthode collecte les positions des pions adverses successifs. La capture est validée seulement si cette séquence est suivie d\textquotesingle{}un pion de la couleur du joueur (et non d\textquotesingle{}une case vide ou du bord du plateau).
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & Plateau de jeu sur lequel la vérification est effectuée. \\
+\hline
+{\em x} & Coordonnée horizontale de la case jouée. \\
+\hline
+{\em y} & Coordonnée verticale de la case jouée. \\
+\hline
+{\em dx} & Déplacement horizontal pour parcourir la direction. \\
+\hline
+{\em dy} & Déplacement vertical pour parcourir la direction. \\
+\hline
+{\em opponent} & Couleur de l\textquotesingle{}adversaire à capturer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Une liste des positions \mbox{[}x, y\mbox{]} capturées dans cette direction si la capture est possible, ou null si aucune capture n\textquotesingle{}est valide. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_rules_aafdaea552d7ad777339999977742f671}\index{model.Rules@{model.Rules}!getCapturedPieces@{getCapturedPieces}}
+\index{getCapturedPieces@{getCapturedPieces}!model.Rules@{model.Rules}}
+\doxysubsubsection{\texorpdfstring{getCapturedPieces()}{getCapturedPieces()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_rules_aafdaea552d7ad777339999977742f671} 
+static List$<$ int\mbox{[}$\,$\mbox{]}$>$ model.\+Rules.\+get\+Captured\+Pieces (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmodel_1_1_board}{Board}}}]{board}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{\mbox{\hyperlink{classmodel_1_1_player}{Player}}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calcule la liste des pions capturés si un coup est joué à une position donnée. 
+
+Pour chaque direction possible, la méthode vérifie si une série de pions adverses est encadrée par un pion du joueur, ce qui correspond à une capture selon les règles d\textquotesingle{}Othello.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & Plateau sur lequel le coup est envisagé. \\
+\hline
+{\em x} & Coordonnée horizontale de la case jouée. \\
+\hline
+{\em y} & Coordonnée verticale de la case jouée. \\
+\hline
+{\em player} & Joueur qui joue le coup. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Une liste de positions \mbox{[}x, y\mbox{]} des pions adverses qui seraient capturés. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_rules_a0be3f89d46017360c0e2d2dfbc1862a5}\index{model.Rules@{model.Rules}!getOpponentColor@{getOpponentColor}}
+\index{getOpponentColor@{getOpponentColor}!model.Rules@{model.Rules}}
+\doxysubsubsection{\texorpdfstring{getOpponentColor()}{getOpponentColor()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_rules_a0be3f89d46017360c0e2d2dfbc1862a5} 
+static Cell.\+Cell\+State model.\+Rules.\+get\+Opponent\+Color (\begin{DoxyParamCaption}\item[{Cell.\+Cell\+State}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Retourne la couleur de l\textquotesingle{}adversaire d\textquotesingle{}une couleur donnée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em color} & Couleur du joueur courant (BLACK ou WHITE). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La couleur opposée (WHITE si color est BLACK, et inversement). 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_rules_a4feb409cd57e544bfb39a8d4ee3c6e8c}\index{model.Rules@{model.Rules}!getValidMoves@{getValidMoves}}
+\index{getValidMoves@{getValidMoves}!model.Rules@{model.Rules}}
+\doxysubsubsection{\texorpdfstring{getValidMoves()}{getValidMoves()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_rules_a4feb409cd57e544bfb39a8d4ee3c6e8c} 
+static List$<$ \mbox{\hyperlink{classmodel_1_1_move}{Move}} $>$ model.\+Rules.\+get\+Valid\+Moves (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmodel_1_1_board}{Board}}}]{board}{, }\item[{\mbox{\hyperlink{classmodel_1_1_player}{Player}}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calcule la liste de tous les coups valides pour un joueur donné. 
+
+Parcourt l\textquotesingle{}ensemble des cases du plateau et ajoute à la liste chaque position où un coup valide peut être joué par le joueur.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & Plateau sur lequel les coups sont recherchés. \\
+\hline
+{\em player} & Joueur pour lequel on cherche les coups valides. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Une liste d\textquotesingle{}objets {\ttfamily \doxylink{classmodel_1_1_move}{Move}} représentant tous les coups possibles. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_rules_a63c739f99208ac6cdd273e20b453043e}\index{model.Rules@{model.Rules}!hasValidMoves@{hasValidMoves}}
+\index{hasValidMoves@{hasValidMoves}!model.Rules@{model.Rules}}
+\doxysubsubsection{\texorpdfstring{hasValidMoves()}{hasValidMoves()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_rules_a63c739f99208ac6cdd273e20b453043e} 
+static boolean model.\+Rules.\+has\+Valid\+Moves (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmodel_1_1_board}{Board}}}]{board}{, }\item[{\mbox{\hyperlink{classmodel_1_1_player}{Player}}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Indique si un joueur possède au moins un coup valide. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & Plateau sur lequel les coups sont examinés. \\
+\hline
+{\em player} & Joueur pour lequel on vérifie la présence de coups valides. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true si au moins un coup valide existe, false sinon. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_rules_a743ec7633645d7ba4febdec4299032cc}\index{model.Rules@{model.Rules}!isValidMove@{isValidMove}}
+\index{isValidMove@{isValidMove}!model.Rules@{model.Rules}}
+\doxysubsubsection{\texorpdfstring{isValidMove()}{isValidMove()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_rules_a743ec7633645d7ba4febdec4299032cc} 
+static boolean model.\+Rules.\+is\+Valid\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmodel_1_1_board}{Board}}}]{board}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{\mbox{\hyperlink{classmodel_1_1_player}{Player}}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Vérifie si un coup est valide pour un joueur donné. 
+
+Un coup est considéré comme valide si \+:
+\begin{DoxyItemize}
+\item la position est à l\textquotesingle{}intérieur des limites du plateau ;
+\item la case ciblée est vide ;
+\item le placement du pion à cette position permet de capturer au moins un pion adverse dans une des directions.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & Plateau de jeu sur lequel le coup est envisagé. \\
+\hline
+{\em x} & Coordonnée horizontale de la case jouée. \\
+\hline
+{\em y} & Coordonnée verticale de la case jouée. \\
+\hline
+{\em player} & Joueur qui souhaite jouer ce coup. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true si le coup est valide pour ce joueur, false sinon. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentation des données membres}
+\Hypertarget{classmodel_1_1_rules_ae1d5dab762044618e0683db5fb99cc34}\index{model.Rules@{model.Rules}!DIRECTIONS@{DIRECTIONS}}
+\index{DIRECTIONS@{DIRECTIONS}!model.Rules@{model.Rules}}
+\doxysubsubsection{\texorpdfstring{DIRECTIONS}{DIRECTIONS}}
+{\footnotesize\ttfamily \label{classmodel_1_1_rules_ae1d5dab762044618e0683db5fb99cc34} 
+final int \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} model.\+Rules.\+DIRECTIONS\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Valeur initiale \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{-\/1,\ 0\},\ \{1,\ 0\},\ \{0,\ -\/1\},\ \{0,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{-\/1,\ -\/1\},\ \{-\/1,\ 1\},\ \{1,\ -\/1\},\ \{1,\ 1\}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Directions de recherche pour détecter les captures. 
+
+Chaque entrée du tableau représente un vecteur de déplacement (dx, dy) permettant de parcourir le plateau dans les huit directions \+: haut, bas, gauche, droite et les quatre diagonales. 
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/model/\mbox{\hyperlink{_rules_8java}{Rules.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,1356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Othelle/reversi: Référence de la classe view.GameController</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Othelle/reversi
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classview_1_1_game_controller.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-methods">Fonctions membres privées</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="#pri-static-attribs">Attributs privés statiques</a> &#124;
+<a href="classview_1_1_game_controller-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle"><div class="title">Référence de la classe view.GameController</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Contrôleur principal d'une partie d'Othello/Reversi.  
+ <a href="#details">Plus de détails...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:aacf834a0875f39b8f43da95ec77487fc" id="r_aacf834a0875f39b8f43da95ec77487fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aacf834a0875f39b8f43da95ec77487fc">GameController</a> (<a class="el" href="classview_1_1_othello_app.html">OthelloApp</a> <a class="el" href="#a662cf56fd0701e6fe80312c21834536f">app</a>)</td></tr>
+<tr class="memdesc:aacf834a0875f39b8f43da95ec77487fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un contrôleur de partie associé à l'application principale.  <br /></td></tr>
+<tr class="separator:aacf834a0875f39b8f43da95ec77487fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae45feca55df39aa1ac01e6a4bb7269ad" id="r_ae45feca55df39aa1ac01e6a4bb7269ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae45feca55df39aa1ac01e6a4bb7269ad">startGame</a> (int <a class="el" href="#a5c771fc03bcb27c66e6fe7740b698901">mode</a>)</td></tr>
+<tr class="memdesc:ae45feca55df39aa1ac01e6a4bb7269ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Démarre une nouvelle partie selon le mode choisi.  <br /></td></tr>
+<tr class="separator:ae45feca55df39aa1ac01e6a4bb7269ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeccef6b2d1aa3189c93f09d2c60c123e" id="r_aeccef6b2d1aa3189c93f09d2c60c123e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeccef6b2d1aa3189c93f09d2c60c123e">playWithKeyboard</a> ()</td></tr>
+<tr class="memdesc:aeccef6b2d1aa3189c93f09d2c60c123e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ouvre une boîte de dialogue permettant de jouer au clavier.  <br /></td></tr>
+<tr class="separator:aeccef6b2d1aa3189c93f09d2c60c123e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72da66e5eb316a00930240312bcfa940" id="r_a72da66e5eb316a00930240312bcfa940"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72da66e5eb316a00930240312bcfa940">showAlert</a> (String title, String message)</td></tr>
+<tr class="memdesc:a72da66e5eb316a00930240312bcfa940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche une boîte de dialogue d'information à l'utilisateur.  <br /></td></tr>
+<tr class="separator:a72da66e5eb316a00930240312bcfa940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Fonctions membres privées</h2></td></tr>
+<tr class="memitem:acd35763a14547cbae7bdf3928592bad7" id="r_acd35763a14547cbae7bdf3928592bad7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd35763a14547cbae7bdf3928592bad7">resetGame</a> (int boardSize)</td></tr>
+<tr class="memdesc:acd35763a14547cbae7bdf3928592bad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réinitialise complètement la partie avec une nouvelle taille de plateau.  <br /></td></tr>
+<tr class="separator:acd35763a14547cbae7bdf3928592bad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae31a6d39d40a0a448be42b9d401b253d" id="r_ae31a6d39d40a0a448be42b9d401b253d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae31a6d39d40a0a448be42b9d401b253d">saveSnapshot</a> (<a class="el" href="classmodel_1_1_move.html">Move</a> move)</td></tr>
+<tr class="memdesc:ae31a6d39d40a0a448be42b9d401b253d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enregistre un instantané complet de l'état courant de la partie.  <br /></td></tr>
+<tr class="separator:ae31a6d39d40a0a448be42b9d401b253d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81ecdad12b06ec2cd361d8a147eea216" id="r_a81ecdad12b06ec2cd361d8a147eea216"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81ecdad12b06ec2cd361d8a147eea216">chooseBoardSize</a> ()</td></tr>
+<tr class="memdesc:a81ecdad12b06ec2cd361d8a147eea216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Demande à l'utilisateur de choisir la taille du plateau.  <br /></td></tr>
+<tr class="separator:a81ecdad12b06ec2cd361d8a147eea216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a203c7f6135b00a09db92b7e119962946" id="r_a203c7f6135b00a09db92b7e119962946"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a203c7f6135b00a09db92b7e119962946">buildGameFrame</a> ()</td></tr>
+<tr class="memdesc:a203c7f6135b00a09db92b7e119962946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit l'interface graphique complète de la partie.  <br /></td></tr>
+<tr class="separator:a203c7f6135b00a09db92b7e119962946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad719a8bc7f9ce79d563e656c2ce794f3" id="r_ad719a8bc7f9ce79d563e656c2ce794f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad719a8bc7f9ce79d563e656c2ce794f3">undoMove</a> ()</td></tr>
+<tr class="memdesc:ad719a8bc7f9ce79d563e656c2ce794f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Annule le dernier coup joué.  <br /></td></tr>
+<tr class="separator:ad719a8bc7f9ce79d563e656c2ce794f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81768e32b9d175507a88cf6522092ab1" id="r_a81768e32b9d175507a88cf6522092ab1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81768e32b9d175507a88cf6522092ab1">redoMove</a> ()</td></tr>
+<tr class="memdesc:a81768e32b9d175507a88cf6522092ab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejoue le dernier coup annulé.  <br /></td></tr>
+<tr class="separator:a81768e32b9d175507a88cf6522092ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ffba2896ca234564720afbe8bbe7bc" id="r_a49ffba2896ca234564720afbe8bbe7bc"><td class="memItemLeft" align="right" valign="top">JPanel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49ffba2896ca234564720afbe8bbe7bc">createBoardPanel</a> ()</td></tr>
+<tr class="memdesc:a49ffba2896ca234564720afbe8bbe7bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée le panneau graphique représentant l'ensemble du plateau.  <br /></td></tr>
+<tr class="separator:a49ffba2896ca234564720afbe8bbe7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02b0268454b20e9ac26e5c36cc5ea0e8" id="r_a02b0268454b20e9ac26e5c36cc5ea0e8"><td class="memItemLeft" align="right" valign="top">JPanel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02b0268454b20e9ac26e5c36cc5ea0e8">createCellPanel</a> (int x, int y)</td></tr>
+<tr class="memdesc:a02b0268454b20e9ac26e5c36cc5ea0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée le panneau graphique correspondant à une case du plateau.  <br /></td></tr>
+<tr class="separator:a02b0268454b20e9ac26e5c36cc5ea0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1efabe241e13548d1a078a90e28892ca" id="r_a1efabe241e13548d1a078a90e28892ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1efabe241e13548d1a078a90e28892ca">handleCellClick</a> (int x, int y)</td></tr>
+<tr class="memdesc:a1efabe241e13548d1a078a90e28892ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traite le clic utilisateur sur une case du plateau.  <br /></td></tr>
+<tr class="separator:a1efabe241e13548d1a078a90e28892ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d73b3cced9439d543e3f3abbaac9f69" id="r_a9d73b3cced9439d543e3f3abbaac9f69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d73b3cced9439d543e3f3abbaac9f69">applyPlayerMove</a> (int x, int y)</td></tr>
+<tr class="memdesc:a9d73b3cced9439d543e3f3abbaac9f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique le coup du joueur courant sur le plateau.  <br /></td></tr>
+<tr class="separator:a9d73b3cced9439d543e3f3abbaac9f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d1b90f4c5dfb53c6f916ad43db74ffd" id="r_a8d1b90f4c5dfb53c6f916ad43db74ffd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d1b90f4c5dfb53c6f916ad43db74ffd">updateMoveHistory</a> ()</td></tr>
+<tr class="memdesc:a8d1b90f4c5dfb53c6f916ad43db74ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour le texte affiché dans la zone d'historique des coups.  <br /></td></tr>
+<tr class="separator:a8d1b90f4c5dfb53c6f916ad43db74ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2be86b1a004c8fbcb3ea568c7e489b91" id="r_a2be86b1a004c8fbcb3ea568c7e489b91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2be86b1a004c8fbcb3ea568c7e489b91">performAiTurn</a> ()</td></tr>
+<tr class="memdesc:a2be86b1a004c8fbcb3ea568c7e489b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exécute le tour de l'intelligence artificielle.  <br /></td></tr>
+<tr class="separator:a2be86b1a004c8fbcb3ea568c7e489b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44cf76027a1105a6c2c27358a51cc0d5" id="r_a44cf76027a1105a6c2c27358a51cc0d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44cf76027a1105a6c2c27358a51cc0d5">updateGameStatus</a> ()</td></tr>
+<tr class="memdesc:a44cf76027a1105a6c2c27358a51cc0d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour l'état global de la partie et détecte la fin du jeu.  <br /></td></tr>
+<tr class="separator:a44cf76027a1105a6c2c27358a51cc0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8052771b96d804a444d0435fd210538" id="r_ad8052771b96d804a444d0435fd210538"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8052771b96d804a444d0435fd210538">refreshBoard</a> ()</td></tr>
+<tr class="memdesc:ad8052771b96d804a444d0435fd210538"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rafraîchit l'affichage du plateau et du texte de statut.  <br /></td></tr>
+<tr class="separator:ad8052771b96d804a444d0435fd210538"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5425808ecf2098ccf1fe356337de0f84" id="r_a5425808ecf2098ccf1fe356337de0f84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5425808ecf2098ccf1fe356337de0f84">showPauseDialog</a> ()</td></tr>
+<tr class="memdesc:a5425808ecf2098ccf1fe356337de0f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la boîte de dialogue de pause.  <br /></td></tr>
+<tr class="separator:a5425808ecf2098ccf1fe356337de0f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9d3db52d7dfb62f43f66f598539e397" id="r_ac9d3db52d7dfb62f43f66f598539e397"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9d3db52d7dfb62f43f66f598539e397">getStatusText</a> ()</td></tr>
+<tr class="memdesc:ac9d3db52d7dfb62f43f66f598539e397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit le texte représentant l'état courant de la partie.  <br /></td></tr>
+<tr class="separator:ac9d3db52d7dfb62f43f66f598539e397"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71ffc16937ac09de38989115250650a2" id="r_a71ffc16937ac09de38989115250650a2"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71ffc16937ac09de38989115250650a2">saveGame</a> ()</td></tr>
+<tr class="memdesc:a71ffc16937ac09de38989115250650a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde l'état courant de la partie dans un fichier texte.  <br /></td></tr>
+<tr class="separator:a71ffc16937ac09de38989115250650a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42d78da68fea6d04ad8cd3b8e4644169" id="r_a42d78da68fea6d04ad8cd3b8e4644169"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42d78da68fea6d04ad8cd3b8e4644169">loadGame</a> ()</td></tr>
+<tr class="memdesc:a42d78da68fea6d04ad8cd3b8e4644169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge une partie depuis le fichier de sauvegarde.  <br /></td></tr>
+<tr class="separator:a42d78da68fea6d04ad8cd3b8e4644169"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a662cf56fd0701e6fe80312c21834536f" id="r_a662cf56fd0701e6fe80312c21834536f"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="classview_1_1_othello_app.html">OthelloApp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a662cf56fd0701e6fe80312c21834536f">app</a></td></tr>
+<tr class="memdesc:a662cf56fd0701e6fe80312c21834536f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Référence vers l'application principale.  <br /></td></tr>
+<tr class="separator:a662cf56fd0701e6fe80312c21834536f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43ce805aafb7550f4ccdd13b89e17ba7" id="r_a43ce805aafb7550f4ccdd13b89e17ba7"><td class="memItemLeft" align="right" valign="top">final File&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43ce805aafb7550f4ccdd13b89e17ba7">saveFile</a></td></tr>
+<tr class="memdesc:a43ce805aafb7550f4ccdd13b89e17ba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fichier physique de sauvegarde associé à la partie.  <br /></td></tr>
+<tr class="separator:a43ce805aafb7550f4ccdd13b89e17ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c82f6207891c382a5400ee34ba354b" id="r_af1c82f6207891c382a5400ee34ba354b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmodel_1_1_game_state.html">GameState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1c82f6207891c382a5400ee34ba354b">gameState</a></td></tr>
+<tr class="memdesc:af1c82f6207891c382a5400ee34ba354b"><td class="mdescLeft">&#160;</td><td class="mdescRight">État courant de la partie.  <br /></td></tr>
+<tr class="separator:af1c82f6207891c382a5400ee34ba354b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f54b798be4195249575493119470575" id="r_a7f54b798be4195249575493119470575"><td class="memItemLeft" align="right" valign="top">JFrame&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f54b798be4195249575493119470575">gameFrame</a></td></tr>
+<tr class="memdesc:a7f54b798be4195249575493119470575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fenêtre principale de la partie en cours.  <br /></td></tr>
+<tr class="separator:a7f54b798be4195249575493119470575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48732d83bec566a57147b8f0bbfa7ce0" id="r_a48732d83bec566a57147b8f0bbfa7ce0"><td class="memItemLeft" align="right" valign="top">JPanel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48732d83bec566a57147b8f0bbfa7ce0">boardPanel</a></td></tr>
+<tr class="memdesc:a48732d83bec566a57147b8f0bbfa7ce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Panneau graphique représentant le plateau de jeu.  <br /></td></tr>
+<tr class="separator:a48732d83bec566a57147b8f0bbfa7ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af76665df06fe93f10531e4adf7ac789b" id="r_af76665df06fe93f10531e4adf7ac789b"><td class="memItemLeft" align="right" valign="top">JLabel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af76665df06fe93f10531e4adf7ac789b">statusLabel</a></td></tr>
+<tr class="memdesc:af76665df06fe93f10531e4adf7ac789b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libellé affichant l'état courant de la partie.  <br /></td></tr>
+<tr class="separator:af76665df06fe93f10531e4adf7ac789b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad687640c647292a29760297ff60e2dd9" id="r_ad687640c647292a29760297ff60e2dd9"><td class="memItemLeft" align="right" valign="top">JButton&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad687640c647292a29760297ff60e2dd9">pauseButton</a></td></tr>
+<tr class="memdesc:ad687640c647292a29760297ff60e2dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bouton permettant d'ouvrir le menu de pause.  <br /></td></tr>
+<tr class="separator:ad687640c647292a29760297ff60e2dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaffb897f81b0d6ded99f733a6728412b" id="r_aaffb897f81b0d6ded99f733a6728412b"><td class="memItemLeft" align="right" valign="top">JButton&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaffb897f81b0d6ded99f733a6728412b">undoButton</a></td></tr>
+<tr class="memdesc:aaffb897f81b0d6ded99f733a6728412b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bouton permettant d'annuler le dernier coup joué.  <br /></td></tr>
+<tr class="separator:aaffb897f81b0d6ded99f733a6728412b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e06206926d0e1bfa57c22d114f14716" id="r_a6e06206926d0e1bfa57c22d114f14716"><td class="memItemLeft" align="right" valign="top">JButton&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e06206926d0e1bfa57c22d114f14716">redoButton</a></td></tr>
+<tr class="memdesc:a6e06206926d0e1bfa57c22d114f14716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bouton permettant de refaire un coup précédemment annulé.  <br /></td></tr>
+<tr class="separator:a6e06206926d0e1bfa57c22d114f14716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51fd8c7c7e837d63edfb11ecaa74b7fb" id="r_a51fd8c7c7e837d63edfb11ecaa74b7fb"><td class="memItemLeft" align="right" valign="top">JButton&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51fd8c7c7e837d63edfb11ecaa74b7fb">playwithkeyboardButton</a></td></tr>
+<tr class="memdesc:a51fd8c7c7e837d63edfb11ecaa74b7fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bouton permettant de jouer en saisissant les coordonnées au clavier.  <br /></td></tr>
+<tr class="separator:a51fd8c7c7e837d63edfb11ecaa74b7fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c771fc03bcb27c66e6fe7740b698901" id="r_a5c771fc03bcb27c66e6fe7740b698901"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c771fc03bcb27c66e6fe7740b698901">mode</a></td></tr>
+<tr class="memdesc:a5c771fc03bcb27c66e6fe7740b698901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode de jeu courant.  <br /></td></tr>
+<tr class="separator:a5c771fc03bcb27c66e6fe7740b698901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d75ec999ba1d415ba04f64741df06fb" id="r_a1d75ec999ba1d415ba04f64741df06fb"><td class="memItemLeft" align="right" valign="top">JTextArea&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d75ec999ba1d415ba04f64741df06fb">HistoryArea</a></td></tr>
+<tr class="memdesc:a1d75ec999ba1d415ba04f64741df06fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zone de texte affichant l'historique des coups joués.  <br /></td></tr>
+<tr class="separator:a1d75ec999ba1d415ba04f64741df06fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed1ba9858c56cef4229292a37fef7ef0" id="r_aed1ba9858c56cef4229292a37fef7ef0"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classmodel_1_1_game_snapshot.html">GameSnapshot</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed1ba9858c56cef4229292a37fef7ef0">snapshots</a> = new ArrayList&lt;&gt;()</td></tr>
+<tr class="memdesc:aed1ba9858c56cef4229292a37fef7ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des instantanés de partie utilisée pour l'annulation.  <br /></td></tr>
+<tr class="separator:aed1ba9858c56cef4229292a37fef7ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cfcbffaa8048942935470bf863d07a1" id="r_a6cfcbffaa8048942935470bf863d07a1"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classmodel_1_1_game_snapshot.html">GameSnapshot</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cfcbffaa8048942935470bf863d07a1">redoSnapshots</a> = new ArrayList&lt;&gt;()</td></tr>
+<tr class="memdesc:a6cfcbffaa8048942935470bf863d07a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des instantanés annulés utilisée pour le rétablissement.  <br /></td></tr>
+<tr class="separator:a6cfcbffaa8048942935470bf863d07a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Attributs privés statiques</h2></td></tr>
+<tr class="memitem:a4a0cae76dd211115296769a32f555e1b" id="r_a4a0cae76dd211115296769a32f555e1b"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a0cae76dd211115296769a32f555e1b">SAVE_FILE_NAME</a> = &quot;othello-save.txt&quot;</td></tr>
+<tr class="memdesc:a4a0cae76dd211115296769a32f555e1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nom du fichier utilisé pour la sauvegarde de la partie.  <br /></td></tr>
+<tr class="separator:a4a0cae76dd211115296769a32f555e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Contrôleur principal d'une partie d'Othello/Reversi. </p>
+<p>Cette classe assure la liaison entre l'interface graphique et la logique du jeu. Elle gère l'initialisation d'une partie, les interactions utilisateur, la mise à jour de l'affichage, l'historique des coups, ainsi que les fonctionnalités de sauvegarde, chargement, annulation et rétablissement. </p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a id="aacf834a0875f39b8f43da95ec77487fc" name="aacf834a0875f39b8f43da95ec77487fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacf834a0875f39b8f43da95ec77487fc">&#9670;&#160;</a></span>GameController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">view.GameController.GameController </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classview_1_1_othello_app.html">OthelloApp</a></td>          <td class="paramname"><span class="paramname"><em>app</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construit un contrôleur de partie associé à l'application principale. </p>
+<p>Initialise la référence vers l'application et prépare le fichier de sauvegarde utilisé pour enregistrer ou charger une partie.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">app</td><td>Application principale contenant le menu et la fenêtre d'accueil. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="a9d73b3cced9439d543e3f3abbaac9f69" name="a9d73b3cced9439d543e3f3abbaac9f69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d73b3cced9439d543e3f3abbaac9f69">&#9670;&#160;</a></span>applyPlayerMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.GameController.applyPlayerMove </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applique le coup du joueur courant sur le plateau. </p>
+<p>La méthode crée l'objet représentant le coup, applique les règles, enregistre ce coup dans l'historique, met à jour les scores, vérifie l'état de la partie, enregistre un instantané et rafraîchit l'affichage.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Coordonnée horizontale du coup joué. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordonnée verticale du coup joué. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a203c7f6135b00a09db92b7e119962946" name="a203c7f6135b00a09db92b7e119962946"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a203c7f6135b00a09db92b7e119962946">&#9670;&#160;</a></span>buildGameFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.GameController.buildGameFrame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construit l'interface graphique complète de la partie. </p>
+<p>Cette méthode crée la fenêtre de jeu, le plateau, la barre d'état, les boutons d'action et la zone d'historique, puis positionne tous les composants dans la fenêtre. </p>
+
+</div>
+</div>
+<a id="a81ecdad12b06ec2cd361d8a147eea216" name="a81ecdad12b06ec2cd361d8a147eea216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81ecdad12b06ec2cd361d8a147eea216">&#9670;&#160;</a></span>chooseBoardSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int view.GameController.chooseBoardSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Demande à l'utilisateur de choisir la taille du plateau. </p>
+<p>Une boîte de dialogue propose plusieurs tailles prédéfinies. Si l'utilisateur annule, la méthode retourne -1.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>La taille choisie du plateau, ou -1 si l'utilisateur annule. </dd></dl>
+
+</div>
+</div>
+<a id="a49ffba2896ca234564720afbe8bbe7bc" name="a49ffba2896ca234564720afbe8bbe7bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49ffba2896ca234564720afbe8bbe7bc">&#9670;&#160;</a></span>createBoardPanel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JPanel view.GameController.createBoardPanel </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Crée le panneau graphique représentant l'ensemble du plateau. </p>
+<p>Le panneau est constitué d'une grille de sous-panneaux, un par case, chacun étant chargé de dessiner et gérer les interactions de sa cellule.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>Le panneau contenant toutes les cases du plateau. </dd></dl>
+
+</div>
+</div>
+<a id="a02b0268454b20e9ac26e5c36cc5ea0e8" name="a02b0268454b20e9ac26e5c36cc5ea0e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02b0268454b20e9ac26e5c36cc5ea0e8">&#9670;&#160;</a></span>createCellPanel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JPanel view.GameController.createCellPanel </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Crée le panneau graphique correspondant à une case du plateau. </p>
+<p>Ce panneau dessine visuellement la case et le pion éventuel présent. Il gère également les interactions souris : survol, clic gauche pour jouer et clic droit pour annuler ou jouer selon l'action définie.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Coordonnée horizontale de la case. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordonnée verticale de la case. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le panneau graphique représentant la case demandée. </dd></dl>
+<p>Met en surbrillance une case valide lors du survol de la souris.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Événement de survol de souris.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Restaure la couleur normale de la case lorsque la souris la quitte.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Événement de sortie de souris.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Gère l'appui sur un bouton de la souris sur une case.</p>
+<ul>
+<li>Clic droit : joue le coup si la case est valide.</li>
+<li>Clic gauche : délègue le traitement au gestionnaire classique de clic.</li>
+</ul>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Événement d'appui souris.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Gère le relâchement du bouton droit de la souris.</p>
+<p>Dans cette implémentation, le relâchement du clic droit déclenche une annulation du dernier coup.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Événement de relâchement souris.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac9d3db52d7dfb62f43f66f598539e397" name="ac9d3db52d7dfb62f43f66f598539e397"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9d3db52d7dfb62f43f66f598539e397">&#9670;&#160;</a></span>getStatusText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String view.GameController.getStatusText </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construit le texte représentant l'état courant de la partie. </p>
+<p>Si la partie est terminée, un texte simple l'indique. Sinon, le texte précise le joueur courant ainsi que les scores.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>Une chaîne décrivant l'état courant de la partie. </dd></dl>
+
+</div>
+</div>
+<a id="a1efabe241e13548d1a078a90e28892ca" name="a1efabe241e13548d1a078a90e28892ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1efabe241e13548d1a078a90e28892ca">&#9670;&#160;</a></span>handleCellClick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.GameController.handleCellClick </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Traite le clic utilisateur sur une case du plateau. </p>
+<p>La méthode vérifie si la partie est terminée, puis si le coup est valide. Si le coup est autorisé, il est appliqué. En mode contre ordinateur, le tour de l'IA est ensuite exécuté.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Coordonnée horizontale de la case cliquée. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordonnée verticale de la case cliquée. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a42d78da68fea6d04ad8cd3b8e4644169" name="a42d78da68fea6d04ad8cd3b8e4644169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42d78da68fea6d04ad8cd3b8e4644169">&#9670;&#160;</a></span>loadGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean view.GameController.loadGame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Charge une partie depuis le fichier de sauvegarde. </p>
+<p>La méthode lit les informations de base de la partie, recrée un état de jeu cohérent, reconstruit le plateau et restaure le joueur courant.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>true si le chargement a réussi, false sinon. </dd></dl>
+
+</div>
+</div>
+<a id="a2be86b1a004c8fbcb3ea568c7e489b91" name="a2be86b1a004c8fbcb3ea568c7e489b91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2be86b1a004c8fbcb3ea568c7e489b91">&#9670;&#160;</a></span>performAiTurn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.GameController.performAiTurn </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exécute le tour de l'intelligence artificielle. </p>
+<p>Dans cette version, l'ordinateur choisit simplement le premier coup valide disponible. Après application du coup, les scores et l'état de la partie sont mis à jour. </p>
+
+</div>
+</div>
+<a id="aeccef6b2d1aa3189c93f09d2c60c123e" name="aeccef6b2d1aa3189c93f09d2c60c123e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeccef6b2d1aa3189c93f09d2c60c123e">&#9670;&#160;</a></span>playWithKeyboard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.GameController.playWithKeyboard </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ouvre une boîte de dialogue permettant de jouer au clavier. </p>
+<p>L'utilisateur saisit les coordonnées x et y du coup à jouer. Si le coup est valide, il est appliqué au plateau. </p>
+
+</div>
+</div>
+<a id="a81768e32b9d175507a88cf6522092ab1" name="a81768e32b9d175507a88cf6522092ab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81768e32b9d175507a88cf6522092ab1">&#9670;&#160;</a></span>redoMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.GameController.redoMove </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rejoue le dernier coup annulé. </p>
+<p>La méthode récupère le dernier instantané annulé, le restaure sur le plateau, réactualise les informations de partie puis le replace dans la liste des instantanés actifs. </p>
+
+</div>
+</div>
+<a id="ad8052771b96d804a444d0435fd210538" name="ad8052771b96d804a444d0435fd210538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8052771b96d804a444d0435fd210538">&#9670;&#160;</a></span>refreshBoard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.GameController.refreshBoard </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rafraîchit l'affichage du plateau et du texte de statut. </p>
+<p>Cette méthode force le redessin du plateau et met à jour le texte affiché en haut de la fenêtre. </p>
+
+</div>
+</div>
+<a id="acd35763a14547cbae7bdf3928592bad7" name="acd35763a14547cbae7bdf3928592bad7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd35763a14547cbae7bdf3928592bad7">&#9670;&#160;</a></span>resetGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.GameController.resetGame </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>boardSize</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Réinitialise complètement la partie avec une nouvelle taille de plateau. </p>
+<p>Cette méthode recrée un nouvel état de jeu, met à jour les scores, vide l'historique des instantanés et enregistre un premier état initial.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boardSize</td><td>Taille du plateau à créer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a71ffc16937ac09de38989115250650a2" name="a71ffc16937ac09de38989115250650a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71ffc16937ac09de38989115250650a2">&#9670;&#160;</a></span>saveGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean view.GameController.saveGame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sauvegarde l'état courant de la partie dans un fichier texte. </p>
+<p>Le fichier contient le mode de jeu, la taille du plateau, le joueur courant et l'état complet de chaque case du plateau.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>true si la sauvegarde s'est bien déroulée, false sinon. </dd></dl>
+
+</div>
+</div>
+<a id="ae31a6d39d40a0a448be42b9d401b253d" name="ae31a6d39d40a0a448be42b9d401b253d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae31a6d39d40a0a448be42b9d401b253d">&#9670;&#160;</a></span>saveSnapshot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.GameController.saveSnapshot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmodel_1_1_move.html">Move</a></td>          <td class="paramname"><span class="paramname"><em>move</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enregistre un instantané complet de l'état courant de la partie. </p>
+<p>Cette méthode copie l'état du plateau, le joueur courant, les scores, le numéro du coup et éventuellement le coup ayant conduit à cet état. L'instantané est ajouté à l'historique pour permettre l'annulation.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">move</td><td>Coup ayant conduit à l'état courant, ou null pour un état initial. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a72da66e5eb316a00930240312bcfa940" name="a72da66e5eb316a00930240312bcfa940"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72da66e5eb316a00930240312bcfa940">&#9670;&#160;</a></span>showAlert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.GameController.showAlert </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Affiche une boîte de dialogue d'information à l'utilisateur. </p>
+<p>Cette méthode centralise l'affichage des messages d'information, d'erreur ou de notification dans l'interface.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>Titre de la boîte de dialogue. </td></tr>
+    <tr><td class="paramname">message</td><td>Message à afficher à l'utilisateur. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5425808ecf2098ccf1fe356337de0f84" name="a5425808ecf2098ccf1fe356337de0f84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5425808ecf2098ccf1fe356337de0f84">&#9670;&#160;</a></span>showPauseDialog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.GameController.showPauseDialog </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Affiche la boîte de dialogue de pause. </p>
+<p>Cette boîte permet de reprendre la partie, recommencer, sauvegarder ou revenir au menu principal. </p>
+
+</div>
+</div>
+<a id="ae45feca55df39aa1ac01e6a4bb7269ad" name="ae45feca55df39aa1ac01e6a4bb7269ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae45feca55df39aa1ac01e6a4bb7269ad">&#9670;&#160;</a></span>startGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.GameController.startGame </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Démarre une nouvelle partie selon le mode choisi. </p>
+<p>Si le mode correspond au chargement d'une partie, la méthode tente de restaurer une sauvegarde existante. Sinon, elle demande la taille du plateau puis initialise une nouvelle partie. Ensuite, elle construit la fenêtre de jeu et l'affiche.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>Mode de jeu à lancer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad719a8bc7f9ce79d563e656c2ce794f3" name="ad719a8bc7f9ce79d563e656c2ce794f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad719a8bc7f9ce79d563e656c2ce794f3">&#9670;&#160;</a></span>undoMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.GameController.undoMove </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Annule le dernier coup joué. </p>
+<p>La méthode restaure l'instantané précédent, place l'instantané annulé dans la pile de rétablissement, met à jour les scores, l'historique des coups et rafraîchit l'affichage. </p>
+
+</div>
+</div>
+<a id="a44cf76027a1105a6c2c27358a51cc0d5" name="a44cf76027a1105a6c2c27358a51cc0d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44cf76027a1105a6c2c27358a51cc0d5">&#9670;&#160;</a></span>updateGameStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.GameController.updateGameStatus </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Met à jour l'état global de la partie et détecte la fin du jeu. </p>
+<p>Si la partie est terminée ou si le plateau est plein, la méthode détermine le vainqueur, met à jour l'affichage puis montre une boîte d'information contenant le résultat final et les scores. </p>
+
+</div>
+</div>
+<a id="a8d1b90f4c5dfb53c6f916ad43db74ffd" name="a8d1b90f4c5dfb53c6f916ad43db74ffd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d1b90f4c5dfb53c6f916ad43db74ffd">&#9670;&#160;</a></span>updateMoveHistory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void view.GameController.updateMoveHistory </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Met à jour le texte affiché dans la zone d'historique des coups. </p>
+<p>Chaque ligne contient le numéro du coup, la couleur du joueur et les coordonnées jouées. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a id="a662cf56fd0701e6fe80312c21834536f" name="a662cf56fd0701e6fe80312c21834536f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a662cf56fd0701e6fe80312c21834536f">&#9670;&#160;</a></span>app</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="classview_1_1_othello_app.html">OthelloApp</a> view.GameController.app</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Référence vers l'application principale. </p>
+<p>Cet objet permet au contrôleur de revenir au menu principal ou d'interagir avec la fenêtre principale de lancement. </p>
+
+</div>
+</div>
+<a id="a48732d83bec566a57147b8f0bbfa7ce0" name="a48732d83bec566a57147b8f0bbfa7ce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48732d83bec566a57147b8f0bbfa7ce0">&#9670;&#160;</a></span>boardPanel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JPanel view.GameController.boardPanel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Panneau graphique représentant le plateau de jeu. </p>
+
+</div>
+</div>
+<a id="a7f54b798be4195249575493119470575" name="a7f54b798be4195249575493119470575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f54b798be4195249575493119470575">&#9670;&#160;</a></span>gameFrame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JFrame view.GameController.gameFrame</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fenêtre principale de la partie en cours. </p>
+<p>Cette fenêtre contient le plateau, les boutons d'action, le statut de la partie et l'historique des coups. </p>
+
+</div>
+</div>
+<a id="af1c82f6207891c382a5400ee34ba354b" name="af1c82f6207891c382a5400ee34ba354b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1c82f6207891c382a5400ee34ba354b">&#9670;&#160;</a></span>gameState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmodel_1_1_game_state.html">GameState</a> view.GameController.gameState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>État courant de la partie. </p>
+<p>Contient le plateau, les joueurs, le joueur courant, les scores, l'historique des coups et l'état de fin de partie. </p>
+
+</div>
+</div>
+<a id="a1d75ec999ba1d415ba04f64741df06fb" name="a1d75ec999ba1d415ba04f64741df06fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d75ec999ba1d415ba04f64741df06fb">&#9670;&#160;</a></span>HistoryArea</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JTextArea view.GameController.HistoryArea</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zone de texte affichant l'historique des coups joués. </p>
+
+</div>
+</div>
+<a id="a5c771fc03bcb27c66e6fe7740b698901" name="a5c771fc03bcb27c66e6fe7740b698901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c771fc03bcb27c66e6fe7740b698901">&#9670;&#160;</a></span>mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int view.GameController.mode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mode de jeu courant. </p>
+<p>Exemples :</p><ul>
+<li>1 : joueur contre joueur ;</li>
+<li>2 : joueur contre ordinateur ;</li>
+<li>3 : chargement d'une partie sauvegardée. </li>
+</ul>
+
+</div>
+</div>
+<a id="ad687640c647292a29760297ff60e2dd9" name="ad687640c647292a29760297ff60e2dd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad687640c647292a29760297ff60e2dd9">&#9670;&#160;</a></span>pauseButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JButton view.GameController.pauseButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bouton permettant d'ouvrir le menu de pause. </p>
+
+</div>
+</div>
+<a id="a51fd8c7c7e837d63edfb11ecaa74b7fb" name="a51fd8c7c7e837d63edfb11ecaa74b7fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51fd8c7c7e837d63edfb11ecaa74b7fb">&#9670;&#160;</a></span>playwithkeyboardButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JButton view.GameController.playwithkeyboardButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bouton permettant de jouer en saisissant les coordonnées au clavier. </p>
+
+</div>
+</div>
+<a id="a6e06206926d0e1bfa57c22d114f14716" name="a6e06206926d0e1bfa57c22d114f14716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e06206926d0e1bfa57c22d114f14716">&#9670;&#160;</a></span>redoButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JButton view.GameController.redoButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bouton permettant de refaire un coup précédemment annulé. </p>
+
+</div>
+</div>
+<a id="a6cfcbffaa8048942935470bf863d07a1" name="a6cfcbffaa8048942935470bf863d07a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cfcbffaa8048942935470bf863d07a1">&#9670;&#160;</a></span>redoSnapshots</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="classmodel_1_1_game_snapshot.html">GameSnapshot</a>&gt; view.GameController.redoSnapshots = new ArrayList&lt;&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liste des instantanés annulés utilisée pour le rétablissement. </p>
+<p>Cette liste permet de refaire les coups après une annulation. </p>
+
+</div>
+</div>
+<a id="a4a0cae76dd211115296769a32f555e1b" name="a4a0cae76dd211115296769a32f555e1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a0cae76dd211115296769a32f555e1b">&#9670;&#160;</a></span>SAVE_FILE_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String view.GameController.SAVE_FILE_NAME = &quot;othello-save.txt&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Nom du fichier utilisé pour la sauvegarde de la partie. </p>
+<p>Ce fichier texte contient les informations minimales nécessaires pour recharger l'état d'une partie. </p>
+
+</div>
+</div>
+<a id="a43ce805aafb7550f4ccdd13b89e17ba7" name="a43ce805aafb7550f4ccdd13b89e17ba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43ce805aafb7550f4ccdd13b89e17ba7">&#9670;&#160;</a></span>saveFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final File view.GameController.saveFile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fichier physique de sauvegarde associé à la partie. </p>
+<p>Il est construit à partir de la constante <code><a class="el" href="#a4a0cae76dd211115296769a32f555e1b">SAVE_FILE_NAME</a></code>. </p>
+
+</div>
+</div>
+<a id="aed1ba9858c56cef4229292a37fef7ef0" name="aed1ba9858c56cef4229292a37fef7ef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed1ba9858c56cef4229292a37fef7ef0">&#9670;&#160;</a></span>snapshots</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="classmodel_1_1_game_snapshot.html">GameSnapshot</a>&gt; view.GameController.snapshots = new ArrayList&lt;&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liste des instantanés de partie utilisée pour l'annulation. </p>
+<p>Chaque instantané représente un état successif du jeu. </p>
+
+</div>
+</div>
+<a id="af76665df06fe93f10531e4adf7ac789b" name="af76665df06fe93f10531e4adf7ac789b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af76665df06fe93f10531e4adf7ac789b">&#9670;&#160;</a></span>statusLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JLabel view.GameController.statusLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Libellé affichant l'état courant de la partie. </p>
+<p>Il indique par exemple le joueur dont c'est le tour ou le score actuel. </p>
+
+</div>
+</div>
+<a id="aaffb897f81b0d6ded99f733a6728412b" name="aaffb897f81b0d6ded99f733a6728412b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaffb897f81b0d6ded99f733a6728412b">&#9670;&#160;</a></span>undoButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JButton view.GameController.undoButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bouton permettant d'annuler le dernier coup joué. </p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<li>src/main/java/view/<a class="el" href="_game_controller_8java.html">GameController.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceview.html">view</a></li><li class="navelem"><a class="el" href="classview_1_1_game_controller.html">GameController</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

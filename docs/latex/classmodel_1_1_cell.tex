@@ -1,0 +1,211 @@
+\doxysection{Référence de la classe model.\+Cell}
+\hypertarget{classmodel_1_1_cell}{}\label{classmodel_1_1_cell}\index{model.Cell@{model.Cell}}
+
+
+Représente une case du plateau de jeu Othello/\+Reversi.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{enummodel_1_1_cell_1_1_cell_state}{Cell\+State}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmodel_1_1_cell_a27807bad638a744099aaa08d33f3ad87}{Cell}} (int \mbox{\hyperlink{classmodel_1_1_cell_aff77368d6fde29fe6e623c0e5a2b3e41}{x}}, int \mbox{\hyperlink{classmodel_1_1_cell_af50976cd2bd70f526be063b13cb5deb2}{y}})
+\begin{DoxyCompactList}\small\item\em Construit une case aux coordonnées spécifiées, initialement vide. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmodel_1_1_cell_ad4c4d57736f383c5d9acd42bbcd408e7}{getX}} ()
+\begin{DoxyCompactList}\small\item\em Retourne la coordonnée horizontale de la case. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmodel_1_1_cell_a1ea0d88e3349db96bf17b35a6d055abd}{getY}} ()
+\begin{DoxyCompactList}\small\item\em Retourne la coordonnée verticale de la case. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enummodel_1_1_cell_1_1_cell_state}{Cell\+State}} \mbox{\hyperlink{classmodel_1_1_cell_af3d3f6f007030f25fb677f0f2f01510b}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}état courant de la case. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmodel_1_1_cell_a41dee636cfa1fc7e3bbe0765f9626256}{set\+State}} (\mbox{\hyperlink{enummodel_1_1_cell_1_1_cell_state}{Cell\+State}} \mbox{\hyperlink{classmodel_1_1_cell_a1d20899d7c807efb1f89934fc1da9b9c}{state}})
+\begin{DoxyCompactList}\small\item\em Modifie l\textquotesingle{}état de la case. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classmodel_1_1_cell_a0786182d2a28c5350b505e38ecbb11e8}{is\+Empty}} ()
+\begin{DoxyCompactList}\small\item\em Indique si la case est vide. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classmodel_1_1_cell_a5793d92f59973caf52252b01f77f874c}{is\+Black}} ()
+\begin{DoxyCompactList}\small\item\em Indique si la case contient un pion noir. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classmodel_1_1_cell_a1ff0ed498bacae70f7eb501200d5ec1c}{is\+White}} ()
+\begin{DoxyCompactList}\small\item\em Indique si la case contient un pion blanc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+final int \mbox{\hyperlink{classmodel_1_1_cell_aff77368d6fde29fe6e623c0e5a2b3e41}{x}}
+\begin{DoxyCompactList}\small\item\em Coordonnée horizontale de la case sur le plateau. \end{DoxyCompactList}\item 
+final int \mbox{\hyperlink{classmodel_1_1_cell_af50976cd2bd70f526be063b13cb5deb2}{y}}
+\begin{DoxyCompactList}\small\item\em Coordonnée verticale de la case sur le plateau. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enummodel_1_1_cell_1_1_cell_state}{Cell\+State}} \mbox{\hyperlink{classmodel_1_1_cell_a1d20899d7c807efb1f89934fc1da9b9c}{state}}
+\begin{DoxyCompactList}\small\item\em État courant de la case. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Représente une case du plateau de jeu Othello/\+Reversi. 
+
+Chaque case est définie par ses coordonnées (x, y) sur le plateau et par un état indiquant si elle est vide, occupée par un pion noir ou par un pion blanc. 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{classmodel_1_1_cell_a27807bad638a744099aaa08d33f3ad87}\index{model.Cell@{model.Cell}!Cell@{Cell}}
+\index{Cell@{Cell}!model.Cell@{model.Cell}}
+\doxysubsubsection{\texorpdfstring{Cell()}{Cell()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_cell_a27807bad638a744099aaa08d33f3ad87} 
+model.\+Cell.\+Cell (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construit une case aux coordonnées spécifiées, initialement vide. 
+
+Le constructeur positionne la case à la colonne x et à la ligne y du plateau, et initialise son état à EMPTY.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & Coordonnée horizontale de la case (colonne). \\
+\hline
+{\em y} & Coordonnée verticale de la case (ligne). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{classmodel_1_1_cell_af3d3f6f007030f25fb677f0f2f01510b}\index{model.Cell@{model.Cell}!getState@{getState}}
+\index{getState@{getState}!model.Cell@{model.Cell}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_cell_af3d3f6f007030f25fb677f0f2f01510b} 
+\mbox{\hyperlink{enummodel_1_1_cell_1_1_cell_state}{Cell\+State}} model.\+Cell.\+get\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne l\textquotesingle{}état courant de la case. 
+
+L\textquotesingle{}état indique si la case est vide ou occupée par un pion noir ou blanc.
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}état de la case sous forme de valeur de l\textquotesingle{}énumération {\ttfamily \doxylink{enummodel_1_1_cell_1_1_cell_state}{Cell\+State}}. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_cell_ad4c4d57736f383c5d9acd42bbcd408e7}\index{model.Cell@{model.Cell}!getX@{getX}}
+\index{getX@{getX}!model.Cell@{model.Cell}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_cell_ad4c4d57736f383c5d9acd42bbcd408e7} 
+int model.\+Cell.\+getX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la coordonnée horizontale de la case. 
+
+Cette coordonnée correspond à la colonne de la case sur le plateau.
+
+\begin{DoxyReturn}{Renvoie}
+La valeur de la coordonnée x de la case. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_cell_a1ea0d88e3349db96bf17b35a6d055abd}\index{model.Cell@{model.Cell}!getY@{getY}}
+\index{getY@{getY}!model.Cell@{model.Cell}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_cell_a1ea0d88e3349db96bf17b35a6d055abd} 
+int model.\+Cell.\+getY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la coordonnée verticale de la case. 
+
+Cette coordonnée correspond à la ligne de la case sur le plateau.
+
+\begin{DoxyReturn}{Renvoie}
+La valeur de la coordonnée y de la case. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_cell_a5793d92f59973caf52252b01f77f874c}\index{model.Cell@{model.Cell}!isBlack@{isBlack}}
+\index{isBlack@{isBlack}!model.Cell@{model.Cell}}
+\doxysubsubsection{\texorpdfstring{isBlack()}{isBlack()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_cell_a5793d92f59973caf52252b01f77f874c} 
+boolean model.\+Cell.\+is\+Black (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Indique si la case contient un pion noir. 
+
+\begin{DoxyReturn}{Renvoie}
+true si l\textquotesingle{}état de la case est BLACK, false sinon. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_cell_a0786182d2a28c5350b505e38ecbb11e8}\index{model.Cell@{model.Cell}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!model.Cell@{model.Cell}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_cell_a0786182d2a28c5350b505e38ecbb11e8} 
+boolean model.\+Cell.\+is\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Indique si la case est vide. 
+
+Une case vide ne contient aucun pion.
+
+\begin{DoxyReturn}{Renvoie}
+true si l\textquotesingle{}état de la case est EMPTY, false sinon. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_cell_a1ff0ed498bacae70f7eb501200d5ec1c}\index{model.Cell@{model.Cell}!isWhite@{isWhite}}
+\index{isWhite@{isWhite}!model.Cell@{model.Cell}}
+\doxysubsubsection{\texorpdfstring{isWhite()}{isWhite()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_cell_a1ff0ed498bacae70f7eb501200d5ec1c} 
+boolean model.\+Cell.\+is\+White (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Indique si la case contient un pion blanc. 
+
+\begin{DoxyReturn}{Renvoie}
+true si l\textquotesingle{}état de la case est WHITE, false sinon. 
+\end{DoxyReturn}
+\Hypertarget{classmodel_1_1_cell_a41dee636cfa1fc7e3bbe0765f9626256}\index{model.Cell@{model.Cell}!setState@{setState}}
+\index{setState@{setState}!model.Cell@{model.Cell}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily \label{classmodel_1_1_cell_a41dee636cfa1fc7e3bbe0765f9626256} 
+void model.\+Cell.\+set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enummodel_1_1_cell_1_1_cell_state}{Cell\+State}}}]{state}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifie l\textquotesingle{}état de la case. 
+
+Permet de mettre à jour la case pour indiquer qu\textquotesingle{}elle est vide ou occupée par un pion d\textquotesingle{}une certaine couleur.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em state} & Nouvel état de la case (EMPTY, BLACK ou WHITE). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des données membres}
+\Hypertarget{classmodel_1_1_cell_a1d20899d7c807efb1f89934fc1da9b9c}\index{model.Cell@{model.Cell}!state@{state}}
+\index{state@{state}!model.Cell@{model.Cell}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \label{classmodel_1_1_cell_a1d20899d7c807efb1f89934fc1da9b9c} 
+\mbox{\hyperlink{enummodel_1_1_cell_1_1_cell_state}{Cell\+State}} model.\+Cell.\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+État courant de la case. 
+
+Cet état indique si la case est vide ou contient un pion noir ou blanc. \Hypertarget{classmodel_1_1_cell_aff77368d6fde29fe6e623c0e5a2b3e41}\index{model.Cell@{model.Cell}!x@{x}}
+\index{x@{x}!model.Cell@{model.Cell}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily \label{classmodel_1_1_cell_aff77368d6fde29fe6e623c0e5a2b3e41} 
+final int model.\+Cell.\+x\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Coordonnée horizontale de la case sur le plateau. 
+
+La valeur 0 correspond généralement à la première colonne du plateau. \Hypertarget{classmodel_1_1_cell_af50976cd2bd70f526be063b13cb5deb2}\index{model.Cell@{model.Cell}!y@{y}}
+\index{y@{y}!model.Cell@{model.Cell}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily \label{classmodel_1_1_cell_af50976cd2bd70f526be063b13cb5deb2} 
+final int model.\+Cell.\+y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Coordonnée verticale de la case sur le plateau. 
+
+La valeur 0 correspond généralement à la première ligne du plateau. 
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/model/\mbox{\hyperlink{_cell_8java}{Cell.\+java}}\end{DoxyCompactItemize}

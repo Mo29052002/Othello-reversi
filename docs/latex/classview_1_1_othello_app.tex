@@ -1,0 +1,134 @@
+\doxysection{Référence de la classe view.\+Othello\+App}
+\hypertarget{classview_1_1_othello_app}{}\label{classview_1_1_othello_app}\index{view.OthelloApp@{view.OthelloApp}}
+
+
+Représente la fenêtre principale de l\textquotesingle{}application Othello / Reversi.  
+
+
+Graphe d\textquotesingle{}héritage de view.\+Othello\+App\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classview_1_1_othello_app}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classview_1_1_othello_app_a1291193f5a0b5978009686ef4a79985a}{Othello\+App}} ()
+\begin{DoxyCompactList}\small\item\em Construit la fenêtre principale de l\textquotesingle{}application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_othello_app_a1a68704a553703842466ee08443236ca}{show\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Affiche le menu principal de l\textquotesingle{}application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classview_1_1_othello_app_a44dbfe19166bdd4786acc71dd451b16c}{show\+Menu\+From\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Réaffiche le menu principal depuis l\textquotesingle{}écran de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classview_1_1_othello_app_a339767ef081662b81b546b0a36d90eee}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\begin{DoxyCompactList}\small\item\em Point d\textquotesingle{}entrée principal de l\textquotesingle{}application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classview_1_1_othello_app_a77c84c860ce06b9187722893b15e8a05}{start\+Game}} (int mode)
+\begin{DoxyCompactList}\small\item\em Lance une nouvelle partie selon le mode choisi. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classview_1_1_game_controller}{Game\+Controller}} \mbox{\hyperlink{classview_1_1_othello_app_a977c3fcb907911e741954d28538afc16}{controller}}
+\begin{DoxyCompactList}\small\item\em Contrôleur principal de l\textquotesingle{}application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Représente la fenêtre principale de l\textquotesingle{}application Othello / Reversi. 
+
+Cette classe hérite de {\ttfamily \doxylink{}{JFrame}} et constitue le point d\textquotesingle{}entrée graphique de l\textquotesingle{}application. Elle gère l\textquotesingle{}affichage du menu principal, l\textquotesingle{}initialisation de la fenêtre ainsi que le lancement d\textquotesingle{}une nouvelle partie via le contrôleur du jeu. 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{classview_1_1_othello_app_a1291193f5a0b5978009686ef4a79985a}\index{view.OthelloApp@{view.OthelloApp}!OthelloApp@{OthelloApp}}
+\index{OthelloApp@{OthelloApp}!view.OthelloApp@{view.OthelloApp}}
+\doxysubsubsection{\texorpdfstring{OthelloApp()}{OthelloApp()}}
+{\footnotesize\ttfamily \label{classview_1_1_othello_app_a1291193f5a0b5978009686ef4a79985a} 
+view.\+Othello\+App.\+Othello\+App (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construit la fenêtre principale de l\textquotesingle{}application. 
+
+Ce constructeur initialise les propriétés générales de la fenêtre \+: titre, comportement à la fermeture, dimensions et position à l\textquotesingle{}écran. Il affiche ensuite le menu principal de l\textquotesingle{}application. 
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{classview_1_1_othello_app_a339767ef081662b81b546b0a36d90eee}\index{view.OthelloApp@{view.OthelloApp}!main@{main}}
+\index{main@{main}!view.OthelloApp@{view.OthelloApp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{classview_1_1_othello_app_a339767ef081662b81b546b0a36d90eee} 
+static void view.\+Othello\+App.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Point d\textquotesingle{}entrée principal de l\textquotesingle{}application. 
+
+Cette méthode démarre l\textquotesingle{}interface graphique sur le thread événementiel de Swing à l\textquotesingle{}aide de {\ttfamily \doxylink{}{Swing\+Utilities\#invoke\+Later(\+Runnable)}}, puis crée et affiche la fenêtre principale de l\textquotesingle{}application.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em args} & Arguments de la ligne de commande transmis au programme. Ils ne sont pas utilisés dans cette application. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classview_1_1_othello_app_a1a68704a553703842466ee08443236ca}\index{view.OthelloApp@{view.OthelloApp}!showMenu@{showMenu}}
+\index{showMenu@{showMenu}!view.OthelloApp@{view.OthelloApp}}
+\doxysubsubsection{\texorpdfstring{showMenu()}{showMenu()}}
+{\footnotesize\ttfamily \label{classview_1_1_othello_app_a1a68704a553703842466ee08443236ca} 
+void view.\+Othello\+App.\+show\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Affiche le menu principal de l\textquotesingle{}application. 
+
+Cette méthode vide le contenu actuel de la fenêtre, crée un panneau de menu vertical, ajoute le titre et les boutons d\textquotesingle{}action disponibles (joueur contre joueur, chargement de partie, quitter), puis rafraîchit l\textquotesingle{}affichage de la fenêtre. \Hypertarget{classview_1_1_othello_app_a44dbfe19166bdd4786acc71dd451b16c}\index{view.OthelloApp@{view.OthelloApp}!showMenuFromGame@{showMenuFromGame}}
+\index{showMenuFromGame@{showMenuFromGame}!view.OthelloApp@{view.OthelloApp}}
+\doxysubsubsection{\texorpdfstring{showMenuFromGame()}{showMenuFromGame()}}
+{\footnotesize\ttfamily \label{classview_1_1_othello_app_a44dbfe19166bdd4786acc71dd451b16c} 
+void view.\+Othello\+App.\+show\+Menu\+From\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Réaffiche le menu principal depuis l\textquotesingle{}écran de jeu. 
+
+Cette méthode peut être appelée lorsqu\textquotesingle{}une partie se termine ou lorsqu\textquotesingle{}un retour au menu principal est demandé depuis l\textquotesingle{}interface du jeu. \Hypertarget{classview_1_1_othello_app_a77c84c860ce06b9187722893b15e8a05}\index{view.OthelloApp@{view.OthelloApp}!startGame@{startGame}}
+\index{startGame@{startGame}!view.OthelloApp@{view.OthelloApp}}
+\doxysubsubsection{\texorpdfstring{startGame()}{startGame()}}
+{\footnotesize\ttfamily \label{classview_1_1_othello_app_a77c84c860ce06b9187722893b15e8a05} 
+void view.\+Othello\+App.\+start\+Game (\begin{DoxyParamCaption}\item[{int}]{mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Lance une nouvelle partie selon le mode choisi. 
+
+Cette méthode crée une nouvelle instance du contrôleur du jeu, associée à cette fenêtre, puis demande au contrôleur de démarrer la partie selon le mode sélectionné.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mode} & Mode de jeu à lancer. Par exemple \+:
+\begin{DoxyItemize}
+\item 1 pour joueur contre joueur ;
+\item 3 pour charger une partie. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des données membres}
+\Hypertarget{classview_1_1_othello_app_a977c3fcb907911e741954d28538afc16}\index{view.OthelloApp@{view.OthelloApp}!controller@{controller}}
+\index{controller@{controller}!view.OthelloApp@{view.OthelloApp}}
+\doxysubsubsection{\texorpdfstring{controller}{controller}}
+{\footnotesize\ttfamily \label{classview_1_1_othello_app_a977c3fcb907911e741954d28538afc16} 
+\mbox{\hyperlink{classview_1_1_game_controller}{Game\+Controller}} view.\+Othello\+App.\+controller\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contrôleur principal de l\textquotesingle{}application. 
+
+Cet objet assure la liaison entre l\textquotesingle{}interface graphique et la logique métier du jeu. Il est initialisé lors du démarrage d\textquotesingle{}une partie. 
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/view/\mbox{\hyperlink{_othello_app_8java}{Othello\+App.\+java}}\end{DoxyCompactItemize}
